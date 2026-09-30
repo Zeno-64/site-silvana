@@ -79,8 +79,16 @@ slider de antes/depois (clique e arraste, com dado temporário já revertido).
 ## Detalhes técnicos que custaram tempo
 
 - `whileInView` dentro de `overflow-hidden` não dispara: ver `CLAUDE.md`.
-- `FaixaTexto` usa duas cópias lado a lado e volta de -50% para 0 sem "pulo";
-  `Mural` repete cada fileira 6× para cobrir telas largas (menos de ~2.900 px
+- `FaixaTexto` usa duas cópias lado a lado e volta de -50% para 0 sem "pulo".
+  A velocidade é constante e **não reage à rolagem da página** (pedido do
+  Kevin: no celular a versão que acelerava com o scroll ficava estranha); só
+  muda se a pessoa clicar/tocar e arrastar na faixa (`touch-pan-y` deixa o
+  scroll vertical funcionar por cima dela). Não voltar a ligar `useVelocity`.
+- No `Hero`, a linha "Cabelos · Unhas · Cílios · Sobrancelhas · Bronze" fica
+  numa caixa: no celular vira faixa de ponta a ponta (uma linha só, tamanho em
+  `vw`); de `sm` em diante, caixa arredondada. Entre `lg` e `xl` a coluna do
+  texto tem ~480px, por isso a fonte é menor até `xl`.
+- `Mural` repete cada fileira 6× para cobrir telas largas (menos de ~2.900 px
   por metade deixa vazio à direita).
 - Capítulos: altura da seção = `n * 90svh`; o índice ativo sai de
   `floor(scrollYProgress * n)`. A navegação lateral (`irPara`) usa a mesma conta.

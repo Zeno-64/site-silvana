@@ -87,7 +87,8 @@ export default function Hero() {
       >
         <div className="relative z-10">
           <motion.p
-            className="mb-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px] tracking-[0.3em] text-rosa uppercase"
+            // Celular: faixa de ponta a ponta, uma linha só. A partir de sm: caixa arredondada do tamanho do texto.
+            className="-mx-5 mb-6 flex w-[calc(100%+2.5rem)] flex-wrap items-center justify-center gap-x-2 gap-y-1 border-y border-rosa/25 bg-rosa/[0.07] px-3 py-2.5 text-[clamp(9.5px,2.7vw,11px)] font-normal tracking-[0.1em] text-rosa uppercase sm:mx-0 sm:w-fit sm:max-w-full sm:justify-start sm:gap-x-2.5 sm:rounded-full sm:border sm:border-rosa/30 sm:px-5 sm:text-[11px] sm:tracking-[0.2em] xl:gap-x-3 xl:px-6 xl:text-[12px] xl:tracking-[0.3em]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 1 }}

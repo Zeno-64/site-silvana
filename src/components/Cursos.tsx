@@ -14,10 +14,13 @@ export default function Cursos() {
     <section id="cursos" className="relative bg-fundo py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
-          <p className="text-[12px] tracking-[0.3em] text-rosa uppercase">Cursos profissionais</p>
-          <h2 className="mt-3 max-w-2xl font-titulo text-[clamp(2.2rem,6vw,4.6rem)] leading-[1] font-medium text-creme">
-            Seja a sua <span className="ouro-rosa font-script text-[1.2em] font-normal">melhor versão</span> — e transforme em profissão
+          <h2 className="font-titulo text-[clamp(3.6rem,18vw,9.5rem)] leading-[0.95] font-medium text-creme uppercase">
+            Cursos
+            <span className="ouro-rosa block font-script text-[1.15em] leading-[1] font-normal normal-case">profissionais</span>
           </h2>
+          <p className="mt-6 max-w-xl font-titulo text-[clamp(1.35rem,3.4vw,2.2rem)] leading-[1.2] text-texto">
+            Seja a sua <span className="ouro-rosa font-script text-[1.2em] font-normal">melhor versão</span> — e transforme em profissão
+          </p>
         </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:gap-10">
