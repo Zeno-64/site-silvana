@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 32 32">
+  <!-- Seta sobre o que é clicável: mesma forma, rosa mais claro e um brilho ao lado. Ponta em (3,2), igual à padrão. -->
+  <path d="M3.5 2.5 L3.5 24.5 L9.2 19.3 L13.2 28.4 L17.4 26.6 L13.4 17.6 L21.2 17.2 Z" fill="#f9d4d8" stroke="#120a09" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M25 1.5 Q25.8 6.2 30.5 7 Q25.8 7.8 25 12.5 Q24.2 7.8 19.5 7 Q24.2 6.2 25 1.5 Z" fill="#e9a0ad" stroke="#120a09" stroke-width="0.9" stroke-linejoin="round"/>
+</svg>

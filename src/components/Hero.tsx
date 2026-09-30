@@ -129,7 +129,6 @@ export default function Hero() {
                 href={site.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                data-cursor="Agendar"
                 className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-rosa-claro via-rosa to-rosa-escuro px-8 py-4 text-[13px] font-medium tracking-[0.2em] text-fundo uppercase shadow-[0_14px_50px_-10px_rgba(233,160,173,0.65)]"
               >
                 <IconeWhatsapp className="size-5" />

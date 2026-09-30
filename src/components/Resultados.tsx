@@ -54,10 +54,7 @@ export default function Resultados() {
               className={`shrink-0 ${idx % 2 ? 'mt-10 sm:mt-16' : 'mb-10 sm:mb-16'}`}
               grau={7}
             >
-              <figure
-                data-cursor="Ver"
-                className="relative h-[46svh] w-[68vw] overflow-hidden rounded-t-[999px] rounded-b-2xl border border-rosa-claro/15 sm:h-[52svh] sm:w-[30vw] lg:w-[22vw] lg:max-w-[340px]"
-              >
+              <figure className="relative h-[46svh] w-[68vw] overflow-hidden rounded-t-[999px] rounded-b-2xl border border-rosa-claro/15 sm:h-[52svh] sm:w-[30vw] lg:w-[22vw] lg:max-w-[340px]">
                 <img
                   src={r.foto}
                   alt={r.alt}

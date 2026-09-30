@@ -97,7 +97,6 @@ export default function Capitulos() {
                   href={site.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  data-cursor="Agendar"
                   className="group mt-8 inline-flex items-center gap-3 rounded-full border border-rosa px-6 py-3 text-[12px] font-medium tracking-[0.2em] text-rosa uppercase transition-colors hover:bg-rosa hover:text-fundo"
                 >
                   Agendar {c.nome.toLowerCase()}

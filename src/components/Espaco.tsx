@@ -29,7 +29,6 @@ export default function Espaco() {
               href={site.instagram}
               target="_blank"
               rel="noreferrer"
-              data-cursor="Ver"
               className="mt-8 inline-block border-b border-rosa/60 pb-1 text-[13px] tracking-[0.2em] text-rosa uppercase transition-colors hover:border-rosa"
             >
               Conheça mais no Instagram

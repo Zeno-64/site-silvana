@@ -30,7 +30,7 @@ npm run build    # tsc + vite build -> dist/
 | Resultados | A rolagem vertical vira deslizamento horizontal da galeria |
 | Antes/depois | Slider arrastável (mouse, toque e teclado). Só aparece com dados |
 | Espaço | Fotos em camadas com parallax de velocidades diferentes |
-| Global | Cursor próprio com rótulo (só desktop), botões magnéticos, cartões que inclinam em 3D, contadores, barra de progresso, botão flutuante de WhatsApp |
+| Global | Cursor de seta rosa (CSS), botões magnéticos, cartões que inclinam em 3D, contadores, barra de progresso, botão flutuante de WhatsApp |
 
 Respeita `prefers-reduced-motion` (`MotionConfig reducedMotion="user"` + CSS). Só anima `transform` e `opacity`.
 

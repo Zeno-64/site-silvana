@@ -17,8 +17,7 @@ function Comparador({ caso }: { caso: CasoAntesDepois }) {
     <figure className="w-full">
       <div
         ref={caixa}
-        data-cursor="Arraste"
-        className="group relative aspect-[4/5] touch-pan-y overflow-hidden rounded-3xl border border-rosa-claro/20 select-none"
+        className="group relative aspect-[4/5] cursor-ew-resize touch-pan-y overflow-hidden rounded-3xl border border-rosa-claro/20 select-none"
         onPointerDown={(e) => {
           e.currentTarget.setPointerCapture(e.pointerId)
           atualizar(e.clientX)
@@ -58,7 +57,7 @@ function Comparador({ caso }: { caso: CasoAntesDepois }) {
           value={p}
           onChange={(e) => setP(Number(e.target.value))}
           aria-label={`Comparar antes e depois — ${caso.servico}`}
-          className="absolute inset-0 h-full w-full cursor-none opacity-0 [pointer-events:none]"
+          className="absolute inset-0 h-full w-full opacity-0 [pointer-events:none]"
         />
       </div>
       <figcaption className="mt-4 flex items-baseline justify-between gap-4">

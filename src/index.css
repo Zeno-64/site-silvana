@@ -58,12 +58,21 @@
   }
 }
 
-/* Cursor personalizado: só entra quando o JS confirma mouse de verdade. */
-html.cursor-on,
-html.cursor-on a,
-html.cursor-on button,
-html.cursor-on [data-cursor] {
-  cursor: none;
+/* Cursor: seta rosa desenhada, só CSS (sem JavaScript). A ponta da seta é o ponto
+   ativo (3,2) nos dois SVGs de public/cursor. Fica FORA de @layer de propósito:
+   assim vence o `cursor: pointer` que o navegador/Tailwind põem em links e
+   botões. Utilitários como `cursor-grab` continuam valendo porque são
+   declarados direto no elemento. */
+html {
+  cursor: url('/cursor/seta.svg') 3 2, auto;
+}
+a,
+button,
+[role='button'],
+summary,
+label[for],
+select {
+  cursor: url('/cursor/seta-link.svg') 3 2, pointer;
 }
 
 /* ---- Tipografia: 3 papéis, cada um com UMA fonte e UMA cor ------------

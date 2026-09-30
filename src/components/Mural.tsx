@@ -20,7 +20,6 @@ function Fita({ itens, reversa = false }: { itens: typeof fotos; reversa?: boole
             target="_blank"
             rel="noreferrer"
             tabIndex={-1}
-            data-cursor="Instagram"
             className="relative block h-56 w-44 shrink-0 overflow-hidden rounded-2xl border border-rosa-claro/15 sm:h-72 sm:w-56"
           >
             <img src={f.foto} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 hover:scale-110" />

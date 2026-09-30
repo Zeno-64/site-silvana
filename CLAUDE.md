@@ -60,7 +60,12 @@ npm run build    # tsc -b && vite build
     a máscara precisa de folga (ver `Linhas`), senão corta o brilho.
 - **Animação**: só `transform` e `opacity`; respeitar `prefers-reduced-motion`
   (já há `MotionConfig reducedMotion="user"` em `main.tsx`). Efeitos de mouse
-  (cursor, magnético, tilt) só com `pointerType === 'mouse'`.
+  (magnético, tilt) só com `pointerType === 'mouse'`.
+- **Cursor**: só CSS, sem JavaScript. Seta rosa em SVG (`public/cursor/seta.svg`
+  e `seta-link.svg`, esta para links/botões), ligada em `src/index.css`. Foi
+  escolha do Kevin trocar o cursor animado com rótulo por este; não recriar o
+  componente. Para arrastar, usar os cursores nativos (`cursor-grab`,
+  `cursor-ew-resize`), que vencem a seta por serem declarados no elemento.
 - **Não inventar informação da cliente** (preços, horários, técnicas, números).
   Se não está no Instagram nem foi dito pelo Kevin, vira item em
   `CONTEUDO-PENDENTE.md`.

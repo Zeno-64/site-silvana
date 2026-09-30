@@ -27,7 +27,6 @@ export default function Contato() {
               href={site.whatsapp}
               target="_blank"
               rel="noreferrer"
-              data-cursor="Chamar"
               className="inline-flex items-center gap-4 rounded-full bg-gradient-to-r from-rosa-claro via-rosa to-rosa-escuro px-10 py-5 text-[14px] font-medium tracking-[0.2em] text-fundo uppercase shadow-[0_20px_70px_-12px_rgba(233,160,173,0.7)]"
             >
               <IconeWhatsapp className="size-6" />

@@ -37,8 +37,8 @@ Curso Cílios, Curso Unha.
 `Hero` → `FaixaTexto` → `Capitulos` (6, fundo muda de cor) → `Resultados`
 (galeria horizontal presa) → `AntesDepois` (oculto sem dados) → `Numeros` →
 `Espaco` → `Cursos` → `Mural` (fitas do Instagram + depoimentos, ocultos sem
-dados) → `Contato`. Globais: `Cursor`, `Nav` (barra, progresso, botão
-flutuante de WhatsApp). Primitivas: `Magnetic`, `Tilt`, `Reveal`/`Linhas`,
+dados) → `Contato`. Globais: `Nav` (barra, progresso, botão
+flutuante de WhatsApp); o cursor é só CSS (ver `CLAUDE.md`). Primitivas: `Magnetic`, `Tilt`, `Reveal`/`Linhas`,
 `Blobs`, `Monograma`.
 
 Verificado no preview: desktop 1440×900 e mobile 375×812 (sem overflow

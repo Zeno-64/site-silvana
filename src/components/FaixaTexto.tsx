@@ -50,7 +50,6 @@ export default function FaixaTexto() {
   return (
     <section id="faixa" aria-label="Nossos serviços" className="overflow-hidden border-y border-rosa/15 bg-fundo-2 py-8 sm:py-12">
       <div
-        data-cursor="Arraste"
         // pan-y: o dedo na faixa ainda rola a página na vertical; só o gesto horizontal é da faixa.
         className="cursor-grab touch-pan-y select-none active:cursor-grabbing"
         onPointerDown={(e) => {

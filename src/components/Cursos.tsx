@@ -29,7 +29,6 @@ export default function Cursos() {
                   href={site.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  data-cursor="Saber mais"
                   className="group relative block aspect-[4/3] overflow-hidden rounded-3xl border border-rosa-claro/20 sm:aspect-[16/11]"
                 >
                   {c.foto ? (
