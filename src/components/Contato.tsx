@@ -10,20 +10,13 @@ export default function Contato() {
       <Blobs />
       <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8">
         <Reveal>
-          <p className="text-[12px] tracking-[0.3em] text-rosa uppercase">Agende seu horário</p>
+          <p className="rotulo">Agende seu horário</p>
         </Reveal>
-        <h2 className="mt-4 font-titulo text-[clamp(2.6rem,8vw,6.4rem)] leading-[1] font-medium text-creme">
-          <Linhas
-            linhas={[
-              'Vamos cuidar',
-              <span key="v" className="ouro-rosa font-script text-[1.25em] leading-[0.9] font-normal">
-                de você?
-              </span>,
-            ]}
-          />
+        <h2 className="titulo mt-4 text-[clamp(2.6rem,8vw,6.4rem)]">
+          <Linhas linhas={['Vamos cuidar', <em key="v">de você?</em>]} />
         </h2>
         <Reveal atraso={0.2}>
-          <p className="mx-auto mt-8 max-w-md text-lg text-texto">
+          <p className="corpo mx-auto mt-8 max-w-lg">
             Chame no WhatsApp, conte o que você quer e a gente encontra o melhor horário.
           </p>
         </Reveal>
@@ -48,7 +41,7 @@ export default function Contato() {
             href={site.instagram}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 text-sm tracking-[0.15em] text-suave transition-colors hover:text-rosa-claro"
+            className="inline-flex items-center gap-2 text-base tracking-[0.15em] text-texto transition-colors hover:text-rosa"
           >
             <IconeInstagram className="size-5" />
             {site.instagramUser}
@@ -56,7 +49,7 @@ export default function Contato() {
         </Reveal>
       </div>
 
-      <footer className="relative mx-auto mt-28 max-w-7xl border-t border-rosa/15 px-5 pt-8 text-center text-[12px] tracking-[0.2em] text-suave uppercase sm:px-8">
+      <footer className="relative mx-auto mt-28 max-w-7xl border-t border-rosa/15 px-5 pt-8 text-center text-[13px] tracking-[0.2em] text-texto uppercase sm:px-8">
         © {new Date().getFullYear()} {site.nome}
       </footer>
     </section>

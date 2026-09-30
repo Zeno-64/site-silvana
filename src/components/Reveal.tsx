@@ -51,18 +51,20 @@ export function Linhas({
     ? { whileInView: 'visivel', viewport: { once: true, margin: '-60px' } }
     : { animate: 'visivel' }
   return (
-    <span className={`block ${className}`}>
+    // flex-col: em bloco normal as margens negativas de linhas vizinhas colapsariam (não somariam).
+    <span className={`flex flex-col ${className}`}>
       {linhas.map((linha, i) => (
-        // padding-bottom evita cortar as hastes do script pela máscara
+        // A máscara tem folga (padding compensado por margem negativa) para não
+        // cortar o brilho rosa do título; por isso o texto começa mais abaixo (160%).
         <motion.span
           key={i}
           initial="oculto"
           {...alvo}
-          className={`block overflow-hidden pb-[0.14em] -mb-[0.14em] ${linhaClassName}`}
+          className={`-mx-[0.4em] -my-[0.4em] block overflow-hidden px-[0.4em] py-[0.4em] ${linhaClassName}`}
         >
           <motion.span
             className="block"
-            variants={{ oculto: { y: '115%' }, visivel: { y: '0%' } }}
+            variants={{ oculto: { y: '160%' }, visivel: { y: '0%' } }}
             transition={{ duration: 1.1, delay: atraso + i * 0.12, ease: suave }}
           >
             {linha}

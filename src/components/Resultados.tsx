@@ -41,9 +41,9 @@ export default function Resultados() {
     >
       <div className="grao sticky top-0 flex h-[100svh] flex-col justify-center overflow-hidden pt-16">
         <div className="mx-auto mb-8 w-full max-w-7xl px-5 sm:mb-12 sm:px-8">
-          <p className="text-[12px] tracking-[0.3em] text-rosa uppercase">Resultados</p>
-          <h2 className="mt-3 font-titulo text-[clamp(2.2rem,6vw,4.6rem)] leading-[1] font-medium text-creme">
-            Detalhes que a gente <span className="ouro-rosa font-script text-[1.2em] font-normal">ama</span> mostrar
+          <p className="rotulo">Resultados</p>
+          <h2 className="titulo mt-3">
+            Detalhes que a gente <em>ama</em> mostrar
           </h2>
         </div>
 
@@ -65,7 +65,7 @@ export default function Resultados() {
                   className="h-full w-full object-cover transition-transform duration-[1200ms] ease-[var(--ease-suave)] hover:scale-110"
                   style={{ objectPosition: r.posicao }}
                 />
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-fundo/90 to-transparent px-4 pt-10 pb-4 text-center font-script text-2xl text-rosa-claro">
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-fundo/90 to-transparent subtitulo px-4 pt-10 pb-4 text-center text-3xl">
                   {r.tag}
                 </figcaption>
               </figure>

@@ -13,12 +13,10 @@ function ArteSemFoto({ c }: { c: Capitulo }) {
   return (
     <div
       className="relative grid h-full w-full place-items-center overflow-hidden"
-      style={{ background: `radial-gradient(circle at 30% 20%, ${c.acento}55, transparent 60%), ${c.bg}` }}
+      style={{ background: `radial-gradient(circle at 30% 20%, rgb(233 160 173 / 0.33), transparent 60%), ${c.bg}` }}
     >
       <Monograma className="absolute inset-[12%] opacity-[0.18]" />
-      <span className="relative font-script text-[clamp(3rem,7vw,5.5rem)] leading-none" style={{ color: c.acento }}>
-        {c.nome}
-      </span>
+      <span className="subtitulo relative text-[clamp(3rem,7vw,5.5rem)] leading-none">{c.nome}</span>
     </div>
   )
 }
@@ -68,7 +66,7 @@ export default function Capitulos() {
         <div className="relative mx-auto grid h-full max-w-7xl grid-rows-[auto_1fr] gap-4 px-5 pt-24 pb-8 sm:px-8 lg:grid-cols-[1fr_0.85fr] lg:grid-rows-1 lg:items-center lg:gap-16 lg:pt-20 lg:pb-0">
           {/* Texto do capítulo */}
           <div className="relative z-10 min-h-0">
-            <p className="mb-4 text-[12px] tracking-[0.3em] uppercase" style={{ color: c.acento }}>
+            <p className="rotulo mb-4">
               Capítulo {String(i + 1).padStart(2, '0')} / {String(n).padStart(2, '0')}
             </p>
 
@@ -80,19 +78,15 @@ export default function Capitulos() {
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 0.6, ease: suave }}
               >
-                <h2 className="font-titulo text-[clamp(2.6rem,7.5vw,6.4rem)] leading-[0.95] font-medium text-creme uppercase">
-                  {c.nome}
-                </h2>
-                <p className="mt-1 font-script text-[clamp(2rem,4.5vw,3.6rem)] leading-tight" style={{ color: c.acento }}>
-                  {c.script}
-                </p>
-                <p className="mt-5 max-w-md text-[17px] leading-relaxed text-texto">{c.frase}</p>
+                <h2 className="titulo text-[clamp(2.6rem,7.5vw,6.4rem)] leading-[0.95] uppercase">{c.nome}</h2>
+                <p className="subtitulo mt-1">{c.script}</p>
+                <p className="corpo mt-5 max-w-lg">{c.frase}</p>
 
                 {c.itens.length > 0 && (
-                  <ul className="mt-6 flex max-w-md flex-col gap-2.5">
+                  <ul className="mt-5 flex max-w-lg flex-col gap-2">
                     {c.itens.map((item) => (
-                      <li key={item} className="flex items-center gap-3 text-[15px] text-creme">
-                        <IconeBrilho className="size-3.5 shrink-0" style={{ color: c.acento }} />
+                      <li key={item} className="corpo-pequeno flex items-center gap-3">
+                        <IconeBrilho className="size-3.5 shrink-0 text-rosa" />
                         {item}
                       </li>
                     ))}
@@ -104,10 +98,7 @@ export default function Capitulos() {
                   target="_blank"
                   rel="noreferrer"
                   data-cursor="Agendar"
-                  className="group mt-8 inline-flex items-center gap-3 rounded-full border px-6 py-3 text-[12px] font-medium tracking-[0.2em] uppercase transition-colors hover:text-fundo"
-                  style={{ borderColor: c.acento, color: c.acento }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = c.acento)}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                  className="group mt-8 inline-flex items-center gap-3 rounded-full border border-rosa px-6 py-3 text-[12px] font-medium tracking-[0.2em] text-rosa uppercase transition-colors hover:bg-rosa hover:text-fundo"
                 >
                   Agendar {c.nome.toLowerCase()}
                   <IconeSeta className="size-4 transition-transform group-hover:translate-x-1" />
@@ -161,8 +152,7 @@ export default function Capitulos() {
               className="group flex items-center gap-3"
             >
               <span
-                className="block h-px transition-all duration-500"
-                style={{ width: idx === i ? 34 : 14, backgroundColor: idx === i ? c.acento : 'rgba(255,255,255,0.3)' }}
+                className={`block h-px transition-all duration-500 ${idx === i ? 'w-[34px] bg-rosa' : 'w-[14px] bg-white/30'}`}
               />
             </button>
           ))}

@@ -8,18 +8,19 @@
   --color-fundo-2: #1a0f0d;
   --color-cetim: #2a1713;
 
-  /* ---- Rosa-ouro (o degradê dos títulos nos posts) --------------- */
+  /* ---- Rosa: a única cor de destaque do site ----------------------
+     `rosa` = subtítulos, rótulos e botões. `rosa-claro`/`rosa-escuro` só
+     compõem o degradê dos botões e os brilhos de fundo. */
   --color-rosa-claro: #f9d4d8;
   --color-rosa: #e9a0ad;
   --color-rosa-escuro: #c9707f;
-  --color-cobre: #d9917a;
-  --color-ouro: #e2b978;
   --color-creme: #fbefe9;
 
-  /* ---- Texto -----------------------------------------------------
-     Sobre #120a09: texto ~13:1 · suave ~7,5:1 (AA em qualquer corpo). */
+  /* ---- Papéis de texto (uma cor por papel, sem exceção) ----------
+     Título: branco puro (+ brilho rosa, ver .titulo) · Subtítulo: rosa ·
+     Texto: abaixo. Sobre #120a09 o texto tem ~13:1 de contraste. */
+  --color-titulo: #ffffff;
   --color-texto: #ead9d4;
-  --color-suave: #b99a94;
 
   /* ---- Tipografia ------------------------------------------------ */
   --font-titulo: 'Playfair Display', Georgia, serif;
@@ -65,25 +66,54 @@ html.cursor-on [data-cursor] {
   cursor: none;
 }
 
-/* Texto com degradê rosa-ouro e brilho que passeia. */
-.ouro-rosa {
-  background: linear-gradient(
-    110deg,
-    #f9d4d8 0%,
-    #e9a0ad 30%,
-    #f6c9bd 50%,
-    #d98594 70%,
-    #f9d4d8 100%
-  );
-  background-size: 220% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: brilho 7s ease-in-out infinite alternate;
-}
-@keyframes brilho {
-  to {
-    background-position: 100% 0;
+/* ---- Tipografia: 3 papéis, cada um com UMA fonte e UMA cor ------------
+   O tamanho padrão vem aqui; títulos de destaque (hero, capítulos...)
+   sobrescrevem só o tamanho com `text-[...]`, nunca fonte nem cor. */
+@layer components {
+  /* Título: Playfair, branco puro, leve brilho rosa em volta. O brilho está
+     em `em` para acompanhar o tamanho da letra (grande = brilho maior). */
+  .titulo {
+    font-family: var(--font-titulo);
+    font-size: clamp(2.4rem, 6vw, 4.8rem);
+    font-weight: 500;
+    line-height: 1;
+    color: var(--color-titulo);
+    text-shadow:
+      0 0 0.14em rgb(233 160 173 / 0.5),
+      0 0 0.36em rgb(233 160 173 / 0.25);
+  }
+  /* Palavra em destaque no título: só itálico. Mesma fonte, mesma cor. */
+  .titulo em {
+    font-style: italic;
+  }
+
+  /* Subtítulo: script, rosa. */
+  .subtitulo {
+    font-family: var(--font-script);
+    font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--color-rosa);
+  }
+
+  /* Rótulo (linha pequena em maiúsculas acima do título): mesmo rosa do subtítulo. */
+  .rotulo {
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-rosa);
+  }
+
+  /* Texto corrido: Jost, sempre a mesma cor. `corpo-pequeno` para legendas e cartões. */
+  .corpo {
+    font-size: clamp(1.125rem, 1.06rem + 0.25vw, 1.25rem);
+    line-height: 1.65;
+    color: var(--color-texto);
+  }
+  .corpo-pequeno {
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: var(--color-texto);
   }
 }
 

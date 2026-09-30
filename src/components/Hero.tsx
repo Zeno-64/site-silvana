@@ -104,22 +104,12 @@ export default function Hero() {
             <span>Bronze</span>
           </motion.p>
 
-          <h1 className="font-titulo text-[clamp(3rem,9vw,7.2rem)] leading-[0.98] font-medium text-creme">
-            <Linhas
-              aoEntrar={false}
-              atraso={0.2}
-              linhas={[
-                'Sua',
-                <span key="a" className="ouro-rosa font-script text-[1.25em] leading-[0.8] font-normal">
-                  autoestima
-                </span>,
-                'começa aqui.',
-              ]}
-            />
+          <h1 className="titulo text-[clamp(3rem,9vw,7.2rem)] leading-[0.98]">
+            <Linhas aoEntrar={false} atraso={0.2} linhas={['Sua', <em key="a">autoestima</em>, 'começa aqui.']} />
           </h1>
 
           <motion.p
-            className="mt-8 max-w-md text-lg leading-relaxed text-texto"
+            className="corpo mt-8 max-w-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 1 }}
@@ -148,7 +138,7 @@ export default function Hero() {
             </Magnetic>
             <a
               href="#servicos"
-              className="group inline-flex items-center gap-2 px-2 py-4 text-[13px] tracking-[0.2em] text-rosa-claro uppercase"
+              className="group inline-flex items-center gap-2 px-2 py-4 text-[13px] tracking-[0.2em] text-rosa uppercase"
             >
               Ver serviços
               <IconeSeta className="size-4 transition-transform group-hover:translate-x-1.5" />
@@ -201,7 +191,7 @@ export default function Hero() {
       <motion.a
         href="#faixa"
         aria-label="Rolar para baixo"
-        className="absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] tracking-[0.35em] text-suave uppercase"
+        className="absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] tracking-[0.35em] text-texto uppercase"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.6 }}

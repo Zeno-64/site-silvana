@@ -60,11 +60,11 @@ export default function Mural() {
     <section id="mural" aria-label="Instagram" className="overflow-hidden bg-fundo-2 py-24 sm:py-32">
       <div className="mx-auto mb-14 max-w-7xl px-5 sm:px-8">
         <Reveal>
-          <p className="text-[12px] tracking-[0.3em] text-rosa uppercase">No Instagram</p>
-          <h2 className="mt-3 max-w-2xl font-titulo text-[clamp(2.2rem,6vw,4.6rem)] leading-[1] font-medium text-creme">
-            Nosso <span className="ouro-rosa font-script text-[1.2em] font-normal">dia a dia</span>, direto do Instagram
+          <p className="rotulo">No Instagram</p>
+          <h2 className="titulo mt-3 max-w-2xl">
+            Nosso <em>dia a dia</em>, direto do Instagram
           </h2>
-          <p className="mt-6 max-w-lg text-lg text-texto">
+          <p className="corpo mt-6 max-w-lg">
             Todo dia tem novidade no perfil, e nos destaques você encontra as avaliações das clientes.
           </p>
         </Reveal>
@@ -82,7 +82,7 @@ export default function Mural() {
           href={site.instagram}
           target="_blank"
           rel="noreferrer"
-          className="group inline-flex items-center gap-3 rounded-full border border-rosa/60 px-7 py-4 text-[13px] font-medium tracking-[0.2em] text-rosa-claro uppercase transition-colors hover:bg-rosa hover:text-fundo"
+          className="group inline-flex items-center gap-3 rounded-full border border-rosa/60 px-7 py-4 text-[13px] font-medium tracking-[0.2em] text-rosa uppercase transition-colors hover:bg-rosa hover:text-fundo"
         >
           <IconeInstagram className="size-5" />
           {site.instagramUser}

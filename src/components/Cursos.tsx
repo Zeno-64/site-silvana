@@ -14,13 +14,11 @@ export default function Cursos() {
     <section id="cursos" className="relative bg-fundo py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
-          <h2 className="font-titulo text-[clamp(3.6rem,18vw,9.5rem)] leading-[0.95] font-medium text-creme uppercase">
+          <h2 className="titulo text-[clamp(3.6rem,18vw,9.5rem)] leading-[0.95] uppercase">
             Cursos
-            <span className="ouro-rosa block font-script text-[1.15em] leading-[1] font-normal normal-case">profissionais</span>
+            <em className="block text-[0.72em] leading-[1.05] normal-case">profissionais</em>
           </h2>
-          <p className="mt-6 max-w-xl font-titulo text-[clamp(1.35rem,3.4vw,2.2rem)] leading-[1.2] text-texto">
-            Seja a sua <span className="ouro-rosa font-script text-[1.2em] font-normal">melhor versão</span> — e transforme em profissão
-          </p>
+          <p className="subtitulo mt-6 max-w-2xl">Seja a sua melhor versão — e transforme em profissão</p>
         </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:gap-10">
@@ -47,12 +45,12 @@ export default function Cursos() {
                   <span className="absolute inset-0 bg-gradient-to-t from-fundo via-fundo/50 to-transparent" />
                   <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6 sm:p-8">
                     <span>
-                      <span className="block text-[11px] tracking-[0.3em] text-rosa uppercase">Curso de</span>
-                      <span className="block font-titulo text-4xl font-medium text-creme uppercase sm:text-5xl">{c.nome}</span>
-                      <span className="mt-1 block font-script text-3xl text-rosa-claro">{c.script}</span>
-                      <span className="mt-2 block max-w-xs text-sm text-texto">{c.hint}</span>
+                      <span className="rotulo block">Curso de</span>
+                      <span className="titulo block text-4xl uppercase sm:text-5xl">{c.nome}</span>
+                      <span className="subtitulo mt-1 block text-3xl">{c.script}</span>
+                      <span className="corpo-pequeno mt-2 block max-w-xs">{c.hint}</span>
                     </span>
-                    <span className="grid size-12 shrink-0 place-items-center rounded-full border border-rosa-claro/60 text-rosa-claro transition-colors group-hover:bg-rosa-claro group-hover:text-fundo">
+                    <span className="grid size-12 shrink-0 place-items-center rounded-full border border-rosa/60 text-rosa transition-colors group-hover:bg-rosa group-hover:text-fundo">
                       <IconeSeta className="size-5 -rotate-45 transition-transform group-hover:rotate-0" />
                     </span>
                   </span>

@@ -84,6 +84,18 @@ slider de antes/depois (clique e arraste, com dado temporário já revertido).
   Kevin: no celular a versão que acelerava com o scroll ficava estranha); só
   muda se a pessoa clicar/tocar e arrastar na faixa (`touch-pan-y` deixa o
   scroll vertical funcionar por cima dela). Não voltar a ligar `useVelocity`.
+- **Tipografia unificada** (pedido do Kevin, menos poluição de cores): título
+  branco com brilho rosa, subtítulo rosa em script, texto numa cor só e um
+  pouco maior. Regras em `CLAUDE.md`; classes em `src/index.css`. Removidos o
+  degradê `ouro-rosa`, as cores de acento por capítulo (`acento` saiu de
+  `capitulos.ts`), `suave`, `ouro` e `cobre`. A faixa gigante ficou toda branca
+  (sem as palavras só de contorno). As manchas de fundo (`Blobs`) e as cores de
+  fundo de cada capítulo continuam como estavam.
+- `Linhas` (`Reveal.tsx`): a máscara ganhou 0.4em de folga em volta (para não
+  cortar o brilho do título); por isso o texto sobe de 160%, e o contêiner é
+  `flex-col` (margens negativas de blocos vizinhos colapsariam).
+- Capítulos no celular baixo (375×667): o texto maior deixa só ~140px para a
+  foto do capítulo mais longo (Sobrancelhas). Se incomodar, encurtar a frase.
 - No `Hero`, a linha "Cabelos · Unhas · Cílios · Sobrancelhas · Bronze" fica
   numa caixa: no celular vira faixa de ponta a ponta (uma linha só, tamanho em
   `vw`); de `sm` em diante, caixa arredondada. Entre `lg` e `xl` a coluna do

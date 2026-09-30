@@ -39,9 +39,25 @@ npm run build    # tsc -b && vite build
   `src/data/capitulos.ts`; galeria em `src/data/resultados.ts`;
   `antesDepois.ts` e `depoimentos.ts` (lista vazia = seção não renderiza).
 - **Tokens de design** só em `src/index.css` (`@theme`): cores `fundo`, `rosa*`,
-  `ouro`, `creme`, `texto`, `suave`; fontes `font-titulo` (Playfair Display),
+  `creme`, `titulo`, `texto`; fontes `font-titulo` (Playfair Display),
   `font-script` (Great Vibes), `font-sans` (Jost). Não usar Cormorant Garamond
   (quebra ê/ô em pt-BR).
+- **Tipografia: 3 papéis, cada um com UMA fonte e UMA cor** (pedido do Kevin,
+  para reduzir poluição visual). Usar as classes de `index.css`, sem inventar
+  cor/fonte por componente:
+  - **Título** (`.titulo`): Playfair, branco puro + leve brilho rosa
+    (`text-shadow` em `em`, acompanha o tamanho). Palavra de destaque dentro do
+    título = `<em>` (só itálico; nada de script, degradê ou outra cor). O
+    tamanho padrão é o de título de seção; hero/capítulos/contato sobrescrevem
+    só o tamanho com `text-[...]`.
+  - **Subtítulo** (`.subtitulo`): Great Vibes, rosa. **Rótulo** (`.rotulo`,
+    linha pequena em maiúsculas acima do título): o mesmo rosa.
+  - **Texto** (`.corpo`; `.corpo-pequeno` para legendas/listas/cartões): Jost,
+    sempre `texto`. Nada de `suave`, `creme` ou opacidades para variar o texto.
+  - Botões: contorno/preenchimento em `rosa`; o CTA principal usa o degradê
+    rosa. Não criar cor de destaque por seção (os capítulos só trocam o fundo).
+  - Se um título tiver brilho e estiver dentro de máscara `overflow-hidden`,
+    a máscara precisa de folga (ver `Linhas`), senão corta o brilho.
 - **Animação**: só `transform` e `opacity`; respeitar `prefers-reduced-motion`
   (já há `MotionConfig reducedMotion="user"` em `main.tsx`). Efeitos de mouse
   (cursor, magnético, tilt) só com `pointerType === 'mouse'`.

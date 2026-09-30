@@ -38,8 +38,8 @@ export default function Numeros() {
       <dl className="mx-auto grid max-w-7xl divide-y divide-rosa/15 px-5 sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:px-8">
         {itens.map((it) => (
           <div key={it.rotulo} className="flex flex-col px-4 py-10 text-center">
-            <dt className="order-2 mt-2 text-[12px] tracking-[0.25em] text-suave uppercase">{it.rotulo}</dt>
-            <dd className="ouro-rosa order-1 font-titulo text-[clamp(3rem,7vw,5rem)] leading-none font-medium">{it.valor}</dd>
+            <dt className="order-2 mt-3 text-[13px] tracking-[0.25em] text-texto uppercase">{it.rotulo}</dt>
+            <dd className="titulo order-1 text-[clamp(3rem,7vw,5rem)]">{it.valor}</dd>
           </div>
         ))}
       </dl>

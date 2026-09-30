@@ -26,7 +26,7 @@ export default function Nav() {
     <>
       <motion.div
         aria-hidden="true"
-        className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-gradient-to-r from-rosa-escuro via-rosa to-ouro"
+        className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-gradient-to-r from-rosa-escuro via-rosa to-rosa-claro"
         style={{ scaleX: progresso }}
       />
 
@@ -44,7 +44,7 @@ export default function Nav() {
               height="40"
               className="size-10 rounded-full ring-1 ring-rosa/40 transition group-hover:ring-rosa"
             />
-            <span className="font-titulo text-sm tracking-[0.22em] text-rosa-claro uppercase max-sm:hidden">
+            <span className="font-titulo text-sm tracking-[0.22em] text-titulo uppercase max-sm:hidden">
               SR Espaço da Beleza
             </span>
           </a>
@@ -54,7 +54,7 @@ export default function Nav() {
               <a
                 key={l.href}
                 href={l.href}
-                className="group relative text-[13px] tracking-[0.2em] text-texto uppercase transition-colors hover:text-rosa-claro"
+                className="group relative text-[13px] tracking-[0.2em] text-texto uppercase transition-colors hover:text-rosa"
               >
                 {l.texto}
                 <span className="absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-rosa transition-transform duration-500 group-hover:scale-x-100" />
@@ -66,7 +66,7 @@ export default function Nav() {
             href={site.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-rosa/60 px-5 py-2.5 text-[12px] font-medium tracking-[0.2em] text-rosa-claro uppercase transition hover:bg-rosa hover:text-fundo"
+            className="inline-flex items-center gap-2 rounded-full border border-rosa/60 px-5 py-2.5 text-[12px] font-medium tracking-[0.2em] text-rosa uppercase transition hover:bg-rosa hover:text-fundo"
           >
             <IconeWhatsapp className="size-4" />
             Agendar

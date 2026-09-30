@@ -75,11 +75,9 @@ export default function FaixaTexto() {
         <motion.div ref={trilho} className="flex w-max" style={{ x }} aria-hidden="true">
           {[0, 1].map((copia) => (
             <div key={copia} className="flex">
-              {palavras.map((p, i) => (
+              {palavras.map((p) => (
                 <span key={p} className="flex shrink-0 items-center gap-[4vw] pr-[4vw]">
-                  <span className={`font-titulo text-[clamp(3.5rem,10vw,9rem)] leading-none uppercase ${i % 2 ? 'contorno' : 'text-creme'}`}>
-                    {p}
-                  </span>
+                  <span className="titulo text-[clamp(3.5rem,10vw,9rem)] leading-none uppercase">{p}</span>
                   <IconeBrilho className="size-[clamp(1.4rem,3vw,2.6rem)] text-rosa" />
                 </span>
               ))}

@@ -39,7 +39,7 @@ function Comparador({ caso }: { caso: CasoAntesDepois }) {
         <span className="absolute top-4 left-4 rounded-full bg-fundo/70 px-3 py-1 text-[10px] tracking-[0.25em] text-creme uppercase backdrop-blur">
           Antes
         </span>
-        <span className="absolute top-4 right-4 rounded-full bg-fundo/70 px-3 py-1 text-[10px] tracking-[0.25em] text-rosa-claro uppercase backdrop-blur">
+        <span className="absolute top-4 right-4 rounded-full bg-fundo/70 px-3 py-1 text-[10px] tracking-[0.25em] text-creme uppercase backdrop-blur">
           Depois
         </span>
 
@@ -62,8 +62,8 @@ function Comparador({ caso }: { caso: CasoAntesDepois }) {
         />
       </div>
       <figcaption className="mt-4 flex items-baseline justify-between gap-4">
-        <span className="font-script text-3xl text-rosa-claro">{caso.servico}</span>
-        <span className="text-sm text-suave">{caso.legenda}</span>
+        <span className="subtitulo text-3xl">{caso.servico}</span>
+        <span className="corpo-pequeno">{caso.legenda}</span>
       </figcaption>
     </figure>
   )
@@ -76,9 +76,9 @@ export default function AntesDepois() {
     <section id="antes-depois" aria-label="Antes e depois" className="bg-fundo-2 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
-          <p className="text-[12px] tracking-[0.3em] text-rosa uppercase">Antes &amp; depois</p>
-          <h2 className="mt-3 max-w-2xl font-titulo text-[clamp(2.2rem,6vw,4.6rem)] leading-[1] font-medium text-creme">
-            Arraste e veja a <span className="ouro-rosa font-script text-[1.2em] font-normal">transformação</span>
+          <p className="rotulo">Antes &amp; depois</p>
+          <h2 className="titulo mt-3 max-w-2xl">
+            Arraste e veja a <em>transformação</em>
           </h2>
         </Reveal>
         <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
