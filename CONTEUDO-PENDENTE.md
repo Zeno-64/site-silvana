@@ -22,6 +22,7 @@ O que falta depende da Silvana. Cada item diz **onde** entra no código.
 | **Descrição real de Cabelos, Cílios e Tranças** | Os textos desses três são provisórios e genéricos; só Unhas, Sobrancelhas e Bronze usam detalhes vistos nos posts. Ajustar `frase` e `itens` em `capitulos.ts`. |
 | **Detalhes dos cursos** (Cílios e Unha): datas, carga horária, valor | `src/components/Cursos.tsx`. Hoje só diz "fale com a gente". |
 | **Fotos de clientes e do espaço** | Alimentam `src/data/resultados.ts` (galeria horizontal) e o mural do Instagram. |
+| **Compressa quente e massagem: são de todo atendimento ou foi ação de inverno?** | Os posts de 10/09 (unhas) e 14/09 (sobrancelhas) abrem com "Nesse frio", então foram tratados como ação da estação e saíram de `capitulos.ts`. Se a Silvana confirmar que são fixos, voltam para o campo `itens` de Unhas (compressa quente, massagem relaxante) e de Sobrancelhas (compressa quentinha nas mãos ou nos pés, massagem facial relaxante). |
 
 ## Fica para depois (combinado)
 

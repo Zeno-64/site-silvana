@@ -64,7 +64,7 @@ export default function Mural() {
             Nosso <em>dia a dia</em>, direto do Instagram
           </h2>
           <p className="corpo mt-6 max-w-lg">
-            Todo dia tem novidade no perfil, e nos destaques você encontra as avaliações das clientes.
+            Passe no nosso perfil para ver o que andamos fazendo, e nos destaques você encontra as avaliações das clientes.
           </p>
         </Reveal>
       </div>
