@@ -3,3 +3,6 @@ dist
 .wrangler
 *.local
 .DS_Store
+
+# Imagens baixadas do Instagram (levantamento): não versionar
+levantamento/imagens/
