@@ -13,7 +13,7 @@ export default function Promocao() {
   if (Date.now() > new Date(promocao.ate).getTime()) return null
 
   return (
-    <section id="promocao" aria-label="Promoção" className="relative border-y border-rosa/40 bg-cetim py-14 sm:py-20">
+    <section id="promocao" aria-label="Promoção" className="relative border-y border-rosa/40 bg-cetim py-10 md:py-20">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <p className="rotulo text-center">{promocao.rotulo}</p>
@@ -22,21 +22,26 @@ export default function Promocao() {
           </h2>
         </Reveal>
 
-        <Reveal atraso={0.15} className="mt-10 sm:mt-12">
-          <ul className="divide-y divide-rosa/20 md:grid md:grid-cols-3 md:gap-6 md:divide-y-0">
+        {/* Celular: cartões que deslizam para o lado (como a galeria), para a faixa ficar curta. Computador: grade de 3. */}
+        <Reveal atraso={0.15} className="mt-5 md:mt-12">
+          <ul
+            tabIndex={0}
+            aria-label="Preços da Black Friday"
+            className="-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-3 overflow-x-auto px-5 [scrollbar-width:none] sm:-mx-8 sm:scroll-px-8 sm:px-8 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden"
+          >
             {promocao.itens.map((i) => (
               <li
                 key={i.servico}
-                className="flex items-baseline justify-between gap-4 py-4 md:flex-col md:items-start md:justify-start md:gap-3 md:rounded-2xl md:border md:border-rosa/25 md:bg-fundo/40 md:p-6"
+                className="flex w-[44%] shrink-0 snap-start flex-col items-start justify-between gap-2.5 rounded-2xl border border-rosa/25 bg-fundo/40 p-3.5 md:w-auto md:justify-start md:gap-3 md:p-6"
               >
                 <span className="corpo-pequeno">{i.servico}</span>
-                <span className="titulo shrink-0 text-right text-[1.35rem] sm:text-[1.6rem] md:text-left">{i.valor}</span>
+                <span className="titulo text-[1.25rem] sm:text-[1.6rem]">{i.valor}</span>
               </li>
             ))}
           </ul>
         </Reveal>
 
-        <Reveal atraso={0.25} className="mt-10 flex justify-center">
+        <Reveal atraso={0.25} className="mt-5 flex justify-center md:mt-10">
           <Magnetic>
             <a
               href={site.whatsapp}

@@ -80,6 +80,17 @@ decidido (sempre a opção mais simples).
     foto da galeria fica a 2.128 px. Ela entra na tela depois de 1,62 tela de rolagem
     (2,62 telas contadas do topo da página). Sem a faixa: 0,67 de rolagem. Pela leitura
     "2 telas de rolagem" da seção 10, o critério passa; o código não mudou por isso.
+  - **Depois, o Kevin escolheu compactar** para cumprir também a leitura rígida (posição
+    ÷ 812). Só abaixo de `md`:
+    - **Hero:** respiro menor (`pt-[88px] pb-10`, espaços de 20 px), palco das fotos com
+      até 290 px de largura e "Role" escondido.
+    - **Faixa da Black Friday:** `py-10`; os 6 preços viram cartões que deslizam para o
+      lado (mesmo estilo dos cartões do computador). Só 2 preços aparecem inteiros sem
+      deslizar.
+    - **Galeria:** `pt-12`.
+
+    Em 375×812, a primeira foto foi de 2.128 para 1.587 px (1,95 tela; 1,42 sem a faixa),
+    e a página de 9,93 para 9,26 telas (8,73 sem a faixa). Do `md` para cima, nada muda.
 
 ## Correções da revisão ([revisao.md](revisao.md))
 

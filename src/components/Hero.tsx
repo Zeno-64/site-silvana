@@ -98,7 +98,8 @@ export default function Hero() {
 
       <motion.div
         style={{ y: subir, opacity: sumir }}
-        className="relative mx-auto grid min-h-[100svh] max-w-7xl items-center gap-6 px-5 pt-28 pb-24 sm:px-8 lg:grid-cols-[1.05fr_0.95fr]"
+        // Celular: respiro menor para a galeria chegar em até 2 telas (seção 10 da direção).
+        className="relative mx-auto grid min-h-[100svh] max-w-7xl items-center gap-5 px-5 pt-[88px] pb-10 sm:px-8 md:gap-6 md:pt-28 md:pb-24 lg:grid-cols-[1.05fr_0.95fr]"
       >
         <div className="relative z-10">
           <motion.p
@@ -116,7 +117,7 @@ export default function Hero() {
           </h1>
 
           <motion.p
-            className="corpo mt-8 max-w-lg"
+            className="corpo mt-5 max-w-lg md:mt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 1 }}
@@ -126,7 +127,7 @@ export default function Hero() {
 
           <motion.p
             // Celular: faixa de ponta a ponta, uma linha só. A partir de sm: caixa arredondada do tamanho do texto.
-            className="-mx-5 mt-8 flex w-[calc(100%+2.5rem)] flex-wrap items-center justify-center gap-x-2 gap-y-1 border-y border-rosa/25 bg-rosa/[0.07] px-3 py-2.5 text-[clamp(9.5px,2.7vw,11px)] font-normal tracking-[0.1em] text-rosa uppercase sm:mx-0 sm:w-fit sm:max-w-full sm:justify-start sm:gap-x-2.5 sm:rounded-full sm:border sm:border-rosa/30 sm:px-5 sm:text-[11px] sm:tracking-[0.2em] xl:gap-x-3 xl:px-6 xl:text-[12px] xl:tracking-[0.3em]"
+            className="-mx-5 mt-5 flex w-[calc(100%+2.5rem)] md:mt-8 flex-wrap items-center justify-center gap-x-2 gap-y-1 border-y border-rosa/25 bg-rosa/[0.07] px-3 py-2.5 text-[clamp(9.5px,2.7vw,11px)] font-normal tracking-[0.1em] text-rosa uppercase sm:mx-0 sm:w-fit sm:max-w-full sm:justify-start sm:gap-x-2.5 sm:rounded-full sm:border sm:border-rosa/30 sm:px-5 sm:text-[11px] sm:tracking-[0.2em] xl:gap-x-3 xl:px-6 xl:text-[12px] xl:tracking-[0.3em]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 1 }}
@@ -143,7 +144,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            className="mt-8 flex flex-wrap items-center gap-4"
+            className="mt-5 flex flex-wrap items-center gap-4 md:mt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 1 }}
@@ -170,7 +171,7 @@ export default function Hero() {
         </div>
 
         {/* Palco: arco grande com as unhas, quadro menor com a Silvana (parallax leve com o mouse) */}
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px] lg:max-w-[460px]">
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-[290px] md:max-w-[420px] lg:max-w-[460px]">
           <Camada
             mx={mx}
             my={my}
@@ -204,7 +205,8 @@ export default function Hero() {
         type="button"
         onClick={descer}
         aria-label="Rolar para baixo"
-        className="absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] tracking-[0.35em] text-texto uppercase"
+        // No celular some: o hero fica curto e a faixa já aparece logo abaixo.
+        className="absolute bottom-7 left-1/2 max-md:hidden flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] tracking-[0.35em] text-texto uppercase"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.6 }}

@@ -124,9 +124,9 @@ function GaleriaPresa() {
 /** Celular: fita horizontal nativa com encaixe, sem prender a rolagem vertical. */
 function GaleriaFita() {
   return (
-    <section id="resultados" aria-label="Resultados" className="grao relative bg-fundo py-16">
+    <section id="resultados" aria-label="Resultados" className="grao relative bg-fundo pt-12 pb-16">
       <Cabecalho />
-      <div className="mt-8 flex items-start snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="mt-6 flex items-start snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {resultados.map((r) => (
           <Foto key={r.foto} r={r} className="w-[72vw] shrink-0 snap-center" />
         ))}
