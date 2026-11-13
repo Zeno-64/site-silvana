@@ -30,3 +30,10 @@ export const IconeBrilho = (p: P) => (
 
 /** Coração do monograma (centrado na origem, ~22px de largura). */
 export const CORACAO = 'M0 9C-11 0 -12 -8 -6 -11C-3 -12.400 0 -10.500 0 -7.500C0 -10.500 3 -12.400 6 -11C12 -8 11 0 0 9Z'
+
+/** Coração do logo, em tamanho próprio: o único ornamento do site (separador, rótulo, rodapé). */
+export const Coracao = (p: P) => (
+  <svg viewBox="-13 -13 26 24" fill="currentColor" aria-hidden="true" {...p}>
+    <path d={CORACAO} />
+  </svg>
+)

@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { resultados, type Resultado } from '../data/resultados'
 import { site } from '../lib/site'
 import { IconeInstagram } from '../lib/Icones'
+import { useMediaQuery } from '../lib/useMediaQuery'
 import Tilt from './Tilt'
 
 /** Foto da galeria: 4:5, canto arredondado, etiqueta só com o que dá para afirmar. */
@@ -135,12 +136,6 @@ function GaleriaFita() {
 
 export default function Resultados() {
   // Computador = md (768px) para cima, o mesmo corte do Tailwind.
-  const [computador, setComputador] = useState(() => window.matchMedia('(min-width: 768px)').matches)
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px)')
-    const atualizar = () => setComputador(mq.matches)
-    mq.addEventListener('change', atualizar)
-    return () => mq.removeEventListener('change', atualizar)
-  }, [])
+  const computador = useMediaQuery('(min-width: 768px)')
   return computador ? <GaleriaPresa /> : <GaleriaFita />
 }

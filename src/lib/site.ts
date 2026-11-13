@@ -14,6 +14,4 @@ export const site = {
   // Liga os valores de referência das tabelas dos destaques (só depois que a
   // Silvana confirmar que ainda valem).
   mostrarPrecos: false,
-  // Sai junto com o componente Numeros (etapa 6).
-  seguidores: 2630,
 } as const
