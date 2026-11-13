@@ -11,7 +11,6 @@ import { site } from '../lib/site'
 import { IconeSeta, IconeWhatsapp } from '../lib/Icones'
 import Blobs from './Blobs'
 import Magnetic from './Magnetic'
-import Monograma from './Monograma'
 import { Linhas } from './Reveal'
 
 /** Foto flutuante: cada uma se mexe um pouco mais que a outra com o mouse (profundidade). */
@@ -22,6 +21,10 @@ function Camada({
   className,
   foto,
   alt,
+  largura,
+  altura,
+  posicao,
+  principal,
   inclina,
   atraso,
 }: {
@@ -31,6 +34,11 @@ function Camada({
   className: string
   foto: string
   alt: string
+  largura: number
+  altura: number
+  posicao?: string
+  /** Foto do primeiro olhar: carrega já, com prioridade. */
+  principal?: boolean
   inclina: number
   atraso: number
 }) {
@@ -47,7 +55,12 @@ function Camada({
         <motion.img
           src={foto}
           alt={alt}
+          width={largura}
+          height={altura}
+          loading={principal ? 'eager' : 'lazy'}
+          fetchPriority={principal ? 'high' : 'auto'}
           className="h-full w-full object-cover"
+          style={{ objectPosition: posicao }}
           animate={{ scale: [1.05, 1.15, 1.05] }}
           transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -72,6 +85,8 @@ export default function Hero() {
     my.set((e.clientY - r.top) / r.height - 0.5)
   }
 
+  const descer = () => window.scrollBy({ top: window.innerHeight - 60, behavior: 'smooth' })
+
   return (
     <section
       id="inicio"
@@ -87,21 +102,12 @@ export default function Hero() {
       >
         <div className="relative z-10">
           <motion.p
-            // Celular: faixa de ponta a ponta, uma linha só. A partir de sm: caixa arredondada do tamanho do texto.
-            className="-mx-5 mb-6 flex w-[calc(100%+2.5rem)] flex-wrap items-center justify-center gap-x-2 gap-y-1 border-y border-rosa/25 bg-rosa/[0.07] px-3 py-2.5 text-[clamp(9.5px,2.7vw,11px)] font-normal tracking-[0.1em] text-rosa uppercase sm:mx-0 sm:w-fit sm:max-w-full sm:justify-start sm:gap-x-2.5 sm:rounded-full sm:border sm:border-rosa/30 sm:px-5 sm:text-[11px] sm:tracking-[0.2em] xl:gap-x-3 xl:px-6 xl:text-[12px] xl:tracking-[0.3em]"
+            className="rotulo mb-5"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 1 }}
+            transition={{ delay: 0.3, duration: 1 }}
           >
-            <span>Cabelos</span>
-            <span aria-hidden="true">·</span>
-            <span>Unhas</span>
-            <span aria-hidden="true">·</span>
-            <span>Cílios</span>
-            <span aria-hidden="true">·</span>
-            <span>Sobrancelhas</span>
-            <span aria-hidden="true">·</span>
-            <span>Bronze</span>
+            Salão de beleza · {site.bairro}, {site.cidade}
           </motion.p>
 
           <h1 className="titulo text-[clamp(3rem,9vw,7.2rem)] leading-[0.98]">
@@ -114,12 +120,29 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 1 }}
           >
-            Cuidado feito com calma para você se olhar no espelho e gostar do que vê. Do cabelo ao bronze, tudo em um só
-            espaço.
+            Um salão, vários cuidados e aquele momento só seu.
+          </motion.p>
+
+          <motion.p
+            // Celular: faixa de ponta a ponta, uma linha só. A partir de sm: caixa arredondada do tamanho do texto.
+            className="-mx-5 mt-8 flex w-[calc(100%+2.5rem)] flex-wrap items-center justify-center gap-x-2 gap-y-1 border-y border-rosa/25 bg-rosa/[0.07] px-3 py-2.5 text-[clamp(9.5px,2.7vw,11px)] font-normal tracking-[0.1em] text-rosa uppercase sm:mx-0 sm:w-fit sm:max-w-full sm:justify-start sm:gap-x-2.5 sm:rounded-full sm:border sm:border-rosa/30 sm:px-5 sm:text-[11px] sm:tracking-[0.2em] xl:gap-x-3 xl:px-6 xl:text-[12px] xl:tracking-[0.3em]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 1 }}
+          >
+            <span>Cabelos</span>
+            <span aria-hidden="true">·</span>
+            <span>Unhas</span>
+            <span aria-hidden="true">·</span>
+            <span>Cílios</span>
+            <span aria-hidden="true">·</span>
+            <span>Sobrancelhas</span>
+            <span aria-hidden="true">·</span>
+            <span>Bronze</span>
           </motion.p>
 
           <motion.div
-            className="mt-10 flex flex-wrap items-center gap-4"
+            className="mt-8 flex flex-wrap items-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 1 }}
@@ -132,7 +155,7 @@ export default function Hero() {
                 className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-rosa-claro via-rosa to-rosa-escuro px-8 py-4 text-[13px] font-medium tracking-[0.2em] text-fundo uppercase shadow-[0_14px_50px_-10px_rgba(233,160,173,0.65)]"
               >
                 <IconeWhatsapp className="size-5" />
-                Agendar horário
+                Agendar no WhatsApp
               </a>
             </Magnetic>
             <a
@@ -145,50 +168,40 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Palco: monograma no centro, fotos em arco flutuando ao redor */}
-        <div className="relative mx-auto aspect-square w-full max-w-[560px]" aria-hidden="false">
+        {/* Palco: arco grande com as unhas, quadro menor com a Silvana (parallax leve com o mouse) */}
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px] lg:max-w-[460px]">
           <Camada
             mx={mx}
             my={my}
-            fundo={26}
-            atraso={1.5}
-            inclina={-6}
-            className="top-[2%] left-[2%] h-[46%] w-[34%]"
-            foto="/img/unhas-nude.jpg"
-            alt="Unhas amêndoa nude sobre cetim"
+            fundo={18}
+            atraso={0.6}
+            inclina={2}
+            principal
+            className="top-0 right-0 h-[90%] w-[76%]"
+            foto="/img/hero-unhas.jpg"
+            largura={1440}
+            altura={1920}
+            posicao="50% 45%"
+            alt="Mãos com unhas amendoadas em nude rosado sobre cetim rosé, fundo preto"
           />
           <Camada
             mx={mx}
             my={my}
-            fundo={38}
-            atraso={1.75}
-            inclina={5}
-            className="right-[0%] bottom-[4%] h-[44%] w-[32%]"
-            foto="/img/unhas-a.jpg"
-            alt="Unhas rosa perolado com francesinha"
+            fundo={34}
+            atraso={1}
+            inclina={-4}
+            className="bottom-0 left-0 h-[44%] w-[36%] max-w-[300px]"
+            foto="/img/silvana-salao.jpg"
+            largura={828}
+            altura={1472}
+            alt="Silvana de uniforme rosa, com prancha e secador, em frente ao logo do salão"
           />
-          <Camada
-            mx={mx}
-            my={my}
-            fundo={16}
-            atraso={2}
-            inclina={3}
-            className="top-[10%] right-[6%] h-[34%] w-[26%]"
-            foto="/img/video-ago25.jpg"
-            alt="Silvana finalizando cabelo liso"
-          />
-          <motion.div
-            className="absolute inset-[16%] drop-shadow-[0_0_40px_rgba(233,160,173,0.35)]"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <Monograma className="h-full w-full" />
-          </motion.div>
         </div>
       </motion.div>
 
-      <motion.a
-        href="#faixa"
+      <motion.button
+        type="button"
+        onClick={descer}
         aria-label="Rolar para baixo"
         className="absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] tracking-[0.35em] text-texto uppercase"
         initial={{ opacity: 0 }}
@@ -203,7 +216,7 @@ export default function Hero() {
             transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
           />
         </span>
-      </motion.a>
+      </motion.button>
     </section>
   )
 }

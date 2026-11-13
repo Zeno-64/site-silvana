@@ -22,3 +22,15 @@ decidido (sempre a opção mais simples).
 - **"Gel na tips" (R$ 110)** não tem lugar óbvio no cardápio. Ficou como linha de preço
   dentro de "Alongamento em gel", ao lado de "Unhas de gel" (R$ 130). Só aparece com
   `site.mostrarPrecos = true`.
+
+## Hero e Nav
+
+- **Monograma tirado do palco do hero.** A direção fala só em "hero-unhas no arco grande" e
+  "silvana-salao no quadro menor". O monograma ficava por cima das fotos, e a direção
+  proíbe sobreposição em cima das fotos de unha. Ele volta no rodapé (etapa 8).
+- **"Role" do hero** virou botão que rola uma tela para baixo (antes era âncora para
+  `#faixa`, que sai na etapa 6), assim não pula a faixa da Black Friday.
+- **Ordem no hero:** rótulo, título, texto, caixa de serviços, CTAs (a ordem da lista da
+  seção 5.1). A caixa de serviços saiu de cima do título.
+- **`og:title`** não aparece na seção 7, então ficou como estava (`SR Espaço da Beleza`).
+- **Botão flutuante** já observa `#contato-cta`; esse id entra no CTA do Contato na etapa 8.
