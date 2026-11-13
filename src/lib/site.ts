@@ -5,5 +5,15 @@ export const site = {
   whatsapp: 'https://wa.me/message/EHB7T5G6A4KJM1',
   instagram: 'https://www.instagram.com/srespacodabelezaofc/',
   instagramUser: '@srespacodabelezaofc',
+  // Vêm das marcações de local e das hashtags dos posts do próprio salão.
+  bairro: 'São Mateus',
+  cidade: 'São Paulo',
+  // Ainda não existem no Instagram. Vazio = não aparece (nada de "em breve").
+  endereco: '',
+  horario: '',
+  // Liga os valores de referência das tabelas dos destaques (só depois que a
+  // Silvana confirmar que ainda valem).
+  mostrarPrecos: false,
+  // Sai junto com o componente Numeros (etapa 6).
   seguidores: 2630,
 } as const

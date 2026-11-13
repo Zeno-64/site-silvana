@@ -1,12 +1,24 @@
-// Galeria horizontal: fotos reais do Instagram.
-export type Resultado = { foto: string; alt: string; tag: string; posicao?: string }
+// Galeria: fotos reais do Instagram do salão, 4:5, sem arte de post e sem repetição.
+// Etiqueta só com o que dá para afirmar (as legendas originais são só emoji).
+export type Resultado = {
+  foto: string
+  alt: string
+  tag: string
+  largura: number
+  altura: number
+  posicao?: string
+  /** Zoom leve no cartão, para cortar fundo bagunçado. */
+  escala?: number
+}
 
 export const resultados: Resultado[] = [
-  { foto: '/img/unhas-nude.jpg', alt: 'Unhas amêndoa nude com francesinha', tag: 'Unhas' },
-  { foto: '/img/unhas-azul.jpg', alt: 'Unhas amêndoa azul-clara perolada', tag: 'Unhas', posicao: '60% 55%' },
-  { foto: '/img/bronze.jpg', alt: 'Bronze uniforme com tatuagem de bronze', tag: 'Bronze', posicao: '50% 70%' },
-  { foto: '/img/unhas-a.jpg', alt: 'Unhas rosa perolado com francesinha', tag: 'Unhas' },
-  { foto: '/img/sobrancelhas.jpg', alt: 'Sobrancelha com design impecável', tag: 'Sobrancelhas', posicao: '50% 60%' },
-  { foto: '/img/unhas-b.jpg', alt: 'Unhas curtas com acabamento perolado', tag: 'Unhas' },
-  { foto: '/img/video-ago25.jpg', alt: 'Silvana finalizando cabelo liso', tag: 'Cabelos', posicao: '50% 30%' },
+  { foto: '/img/unhas-nude-mesa.jpg', alt: 'Unhas amendoadas em nude rosado', tag: 'Unhas', largura: 1440, altura: 1918 },
+  { foto: '/img/unhas-bordo.jpg', alt: 'Unhas curtas em bordô sobre cetim rosé', tag: 'Unhas', largura: 1440, altura: 1800 },
+  { foto: '/img/unhas-brancas-ouro.jpg', alt: 'Unhas amendoadas em branco leitoso com filete dourado na cutícula', tag: 'Unhas', largura: 1406, altura: 1758 },
+  { foto: '/img/cabelo-matizado.jpg', alt: 'Cabelo loiro matizado, liso, visto de costas', tag: 'Cabelos · matização', largura: 1440, altura: 1800, posicao: '50% 40%', escala: 1.08 },
+  { foto: '/img/unhas-holograficas.jpg', alt: 'Unhas longas com efeito cromado holográfico', tag: 'Unhas', largura: 1440, altura: 1708 },
+  { foto: '/img/unhas-preto-marmore.jpg', alt: 'Unhas amendoadas em preto e marmorizado com folha dourada', tag: 'Unhas', largura: 1440, altura: 1920 },
+  { foto: '/img/unhas-francesinha-strass.jpg', alt: 'Unhas amendoadas com francesinha branca e pedrinhas', tag: 'Unhas', largura: 1440, altura: 1920 },
+  { foto: '/img/unhas-leitosas.jpg', alt: 'Unhas curtas em branco leitoso', tag: 'Unhas', largura: 1440, altura: 1440 },
+  { foto: '/img/unhas-francesinha-ouro.jpg', alt: 'Unhas quadradas com francesinha branca em V e folha dourada', tag: 'Unhas', largura: 1440, altura: 1480 },
 ]
