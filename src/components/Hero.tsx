@@ -110,8 +110,9 @@ export default function Hero() {
             Salão de beleza · {site.bairro}, {site.cidade}
           </motion.p>
 
-          <h1 className="titulo text-[clamp(3rem,9vw,7.2rem)] leading-[0.98]">
-            <Linhas aoEntrar={false} atraso={0.2} linhas={['Sua', <em key="a">autoestima</em>, 'começa aqui.']} />
+          {/* Duas linhas, como na direção: o tamanho acompanha a coluna para "Sua autoestima" caber numa linha só. */}
+          <h1 className="titulo text-[length:clamp(2.75rem,12vw,7.2rem)] leading-[0.98] lg:text-[length:min(6.8vw,5.4rem)]">
+            <Linhas aoEntrar={false} atraso={0.2} linhas={['Sua autoestima', <em key="a">começa aqui.</em>]} />
           </h1>
 
           <motion.p
@@ -178,9 +179,9 @@ export default function Hero() {
             inclina={2}
             principal
             className="top-0 right-0 h-[90%] w-[76%]"
-            foto="/img/hero-unhas.jpg"
-            largura={1440}
-            altura={1920}
+            foto="/img/hero-unhas.webp"
+            largura={1200}
+            altura={1600}
             posicao="50% 45%"
             alt="Mãos com unhas amendoadas em nude rosado sobre cetim rosé, fundo preto"
           />
@@ -191,7 +192,7 @@ export default function Hero() {
             atraso={1}
             inclina={-4}
             className="bottom-0 left-0 h-[44%] w-[36%] max-w-[300px]"
-            foto="/img/silvana-salao.jpg"
+            foto="/img/silvana-salao.webp"
             largura={828}
             altura={1472}
             alt="Silvana de uniforme rosa, com prancha e secador, em frente ao logo do salão"

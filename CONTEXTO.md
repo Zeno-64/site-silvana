@@ -50,8 +50,9 @@ Saíram do repositório: `FaixaTexto`, `Numeros`, `Mural`, `Capitulos` (e
 
 ## Estado / limitações atuais
 
-- **Imagens em JPEG original** (1440 px), sem WebP: o `npx --yes sharp-cli` da direção
-  foi negado pelo ambiente. Ver `levantamento/duvidas.md`.
+- **Imagens em WebP** (1200 px, qualidade 78, gerado com Pillow; 1,5 MB no total). Só
+  `hero-unhas.jpg` (para o `og:image`) e `logo-perfil.jpg` continuam em JPEG. Ver
+  `levantamento/duvidas.md`.
 - **Preços desligados** (`site.mostrarPrecos = false`). As tabelas de Unhas e Cabelos
   estão em `servicos.ts`, mas só aparecem quando a Silvana confirmar que valem. As de
   Cílios e Tranças são assinadas por outras profissionais e não entram.
@@ -59,7 +60,7 @@ Saíram do repositório: `FaixaTexto`, `Numeros`, `Mural`, `Capitulos` (e
   vazios, nada de "em breve" no site. JSON-LD e `canonical` esperam endereço e domínio.
 - **Monograma** é um SVG redesenhado a partir do letreiro (`Monograma.tsx`), não a logo
   original.
-- `espaco-recepcao.jpg` tem o texto "Sonhei" por cima (cortado com zoom) e `fachada.jpg`
+- `espaco-recepcao.webp` tem o texto "Sonhei" por cima (cortado com zoom) e `fachada.webp`
   mostra o rosto do adesivo da vitrine. Ver `levantamento/duvidas.md`.
 - Nenhuma foto de rosto de cliente ou aluna está no site. As 5 fotos de entrega de
   certificado esperam autorização (campo `foto?` em `cursos.ts`).

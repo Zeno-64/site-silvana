@@ -45,7 +45,7 @@ export default function Espaco() {
             className="absolute top-0 left-0 h-[78%] w-[58%] overflow-hidden rounded-t-[999px] rounded-b-2xl border border-rosa-claro/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]"
           >
             <img
-              src="/img/silvana-salao.jpg"
+              src="/img/silvana-salao.webp"
               alt="Silvana de uniforme rosa, com prancha e secador, em frente ao logo do salão"
               width={828}
               height={1472}
@@ -58,7 +58,7 @@ export default function Espaco() {
             className="absolute top-[4%] right-0 h-[36%] w-[36%] overflow-hidden rounded-2xl border border-rosa-claro/20"
           >
             <img
-              src="/img/fachada.jpg"
+              src="/img/fachada.webp"
               alt="Fachada do salão, com um adesivo na vitrine anunciando os cursos de nail design e lash"
               width={360}
               height={640}
@@ -73,7 +73,7 @@ export default function Espaco() {
           >
             {/* Zoom para fora do quadro o texto "Sonhei" que a foto original traz por cima. */}
             <img
-              src="/img/espaco-recepcao.jpg"
+              src="/img/espaco-recepcao.webp"
               alt="Recepção com duas poltronas rosa e uma planta"
               width={640}
               height={640}

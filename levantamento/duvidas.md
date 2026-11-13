@@ -10,9 +10,12 @@ decidido (sempre a opção mais simples).
   tentei contornar. Seguindo o plano B da própria direção, as 11 imagens foram
   **copiadas como JPEG original** (1440 px de largura, exceto `silvana-salao`, com 828 px),
   com os nomes da seção 4.1 e extensão `.jpg`. Peso total: cerca de 3,9 MB, todas com
-  `loading="lazy"` (menos a do hero). Se o Kevin quiser WebP, basta rodar o `sharp-cli`
-  por conta própria sobre `public/img/` e trocar as extensões em `src/data/resultados.ts`
-  e no `Hero`.
+  `loading="lazy"` (menos a do hero).
+  - **Resolvido depois da revisão (M4 de [revisao.md](revisao.md)):** o WebP foi gerado com o
+    Pillow já instalado na máquina (sem `npx` e sem dependência nova): 1200 px de largura,
+    qualidade 78, as menores mantidas no tamanho original. `public/img` caiu de 3,95 MB para
+    cerca de 1,5 MB. Ficam em JPEG só `hero-unhas.jpg` (o `og:image`, como pede a seção 7)
+    e `logo-perfil.jpg` (4,5 KB). Os originais continuam em `levantamento/imagens/`.
 
 ## Dados
 
@@ -73,3 +76,16 @@ decidido (sempre a opção mais simples).
   cor `texto` (antes `creme`).
 - **Tamanho no celular:** com a faixa da Black Friday no ar a página tem 9,95 telas de
   812 px; depois de 20/11/2026, 9,0. A direção pede "no máximo ~9".
+  - **Medida da primeira foto (revisão, M1):** em 375×812, com a faixa, o topo da primeira
+    foto da galeria fica a 2.128 px. Ela entra na tela depois de 1,62 tela de rolagem
+    (2,62 telas contadas do topo da página). Sem a faixa: 0,67 de rolagem. Pela leitura
+    "2 telas de rolagem" da seção 10, o critério passa; o código não mudou por isso.
+
+## Correções da revisão ([revisao.md](revisao.md))
+
+- **Título do hero:** voltou às duas linhas da direção, `Sua autoestima` /
+  `<em>começa aqui.</em>`. Para "Sua autoestima" caber numa linha, o tamanho passou a
+  `clamp(2.75rem, 12vw, 7.2rem)`, e a partir de `lg` `min(6.8vw, 5.4rem)` (a coluna do
+  texto é estreita). Conferido em 360, 375, 768, 1024 e 1440 px: sempre 2 linhas.
+- **Legenda da galeria:** saiu de cima da foto (tinha um degradê `fundo/90`) e foi para
+  baixo dela, fora da imagem. Nada de cor sobre as unhas.

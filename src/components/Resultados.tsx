@@ -6,24 +6,26 @@ import { IconeInstagram } from '../lib/Icones'
 import { useMediaQuery } from '../lib/useMediaQuery'
 import Tilt from './Tilt'
 
-/** Foto da galeria: 4:5, canto arredondado, etiqueta só com o que dá para afirmar. */
-function Foto({ r, className = '' }: { r: Resultado; className?: string }) {
+/**
+ * Foto da galeria: 4:5, canto arredondado, etiqueta só com o que dá para afirmar.
+ * A etiqueta fica embaixo da foto, fora dela: nada de cor por cima das unhas
+ * (a cor do esmalte é a informação). `quadro` dá o tamanho da foto; `className`, o do cartão.
+ */
+function Foto({ r, className = '', quadro = '' }: { r: Resultado; className?: string; quadro?: string }) {
   return (
-    <figure
-      className={`relative aspect-[4/5] overflow-hidden rounded-2xl border border-rosa-claro/15 ${className}`}
-    >
-      <img
-        src={r.foto}
-        alt={r.alt}
-        width={r.largura}
-        height={r.altura}
-        loading="lazy"
-        className="h-full w-full object-cover transition-transform duration-[1200ms] ease-[var(--ease-suave)] hover:scale-105"
-        style={{ objectPosition: r.posicao, transform: r.escala ? `scale(${r.escala})` : undefined }}
-      />
-      <figcaption className="rotulo absolute inset-x-0 bottom-0 bg-gradient-to-t from-fundo/90 to-transparent px-4 pt-10 pb-4 text-center">
-        {r.tag}
-      </figcaption>
+    <figure className={className}>
+      <div className={`aspect-[4/5] overflow-hidden rounded-2xl border border-rosa-claro/15 ${quadro}`}>
+        <img
+          src={r.foto}
+          alt={r.alt}
+          width={r.largura}
+          height={r.altura}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-[1200ms] ease-[var(--ease-suave)] hover:scale-105"
+          style={{ objectPosition: r.posicao, transform: r.escala ? `scale(${r.escala})` : undefined }}
+        />
+      </div>
+      <figcaption className="rotulo mt-3 text-center">{r.tag}</figcaption>
     </figure>
   )
 }
@@ -101,7 +103,7 @@ function GaleriaPresa() {
         <motion.div ref={fita} className="flex w-max gap-8 px-8 will-change-transform" style={{ x }}>
           {resultados.map((r, idx) => (
             <Tilt key={r.foto} className={`shrink-0 ${idx % 2 ? 'mt-8' : 'mb-8'}`} grau={6}>
-              <Foto r={r} className="h-[46svh]" />
+              <Foto r={r} quadro="h-[46svh]" />
             </Tilt>
           ))}
           <div className={`shrink-0 ${resultados.length % 2 ? 'mt-8' : 'mb-8'}`}>
@@ -124,7 +126,7 @@ function GaleriaFita() {
   return (
     <section id="resultados" aria-label="Resultados" className="grao relative bg-fundo py-16">
       <Cabecalho />
-      <div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="mt-8 flex items-start snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {resultados.map((r) => (
           <Foto key={r.foto} r={r} className="w-[72vw] shrink-0 snap-center" />
         ))}
