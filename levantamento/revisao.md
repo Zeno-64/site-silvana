@@ -19,7 +19,7 @@ Os itens médios foram tratados no commit seguinte a esta revisão:
 | M1 | **Medida revista, sem mudança no código.** Abaixo, as telas foram contadas do topo da página (posição ÷ 812). A seção 10 fala em "2 telas **de rolagem**": com a faixa no ar, a primeira foto da galeria entra na tela depois de 1,62 tela de rolagem e fica inteira visível com cerca de 2. Pela leitura literal, passa. Se o Kevin quiser a outra leitura, é preciso compactar o hero ou a faixa no celular. |
 | M2 | **Corrigido.** O título ficou em 2 linhas, com o `<em>` em "começa aqui.". O tamanho foi ajustado para não quebrar em 4 linhas no computador. |
 | M3 | **Corrigido.** A legenda foi para baixo da foto, sem degradê. |
-| M4 | **Corrigido.** As fotos estão em WebP de 1200 px, com qualidade 78: `public/img` caiu de 3,95 MB para ~1,5 MB. |
+| M4 | **Corrigido.** As fotos estão em WebP de 1200 px, com qualidade 78: `public/img` caiu de 3,95 MB para 1,7 MB (1,5 MB de WebP; o `hero-unhas.jpg` do `og:image` continua). |
 
 Detalhes registrados em `duvidas.md`.
 

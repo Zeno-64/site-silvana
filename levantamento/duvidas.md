@@ -14,7 +14,7 @@ decidido (sempre a opção mais simples).
   - **Resolvido depois da revisão (M4 de [revisao.md](revisao.md)):** o WebP foi gerado com o
     Pillow já instalado na máquina (sem `npx` e sem dependência nova): 1200 px de largura,
     qualidade 78, as menores mantidas no tamanho original. `public/img` caiu de 3,95 MB para
-    cerca de 1,5 MB. Ficam em JPEG só `hero-unhas.jpg` (o `og:image`, como pede a seção 7)
+    1,7 MB (1,5 MB de WebP). Ficam em JPEG só `hero-unhas.jpg` (o `og:image`, como pede a seção 7)
     e `logo-perfil.jpg` (4,5 KB). Os originais continuam em `levantamento/imagens/`.
 
 ## Dados
