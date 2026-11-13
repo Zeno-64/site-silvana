@@ -15,35 +15,32 @@ npm run build    # tsc + vite build -> dist/
 ## Identidade (tirada do Instagram)
 
 - Fundo: cetim chocolate `#120a09`, o mesmo dos posts.
-- Destaque: degradê rosa-ouro (`#f9d4d8` → `#e9a0ad` → `#c9707f`), com ouro `#e2b978` só no Bronze.
-- Fontes: **Playfair Display** (títulos), **Great Vibes** (palavras em script), **Jost** (texto).
-- Logo: monograma "SR" com aro rosa e corações.
+- Destaque: rosa único (`#e9a0ad`), com `#f9d4d8` e `#c9707f` só no degradê dos botões.
+- Fontes: **Playfair Display** (títulos), **Great Vibes** (frases em script, sempre literais do perfil), **Jost** (texto).
+- Logo: monograma "SR" com anel duplo e corações, redesenhado em SVG a partir do letreiro do salão.
 - Tokens em `src/index.css` (`@theme`).
 
-## O que faz o site fugir do padrão
+## Ordem da página
 
-| Onde | Efeito |
-|---|---|
-| Hero | Monograma que se desenha sozinho, manchas de luz e reflexo de cetim, fotos em arco com parallax pelo mouse, título revelado linha a linha |
-| Faixa de texto | Letras gigantes que aceleram e invertem com a velocidade da rolagem |
-| Serviços | 6 "capítulos" presos na tela: o fundo troca de cor e a foto abre em arco a cada serviço |
-| Resultados | A rolagem vertical vira deslizamento horizontal da galeria |
-| Antes/depois | Slider arrastável (mouse, toque e teclado). Só aparece com dados |
-| Espaço | Fotos em camadas com parallax de velocidades diferentes |
-| Global | Cursor de seta rosa (CSS), botões magnéticos, cartões que inclinam em 3D, contadores, barra de progresso, botão flutuante de WhatsApp |
+Hero · Promoção (Black Friday, some sozinha depois de 20/11/2026) · Resultados (galeria) ·
+Antes e depois (oculto sem dados) · Depoimentos (oculto sem dados) · Serviços (cardápio em texto) ·
+Quem cuida de você · Contato · Cursos · Rodapé. A direção completa está em
+[levantamento/direcao.md](levantamento/direcao.md).
 
 Respeita `prefers-reduced-motion` (`MotionConfig reducedMotion="user"` + CSS). Só anima `transform` e `opacity`.
 
 ## Onde mexer
 
 ```
-src/lib/site.ts          WhatsApp, Instagram, nome, seguidoras
-src/data/capitulos.ts    serviços (texto, cor do fundo, foto)
-src/data/resultados.ts   galeria horizontal
+src/lib/site.ts          WhatsApp, Instagram, nome, bairro, cidade, endereço, horário, mostrarPrecos
+src/data/servicos.ts     cardápio de serviços (técnicas e valores de referência)
+src/data/resultados.ts   galeria
+src/data/promocao.ts     faixa da Black Friday (com data de fim)
+src/data/cursos.ts       cursos de unhas e de cílios
 src/data/antesDepois.ts  pares antes/depois (vazio = seção oculta)
 src/data/depoimentos.ts  depoimentos (vazio = faixa oculta)
 public/img/              fotos
-brand/instagram/         material bruto baixado do perfil
+levantamento/            leitura do Instagram, direção do site e dúvidas
 ```
 
 O que ainda falta da cliente está em [CONTEUDO-PENDENTE.md](CONTEUDO-PENDENTE.md).

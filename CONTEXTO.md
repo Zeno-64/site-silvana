@@ -1,112 +1,86 @@
 # Contexto do projeto (passagem de sessão)
 
-Escrito em 2026-09-30, ao final da sessão que criou o site, para a próxima
-sessão abrir direto nesta pasta sem depender do histórico do workspace.
+Escrito em 2026-09-30 e reescrito em 2026-11-13, depois de implementar
+[levantamento/direcao.md](levantamento/direcao.md). Serve para a próxima sessão abrir
+direto nesta pasta sem depender do histórico do workspace.
 
 ## O que é
 
-Site do salão **SR Espaço da Beleza** (dona: Silvana), feito pelo Kevin como
-freelance. Instagram: `@srespacodabelezaofc` (2,6 mil seguidoras). Bio:
-"Sua autoestima começa aqui" · Cabelos | Unhas | Cílios | Sobrancelhas |
-Bronze · Cursos Profissionais. WhatsApp: `https://wa.me/message/EHB7T5G6A4KJM1`
-(link curto "message": não aceita `?text=` com mensagem pré-preenchida).
+Site do salão **SR Espaço da Beleza** (dona: Silvana Ribeiro, sobrenome confirmado pelo
+letreiro da parede e pelos certificados), feito pelo Kevin como freelance. Instagram:
+`@srespacodabelezaofc` (2,6 mil seguidoras). Bio: "Sua autoestima começa aqui" ·
+Cabelos | Unhas | Cílios | Sobrancelhas | Bronze · Cursos Profissionais. Local: São
+Mateus, São Paulo (das marcações e hashtags dos posts). WhatsApp:
+`https://wa.me/message/EHB7T5G6A4KJM1` (link curto "message": não aceita `?text=`).
 
-Destaques do perfil: Unhas, Cílios, Cabelos, Tranças, Avaliações, Bronze,
-Curso Cílios, Curso Unha.
+## Como o conteúdo foi obtido
 
-## Como o material foi obtido
-
-- Perfil público aberto no navegador embutido, **sem login** (aparece um
-  pop-up de cadastro que não atrapalha a leitura).
-- Só ~12 posts carregam sem login, com 480–640 px. Os destaques (incluindo
-  **Avaliações**) são stories e exigem login: **não foram vistos**.
-- Baixado para `brand/instagram/` (bruto) e copiado com nomes limpos para
-  `public/img/`. A logo é só a foto de perfil em 150 px.
-- Busca na web por mais informação (endereço, avaliações) não achou nada.
+- `levantamento/instagram.md`: leitura do perfil logado (107 posts próprios, 36 em
+  colaboração, 8 destaques frame a frame) e leitura visual com nota de 1 a 3 por post.
+- `levantamento/imagens.md`: as 24 fotos nota 3 baixadas em `levantamento/imagens/`
+  (fora do git).
+- `levantamento/direcao.md`: a direção que o site segue. **Onde ela e o código
+  discordarem, vale a direção.** Onde for ambígua, o que foi decidido está em
+  `levantamento/duvidas.md`.
+- `levantamento/auditoria.md`: auditoria do site anterior (história, copy, identidade).
 
 ## Decisões do Kevin
 
-- Implementar tudo do plano **exceto** o quiz "qual serviço é a sua cara?" e o
-  montador de combo com preço somado: ficam para quando a cliente enviar a
-  lista de serviços. Quando vierem, encaixar entre Serviços e Resultados.
-- Antes/depois e parede de clientes entram no site (feitos, mas ocultos por
-  falta de dados).
+- Quiz "qual serviço é a sua cara?" e montador de combo com preço somado: ficam para
+  quando a cliente enviar a lista de serviços. Quando vierem, encaixar entre Serviços e
+  Resultados.
+- Antes/depois e depoimentos existem, mas ocultos por falta de dados.
+- Tipografia em 3 papéis, uma fonte e uma cor cada (ver `CLAUDE.md`).
+- Só o que o Instagram sustenta entra no site; o resto vai para `CONTEUDO-PENDENTE.md`.
 
-## O que existe (ordem da página)
+## Ordem da página (atual)
 
-`Hero` → `FaixaTexto` → `Capitulos` (6, fundo muda de cor) → `Resultados`
-(galeria horizontal presa) → `AntesDepois` (oculto sem dados) → `Numeros` →
-`Espaco` → `Cursos` → `Mural` (fitas do Instagram + depoimentos, ocultos sem
-dados) → `Contato`. Globais: `Nav` (barra, progresso, botão
-flutuante de WhatsApp); o cursor é só CSS (ver `CLAUDE.md`). Primitivas: `Magnetic`, `Tilt`, `Reveal`/`Linhas`,
-`Blobs`, `Monograma`.
+`Hero` → `Promocao` (Black Friday, some depois de 20/11/2026 23h59) → `Resultados`
+(9 fotos 4:5 + cartão do Instagram; presa no computador, fita nativa no celular) →
+`AntesDepois` (oculto) → `Depoimentos` (oculto) → `Servicos` (cardápio em texto; sanfona
+no celular) → `Espaco` ("Quem cuida de você", `id="espaco"`) → `Contato` → `Cursos` →
+`Rodape`. Globais: `Nav` (barra, menu de tela cheia no celular, progresso, botão
+flutuante de WhatsApp que some no celular enquanto o CTA do Contato está na tela); o
+cursor é só CSS. Primitivas: `Magnetic`, `Tilt`, `Reveal`/`Linhas`, `Blobs`,
+`Monograma`, `Coracao` (ornamento único), `useMediaQuery`.
 
-Verificado no preview: desktop 1440×900 e mobile 375×812 (sem overflow
-horizontal), console limpo, troca de cor dos capítulos, galeria horizontal,
-slider de antes/depois (clique e arraste, com dado temporário já revertido).
+Saíram do repositório: `FaixaTexto`, `Numeros`, `Mural`, `Capitulos` (e
+`capitulos.ts`), `ArteSemFoto`, as artes de post (`bronze`, `sobrancelhas`,
+`unhas-azul`) e as fotos antigas.
 
 ## Estado / limitações atuais
 
-- **Monograma** é um SVG redesenhado (`Monograma.tsx`), não a logo original.
-- **Cílios e Tranças** não têm foto: mostram arte com o nome em script
-  (`ArteSemFoto` em `Capitulos.tsx`); o curso de Cílios idem em `Cursos.tsx`.
-- Textos de **Cabelos, Cílios e Tranças** são genéricos/provisórios. Só Unhas,
-  Sobrancelhas e Bronze usam detalhes reais dos posts (compressa quente +
-  massagem; massagem facial relaxante, toalha morna, design impecável; bronze
-  uniforme, tatuagem de bronze, pele hidratada).
-- Fotos de **Bronze e Sobrancelhas** são artes de post com texto embutido;
-  competem com o texto do capítulo. Trocar por fotos limpas quando houver.
-- **Endereço, horário, cidade, mapa e domínio** ainda não existem no site.
-- `Numeros` usa só dados reais: 2,6 mil seguidoras, 6 áreas, 2 cursos.
-  Atualizar `site.seguidores` em `src/lib/site.ts` se mudar muito.
-- Sem SEO avançado ainda (sem `canonical`, sem JSON-LD `HealthAndBeautyBusiness`):
-  fazer quando houver endereço e domínio.
-- O nome "Silvana" vem do perfil; o sobrenome não foi confirmado (apareceu
-  parcialmente numa placa em um vídeo). Não usar sem confirmar.
-
-## Próximos passos sugeridos
-
-1. Kevin pedir à cliente o que está em `CONTEUDO-PENDENTE.md` (logo original,
-   fotos limpas, endereço/horário, pares antes/depois, lista de serviços).
-2. Com a lista de serviços: quiz + montador de combo (WhatsApp com mensagem
-   montada; o link atual não aceita texto, então usar `https://wa.me/55DDDNUMERO?text=`
-   quando houver o número).
-3. Endereço/mapa/horário na seção `Contato` + JSON-LD + `canonical`/domínio.
-4. Otimizar imagens (WebP/AVIF) quando chegarem as originais.
-5. Domínio próprio (passo a passo em `../landing-page-natalie/PLAYBOOK.md`,
-   se a pasta existir na máquina).
+- **Imagens em JPEG original** (1440 px), sem WebP: o `npx --yes sharp-cli` da direção
+  foi negado pelo ambiente. Ver `levantamento/duvidas.md`.
+- **Preços desligados** (`site.mostrarPrecos = false`). As tabelas de Unhas e Cabelos
+  estão em `servicos.ts`, mas só aparecem quando a Silvana confirmar que valem. As de
+  Cílios e Tranças são assinadas por outras profissionais e não entram.
+- **Endereço e horário** não existem no Instagram: `site.endereco` e `site.horario`
+  vazios, nada de "em breve" no site. JSON-LD e `canonical` esperam endereço e domínio.
+- **Monograma** é um SVG redesenhado a partir do letreiro (`Monograma.tsx`), não a logo
+  original.
+- `espaco-recepcao.jpg` tem o texto "Sonhei" por cima (cortado com zoom) e `fachada.jpg`
+  mostra o rosto do adesivo da vitrine. Ver `levantamento/duvidas.md`.
+- Nenhuma foto de rosto de cliente ou aluna está no site. As 5 fotos de entrega de
+  certificado esperam autorização (campo `foto?` em `cursos.ts`).
 
 ## Detalhes técnicos que custaram tempo
 
 - `whileInView` dentro de `overflow-hidden` não dispara: ver `CLAUDE.md`.
-- `FaixaTexto` usa duas cópias lado a lado e volta de -50% para 0 sem "pulo".
-  A velocidade é constante e **não reage à rolagem da página** (pedido do
-  Kevin: no celular a versão que acelerava com o scroll ficava estranha); só
-  muda se a pessoa clicar/tocar e arrastar na faixa (`touch-pan-y` deixa o
-  scroll vertical funcionar por cima dela). Não voltar a ligar `useVelocity`.
-- **Tipografia unificada** (pedido do Kevin, menos poluição de cores): título
-  branco com brilho rosa, subtítulo rosa em script, texto numa cor só e um
-  pouco maior. Regras em `CLAUDE.md`; classes em `src/index.css`. Removidos o
-  degradê `ouro-rosa`, as cores de acento por capítulo (`acento` saiu de
-  `capitulos.ts`), `suave`, `ouro` e `cobre`. A faixa gigante ficou toda branca
-  (sem as palavras só de contorno). As manchas de fundo (`Blobs`) e as cores de
-  fundo de cada capítulo continuam como estavam.
-- `Linhas` (`Reveal.tsx`): a máscara ganhou 0.4em de folga em volta (para não
-  cortar o brilho do título); por isso o texto sobe de 160%, e o contêiner é
-  `flex-col` (margens negativas de blocos vizinhos colapsariam).
-- Capítulos no celular baixo (375×667): o texto maior deixa só ~140px para a
-  foto do capítulo mais longo (Sobrancelhas). Se incomodar, encurtar a frase.
-- No `Hero`, a linha "Cabelos · Unhas · Cílios · Sobrancelhas · Bronze" fica
-  numa caixa: no celular vira faixa de ponta a ponta (uma linha só, tamanho em
-  `vw`); de `sm` em diante, caixa arredondada. Entre `lg` e `xl` a coluna do
-  texto tem ~480px, por isso a fonte é menor até `xl`.
-- `Mural` repete cada fileira 6× para cobrir telas largas (menos de ~2.900 px
-  por metade deixa vazio à direita).
-- Capítulos: altura da seção = `n * 90svh`; o índice ativo sai de
-  `floor(scrollYProgress * n)`. A navegação lateral (`irPara`) usa a mesma conta.
-- `Resultados`: a altura da seção = `100svh + distância que a fita precisa
-  andar`, medida com `ResizeObserver`.
-- No shell do Claude Code no Windows, blocos `cat <<EOF` muito grandes com
-  aspas mistas falharam; para arquivos longos usar a ferramenta Write.
-- O navegador embutido devolve screenshot atrasado em um passo: depois de
-  rolar, esperar e tirar o print duas vezes.
+- `Linhas` (`Reveal.tsx`): a máscara ganhou 0.4em de folga em volta (para não cortar o
+  brilho rosa do título); por isso o texto sobe de 160%, e o contêiner é `flex-col`
+  (margens negativas de blocos vizinhos colapsariam).
+- `Resultados`: no computador a altura da seção = `100svh + distância que a fita precisa
+  andar`, medida com `ResizeObserver`. No celular é outro componente (`GaleriaFita`),
+  escolhido por `useMediaQuery`, porque `useScroll` com alvo fora da tela não funciona.
+- `Servicos`: no celular o painel de cada cartão só é renderizado quando aberto (sanfona
+  sem animar altura, para respeitar "só transform e opacity").
+- No `Hero`, a linha "Cabelos · Unhas · Cílios · Sobrancelhas · Bronze" fica numa caixa:
+  no celular vira faixa de ponta a ponta (uma linha só, tamanho em `vw`); de `sm` em
+  diante, caixa arredondada.
+- O botão flutuante observa `#contato-cta` (id do CTA do Contato).
+- No shell do Claude Code no Windows, blocos `cat <<EOF` muito grandes com aspas mistas
+  falharam; para arquivos longos usar a ferramenta Write.
+- O navegador embutido devolve screenshot atrasado em um passo: depois de rolar, esperar
+  e tirar o print duas vezes. O log de console do preview guarda erros de módulos antigos
+  (HMR): confira o carimbo `?t=` do erro antes de achar que é do código atual.

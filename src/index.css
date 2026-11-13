@@ -143,9 +143,6 @@ select {
   width: max-content;
   animation: rolar 70s linear infinite;
 }
-.faixa.reversa {
-  animation-direction: reverse;
-}
 .faixa-pausa:hover .faixa {
   animation-play-state: paused;
 }
@@ -160,8 +157,3 @@ select {
   }
 }
 
-/* Contorno de letra para o título gigante. */
-.contorno {
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(233, 160, 173, 0.55);
-}

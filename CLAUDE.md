@@ -35,9 +35,15 @@ npm run build    # tsc -b && vite build
 ## Convenções
 
 - **Português** em todo texto do site, nomes de componentes/variáveis e comentários.
-- **Conteúdo separado do código**: contato/marca em `src/lib/site.ts`; serviços em
-  `src/data/capitulos.ts`; galeria em `src/data/resultados.ts`;
-  `antesDepois.ts` e `depoimentos.ts` (lista vazia = seção não renderiza).
+- **Conteúdo separado do código**: contato/marca/local em `src/lib/site.ts`
+  (`endereco` e `horario` vazios = não aparecem; `mostrarPrecos` liga os valores);
+  serviços em `src/data/servicos.ts`; galeria em `src/data/resultados.ts`;
+  Black Friday em `src/data/promocao.ts` (tem data de fim); cursos em
+  `src/data/cursos.ts`; `antesDepois.ts` e `depoimentos.ts` (lista vazia = seção
+  não renderiza).
+- **A direção do site é `levantamento/direcao.md`** (ordem das seções, copy,
+  fotos). Dúvidas e desvios da implementação ficam em `levantamento/duvidas.md`.
+  O script (`.subtitulo`) é sempre uma frase literal do perfil da cliente.
 - **Tokens de design** só em `src/index.css` (`@theme`): cores `fundo`, `rosa*`,
   `creme`, `titulo`, `texto`; fontes `font-titulo` (Playfair Display),
   `font-script` (Great Vibes), `font-sans` (Jost). Não usar Cormorant Garamond

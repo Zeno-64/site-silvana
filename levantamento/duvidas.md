@@ -61,3 +61,15 @@ decidido (sempre a opção mais simples).
   Instagram").
 - **Botão flutuante em computador:** a direção só manda sumir no celular. Em `md`+ ele
   continua visível junto do CTA do Contato.
+
+## Limpeza
+
+- Removidos também, por ficarem sem uso depois das trocas: `IconeBrilho`, as classes
+  `.contorno` e `.faixa.reversa` de `index.css`.
+- `README.md` estava descrevendo o site antigo (capítulos, faixa de texto); foi atualizado
+  junto com `CLAUDE.md`, `CONTEXTO.md` e `CONTEUDO-PENDENTE.md`.
+- Dois acertos pequenos em componentes ocultos, para cumprir a seção 10: o `aria-label` do
+  comparador de antes e depois perdeu um travessão, e os rótulos "Antes"/"Depois" usam a
+  cor `texto` (antes `creme`).
+- **Tamanho no celular:** com a faixa da Black Friday no ar a página tem 9,95 telas de
+  812 px; depois de 20/11/2026, 9,0. A direção pede "no máximo ~9".

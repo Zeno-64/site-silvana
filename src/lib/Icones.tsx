@@ -22,12 +22,6 @@ export const IconeSeta = (p: P) => (
   </svg>
 )
 
-export const IconeBrilho = (p: P) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...p}>
-    <path d="M12 2c.6 4.7 2.3 6.4 7 7-4.700.6-6.400 2.300-7 7-.6-4.700-2.300-6.400-7-7 4.700-.6 6.400-2.300 7-7Zm7 12c.3 2.200 1.100 3 3 3.300-1.900.3-2.700 1.100-3 3.300-.3-2.200-1.100-3-3-3.300 1.900-.3 2.700-1.100 3-3.300Z" />
-  </svg>
-)
-
 /** Coração do monograma (centrado na origem, ~22px de largura). */
 export const CORACAO = 'M0 9C-11 0 -12 -8 -6 -11C-3 -12.400 0 -10.500 0 -7.500C0 -10.500 3 -12.400 6 -11C12 -8 11 0 0 9Z'
 

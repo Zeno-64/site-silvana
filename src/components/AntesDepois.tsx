@@ -35,10 +35,10 @@ function Comparador({ caso }: { caso: CasoAntesDepois }) {
           draggable={false}
         />
 
-        <span className="absolute top-4 left-4 rounded-full bg-fundo/70 px-3 py-1 text-[10px] tracking-[0.25em] text-creme uppercase backdrop-blur">
+        <span className="absolute top-4 left-4 rounded-full bg-fundo/70 px-3 py-1 text-[10px] tracking-[0.25em] text-texto uppercase backdrop-blur">
           Antes
         </span>
-        <span className="absolute top-4 right-4 rounded-full bg-fundo/70 px-3 py-1 text-[10px] tracking-[0.25em] text-creme uppercase backdrop-blur">
+        <span className="absolute top-4 right-4 rounded-full bg-fundo/70 px-3 py-1 text-[10px] tracking-[0.25em] text-texto uppercase backdrop-blur">
           Depois
         </span>
 
@@ -56,7 +56,7 @@ function Comparador({ caso }: { caso: CasoAntesDepois }) {
           max={100}
           value={p}
           onChange={(e) => setP(Number(e.target.value))}
-          aria-label={`Comparar antes e depois — ${caso.servico}`}
+          aria-label={`Comparar antes e depois: ${caso.servico}`}
           className="absolute inset-0 h-full w-full opacity-0 [pointer-events:none]"
         />
       </div>

@@ -89,6 +89,7 @@ export default function Nav() {
               alt=""
               width="40"
               height="40"
+              loading="lazy"
               className="size-10 rounded-full ring-1 ring-rosa/40 transition group-hover:ring-rosa"
             />
             <span className="font-titulo text-sm tracking-[0.22em] text-titulo uppercase max-sm:hidden">
