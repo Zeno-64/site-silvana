@@ -34,3 +34,15 @@ decidido (sempre a opção mais simples).
   seção 5.1). A caixa de serviços saiu de cima do título.
 - **`og:title`** não aparece na seção 7, então ficou como estava (`SR Espaço da Beleza`).
 - **Botão flutuante** já observa `#contato-cta`; esse id entra no CTA do Contato na etapa 8.
+
+## Quem cuida de você
+
+- **`espaco-recepcao.jpg` traz o texto "Sonhei" por cima da foto** (veio de capa de reel). A
+  direção manda manter a foto, e a seção 10 proíbe arte de post. Solução: o quadro dá
+  zoom de 1.7 ancorado embaixo, o que deixa a parede e o "Sonhei" fora do enquadramento
+  (aparecem só as poltronas e a planta; o monograma SR da parede também sai). Vale pedir à
+  Silvana uma foto limpa da recepção.
+- **`fachada.jpg` mostra o adesivo da vitrine com o rosto de uma mulher** ("Seja sua melhor
+  versão / Cursos: Nail design / Lash..."). É propaganda do próprio salão, provavelmente a
+  Silvana, mas **isso não está confirmado** em nenhum lugar. O `alt` descreve só o adesivo,
+  sem dar nome. Perguntar à Silvana quem é, ou trocar por foto da fachada sem o adesivo.
