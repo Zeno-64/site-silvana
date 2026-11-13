@@ -46,3 +46,18 @@ decidido (sempre a opção mais simples).
   versão / Cursos: Nail design / Lash..."). É propaganda do próprio salão, provavelmente a
   Silvana, mas **isso não está confirmado** em nenhum lugar. O `alt` descreve só o adesivo,
   sem dar nome. Perguntar à Silvana quem é, ou trocar por foto da fachada sem o adesivo.
+
+## Contato, Cursos, rodapé e Depoimentos
+
+- **Depoimentos** (`Depoimentos.tsx`) saiu do Mural e continua oculto sem dados. A direção
+  não dá texto para essa seção; o único rótulo é `Avaliações` (nome do destaque do
+  Instagram), sem título. Os cartões deixaram de ser cremes (cor fora da paleta) e usam
+  `cetim` com texto `.corpo`.
+- **Monograma** foi redesenhado a partir do letreiro da foto de referência: anel duplo fino,
+  6 corações presos ao anel e "Espaço da Beleza" em curva embaixo. Continua sendo uma
+  aproximação em SVG, não o arquivo original da logo.
+- **Rodapé** é um componente próprio (`Rodape.tsx`), depois de Cursos, como na ordem da
+  seção 2. O link do Instagram no rodapé tem o texto `Instagram` (a direção diz só "link do
+  Instagram").
+- **Botão flutuante em computador:** a direção só manda sumir no celular. Em `md`+ ele
+  continua visível junto do CTA do Contato.

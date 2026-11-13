@@ -1,5 +1,5 @@
 import { site } from '../lib/site'
-import { IconeInstagram, IconeWhatsapp } from '../lib/Icones'
+import { IconeWhatsapp } from '../lib/Icones'
 import Blobs from './Blobs'
 import Magnetic from './Magnetic'
 import { Linhas, Reveal } from './Reveal'
@@ -10,7 +10,7 @@ export default function Contato() {
       <Blobs />
       <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8">
         <Reveal>
-          <p className="rotulo">Agende seu horário</p>
+          <p className="rotulo">Já agendou seu horário?</p>
         </Reveal>
         <h2 className="titulo mt-4 text-[clamp(2.6rem,8vw,6.4rem)]">
           <Linhas linhas={['Vamos cuidar', <em key="v">de você?</em>]} />
@@ -24,6 +24,7 @@ export default function Contato() {
         <Reveal atraso={0.35} className="mt-12">
           <Magnetic forca={0.4}>
             <a
+              id="contato-cta"
               href={site.whatsapp}
               target="_blank"
               rel="noreferrer"
@@ -35,22 +36,26 @@ export default function Contato() {
           </Magnetic>
         </Reveal>
 
-        <Reveal atraso={0.45} className="mt-8">
-          <a
-            href={site.instagram}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 text-base tracking-[0.15em] text-texto transition-colors hover:text-rosa"
-          >
-            <IconeInstagram className="size-5" />
-            {site.instagramUser}
-          </a>
+        <Reveal atraso={0.45} className="mt-10">
+          <div className="corpo-pequeno space-y-1">
+            <p>
+              {site.bairro} · {site.cidade}
+            </p>
+            {site.endereco && <p>{site.endereco}</p>}
+            {site.horario && <p>{site.horario}</p>}
+            <p>
+              <a
+                href={site.instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-rosa"
+              >
+                {site.instagramUser}
+              </a>
+            </p>
+          </div>
         </Reveal>
       </div>
-
-      <footer className="relative mx-auto mt-28 max-w-7xl border-t border-rosa/15 px-5 pt-8 text-center text-[13px] tracking-[0.2em] text-texto uppercase sm:px-8">
-        © {new Date().getFullYear()} {site.nome}
-      </footer>
     </section>
   )
 }

@@ -1,24 +1,32 @@
 import { motion } from 'framer-motion'
 import { CORACAO } from '../lib/Icones'
 
-// Corações ao redor do aro, como na logo (ângulo em graus, escala).
+// Corações presos ao anel, como no letreiro do salão (ângulo em graus, 0 = direita, horário; escala).
 const coracoes = [
-  { a: 205, s: 1.5 },
-  { a: 322, s: 1.15 },
-  { a: 12, s: 0.9 },
-  { a: 118, s: 1.05 },
-  { a: 250, s: 0.7 },
-  { a: 82, s: 0.7 },
+  { a: 228, s: 1.1 },
+  { a: 203, s: 1.5 },
+  { a: 334, s: 1.0 },
+  { a: 355, s: 1.5 },
+  { a: 139, s: 0.8 },
+  { a: 122, s: 1.35 },
 ]
 
 /**
- * Monograma "SR" redesenhado em SVG: o aro se traça sozinho e os corações
- * "estouram" um a um. Referência: foto de perfil do Instagram.
+ * Monograma "SR" redesenhado em SVG a partir do letreiro da parede do salão: anel fino
+ * duplo, corações presos ao anel e "Espaço da Beleza" em cursiva na curva de baixo.
  * Trocar pelo arquivo original da logo quando a cliente enviar.
  */
 export default function Monograma({ className = '' }: { className?: string }) {
   const c = 120
   const r = 92
+  const traco = {
+    fill: 'none',
+    stroke: 'url(#mg)',
+    strokeLinecap: 'round' as const,
+    style: { rotate: -90, transformOrigin: '120px 120px' },
+    initial: { pathLength: 0 },
+    animate: { pathLength: 1 },
+  }
   return (
     <svg viewBox="0 0 240 240" className={className} role="img" aria-label="Monograma SR Espaço da Beleza">
       <defs>
@@ -27,19 +35,24 @@ export default function Monograma({ className = '' }: { className?: string }) {
           <stop offset="0.5" stopColor="#e9a0ad" />
           <stop offset="1" stopColor="#c9707f" />
         </linearGradient>
+        {/* Curva de baixo, da base até a direita, onde o letreiro escreve "Espaço da Beleza". */}
+        <path id="curva-nome" d="M 100.8 191.5 A 74 74 0 0 0 187.1 151.3" fill="none" />
       </defs>
       <motion.circle
         cx={c}
         cy={c}
         r={r}
-        fill="none"
-        stroke="url(#mg)"
-        strokeWidth="2.6"
-        strokeLinecap="round"
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        style={{ rotate: -90, transformOrigin: '120px 120px' }}
+        strokeWidth="1.8"
+        {...traco}
         transition={{ duration: 2.2, ease: [0.65, 0, 0.35, 1], delay: 0.3 }}
+      />
+      <motion.circle
+        cx={c}
+        cy={c}
+        r={r - 4.5}
+        strokeWidth="1.1"
+        {...traco}
+        transition={{ duration: 2.2, ease: [0.65, 0, 0.35, 1], delay: 0.5 }}
       />
       {coracoes.map((h, i) => {
         const rad = (h.a * Math.PI) / 180
@@ -59,10 +72,10 @@ export default function Monograma({ className = '' }: { className?: string }) {
       })}
       <motion.text
         x={c}
-        y={c + 30}
+        y={c + 22}
         textAnchor="middle"
         fontFamily="'Great Vibes', cursive"
-        fontSize="104"
+        fontSize="100"
         fill="url(#mg)"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -71,17 +84,16 @@ export default function Monograma({ className = '' }: { className?: string }) {
         SR
       </motion.text>
       <motion.text
-        x={c}
-        y={c + 58}
-        textAnchor="middle"
         fontFamily="'Great Vibes', cursive"
         fontSize="15"
         fill="#e9a0ad"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.85 }}
+        animate={{ opacity: 0.9 }}
         transition={{ duration: 1, delay: 2.2 }}
       >
-        Espaço da Beleza
+        <textPath href="#curva-nome" startOffset="50%" textAnchor="middle">
+          Espaço da Beleza
+        </textPath>
       </motion.text>
     </svg>
   )
