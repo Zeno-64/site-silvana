@@ -22,10 +22,14 @@ function Foto({ r, className = '', quadro = '' }: { r: Resultado; className?: st
           height={r.altura}
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-[1200ms] ease-[var(--ease-suave)] hover:scale-105"
-          style={{ objectPosition: r.posicao, transform: r.escala ? `scale(${r.escala})` : undefined }}
+          style={{
+            objectPosition: r.posicao,
+            transform: r.escala ? `scale(${r.escala})` : undefined,
+            transformOrigin: r.origem,
+          }}
         />
       </div>
-      <figcaption className="rotulo mt-3 text-center">{r.tag}</figcaption>
+      {r.tag && <figcaption className="corpo-pequeno mt-2 text-left">{r.tag}</figcaption>}
     </figure>
   )
 }
@@ -54,7 +58,6 @@ function Cabecalho() {
         Feito <em>aqui</em>
       </h2>
       <p className="subtitulo mt-2">dignidade recuperada com sucesso</p>
-      <p className="corpo-pequeno mt-2">Fotos do nosso Instagram.</p>
     </div>
   )
 }
@@ -124,13 +127,13 @@ function GaleriaPresa() {
 /** Celular: fita horizontal nativa com encaixe, sem prender a rolagem vertical. */
 function GaleriaFita() {
   return (
-    <section id="resultados" aria-label="Resultados" className="relative bg-fundo pt-12 pb-16">
+    <section id="resultados" aria-label="Resultados" className="relative bg-fundo py-16">
       <Cabecalho />
-      <div className="mt-6 flex items-start snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="mt-8 flex snap-x snap-mandatory scroll-px-5 items-start gap-3 overflow-x-auto px-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {resultados.map((r) => (
-          <Foto key={r.foto} r={r} className="w-[72vw] shrink-0 snap-center" />
+          <Foto key={r.foto} r={r} className="w-[78vw] shrink-0 snap-start" />
         ))}
-        <CartaoInstagram className="w-[72vw] shrink-0 snap-center" />
+        <CartaoInstagram className="w-[78vw] shrink-0 snap-start" />
       </div>
     </section>
   )

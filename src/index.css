@@ -40,6 +40,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* A barra fixa tem 64 px: âncoras param logo abaixo dela. */
+    scroll-padding-top: 4rem;
     background: var(--color-fundo);
   }
   body {
