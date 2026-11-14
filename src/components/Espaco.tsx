@@ -1,90 +1,54 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { site } from '../lib/site'
 import { IconeSeta } from '../lib/Icones'
+import { site } from '../lib/site'
 import { Linhas, Reveal } from './Reveal'
 
-/** Quem cuida de você: apresentação da Silvana, higiene e o lugar, com fotos em camadas (parallax). */
+/**
+ * Quem cuida de você: apresentação da Silvana e higiene. O retrato em arco é a
+ * única forma de arco da página (assinatura). Fachada e recepção saíram até a
+ * Silvana mandar fotos novas (pendência 11 de CONTEUDO-PENDENTE.md).
+ */
 export default function Espaco() {
-  const ref = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
-  const a = useTransform(scrollYProgress, [0, 1], ['10%', '-10%'])
-  const b = useTransform(scrollYProgress, [0, 1], ['-8%', '12%'])
-  const c = useTransform(scrollYProgress, [0, 1], ['6%', '-8%'])
-
   return (
-    <section id="espaco" ref={ref} aria-label="O salão" className="relative overflow-hidden bg-fundo py-16 md:py-24">
-      <div className="mx-auto grid max-w-7xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-2">
-        <div className="relative z-10">
+    <section id="espaco" aria-label="O salão" className="relative bg-fundo py-16 md:py-24">
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-2 md:content-center md:gap-x-16 md:gap-y-8 md:px-8">
+        <div className="md:col-start-1 md:self-end">
           <Reveal>
             <p className="rotulo">O salão</p>
           </Reveal>
           <h2 className="titulo mt-3">
             <Linhas linhas={['Quem cuida', <em key="p">de você</em>]} />
           </h2>
-          <Reveal atraso={0.2}>
-            <p className="subtitulo mt-4">cuidado e higiene em cada detalhe</p>
-            <p className="corpo mt-6 max-w-lg">
-              O {site.nome} é o salão da Silvana Ribeiro, em {site.bairro}. Ela atende, tem uma equipe ao lado e ainda
-              ensina: é a instrutora dos cursos de unhas e de cílios da casa.
-            </p>
-            <p className="corpo mt-5 max-w-lg">
-              Alicates e espátulas são esterilizados, porque a segurança de cada cliente é essencial.
-            </p>
-            <a
-              href="#cursos"
-              className="botao-texto btn-link mt-6"
-            >
-              Conheça os cursos
-              <IconeSeta className="size-4" />
-            </a>
+          <p className="subtitulo mt-2">cuidado e higiene em cada detalhe</p>
+        </div>
+
+        <div className="mx-auto w-full max-w-[320px] md:col-start-2 md:row-span-2 md:row-start-1 md:max-w-[400px] md:self-center">
+          <Reveal>
+            <div className="aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-2xl">
+              <img
+                src="/img/silvana-salao.webp"
+                alt="Silvana de uniforme rosa, com prancha e secador, em frente ao logo do salão"
+                width={828}
+                height={1472}
+                loading="lazy"
+                className="h-full w-full object-cover object-[50%_20%]"
+              />
+            </div>
           </Reveal>
         </div>
 
-        <div className="relative mx-auto h-[520px] w-full max-w-[540px] sm:h-[640px]">
-          <motion.div
-            style={{ y: a }}
-            className="absolute top-0 left-0 h-[78%] w-[58%] overflow-hidden rounded-t-[999px] rounded-b-2xl"
-          >
-            <img
-              src="/img/silvana-salao.webp"
-              alt="Silvana de uniforme rosa, com prancha e secador, em frente ao logo do salão"
-              width={828}
-              height={1472}
-              loading="lazy"
-              className="h-full w-full object-cover"
-            />
-          </motion.div>
-          <motion.div
-            style={{ y: b }}
-            className="absolute top-[4%] right-0 h-[36%] w-[36%] overflow-hidden rounded-2xl"
-          >
-            <img
-              src="/img/fachada.webp"
-              alt="Fachada do salão, com um adesivo na vitrine anunciando os cursos de nail design e lash"
-              width={360}
-              height={640}
-              loading="lazy"
-              className="h-full w-full object-cover"
-              style={{ objectPosition: '50% 20%' }}
-            />
-          </motion.div>
-          <motion.div
-            style={{ y: c }}
-            className="absolute right-0 bottom-0 h-[42%] w-[52%] overflow-hidden rounded-2xl"
-          >
-            {/* Recorte da foto da recepção numa poltrona só (o arquivo já vem recortado, sem o texto "Sonhei"). */}
-            <img
-              src="/img/espaco-recepcao.webp"
-              alt="Poltrona rosa da recepção, com almofada escura, ao lado de uma planta"
-              width={300}
-              height={300}
-              loading="lazy"
-              className="h-full w-full object-cover"
-              style={{ objectPosition: '35% 50%' }}
-            />
-          </motion.div>
-        </div>
+        <Reveal className="md:col-start-1 md:self-start">
+          <p className="corpo max-w-lg">
+            O {site.nome} é o salão da Silvana Ribeiro, em {site.bairro}. Ela atende, tem uma equipe ao lado e ainda
+            ensina: é a instrutora dos cursos de unhas e de cílios da casa.
+          </p>
+          <p className="corpo mt-4 max-w-lg">
+            Alicates e espátulas são esterilizados, porque a segurança de cada cliente é essencial.
+          </p>
+          <a href="#cursos" className="botao-texto btn-link mt-4 !justify-start">
+            Conheça os cursos
+            <IconeSeta className="size-4" />
+          </a>
+        </Reveal>
       </div>
     </section>
   )

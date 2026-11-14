@@ -3,8 +3,9 @@
 // `foto` é opcional: só preencher com autorização das alunas (ver CONTEUDO-PENDENTE.md).
 export type Curso = {
   id: string
+  /** Linha pequena acima do título (ex.: "Nail design"). */
+  rotulo: string
   titulo: string
-  script: string
   linhas: string[]
   foto?: string
   alt?: string
@@ -13,8 +14,8 @@ export type Curso = {
 export const cursos: Curso[] = [
   {
     id: 'unhas',
-    titulo: 'Unhas',
-    script: 'nail design',
+    rotulo: 'Nail design',
+    titulo: 'Curso de unhas',
     linhas: [
       'Alongamento em fibra de vidro e molde F1',
       'Do básico ao avançado',
@@ -24,8 +25,8 @@ export const cursos: Curso[] = [
   },
   {
     id: 'cilios',
-    titulo: 'Cílios',
-    script: 'lash design',
+    rotulo: 'Lash design',
+    titulo: 'Curso de cílios',
     linhas: [
       'Extensão de cílios: fio a fio, brasileiro e híbrido',
       'Aula 90% prática, com modelo',

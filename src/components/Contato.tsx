@@ -5,21 +5,21 @@ import { Linhas, Reveal } from './Reveal'
 
 export default function Contato() {
   return (
-    <section id="contato" className="relative isolate overflow-hidden bg-superficie py-16 md:py-24">
-      <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8">
+    <section id="contato" className="relative bg-superficie py-16 md:py-24">
+      <div className="mx-auto max-w-4xl px-5 text-center md:px-8">
         <Reveal>
           <p className="rotulo">Já agendou seu horário?</p>
         </Reveal>
         <h2 className="titulo mt-3">
           <Linhas linhas={['Vamos cuidar', <em key="v">de você?</em>]} />
         </h2>
-        <Reveal atraso={0.2}>
-          <p className="corpo mx-auto mt-8 max-w-lg">
+        <Reveal>
+          <p className="corpo mx-auto mt-4 max-w-lg">
             Chame no WhatsApp, conte o que você quer e a gente encontra o melhor horário.
           </p>
         </Reveal>
 
-        <Reveal atraso={0.35} className="mt-12">
+        <Reveal className="mt-8">
           <Magnetic forca={0.4} className="block w-full md:w-auto">
             <a
               id="contato-cta"
@@ -28,14 +28,14 @@ export default function Contato() {
               rel="noreferrer"
               className="botao-texto btn-cheio w-full md:w-auto"
             >
-              <IconeWhatsapp className="size-6" />
+              <IconeWhatsapp className="size-5" />
               Chamar no WhatsApp
             </a>
           </Magnetic>
         </Reveal>
 
-        <Reveal atraso={0.45} className="mt-10">
-          <div className="corpo-pequeno space-y-1">
+        <Reveal className="mt-6">
+          <div className="corpo-pequeno">
             <p>
               {site.bairro} · {site.cidade}
             </p>
@@ -46,7 +46,7 @@ export default function Contato() {
                 href={site.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="transition-colors hover:text-rosa"
+                className="inline-flex min-h-12 items-center px-2"
               >
                 {site.instagramUser}
               </a>

@@ -86,11 +86,11 @@ export default function Nav() {
       />
 
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-[background,backdrop-filter,padding] duration-500 ${
-          rolou ? 'bg-fundo/85 py-3 backdrop-blur-xl' : 'py-5'
+        className={`fixed inset-x-0 top-0 z-50 h-16 transition-colors duration-300 ${
+          rolou ? 'bg-fundo/85 backdrop-blur-xl' : ''
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 sm:px-8">
+        <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-3 px-5 sm:px-8">
           <a href="#inicio" className="group flex min-h-12 items-center gap-3" aria-label="SR Espaço da Beleza, início">
             <img
               src="/img/logo-perfil.jpg"
