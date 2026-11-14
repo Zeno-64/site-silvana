@@ -18,7 +18,7 @@ destrava** e onde entra no código. A direção completa está em `levantamento/
 | 8 | A foto de 28/10/2026 (francesinha no cetim rosa) é foto real? | Mais uma foto na galeria |
 | 9 | Compressa quente e massagem são de todo atendimento ou foram só no frio? | Voltam para Unhas e Sobrancelhas em `servicos.ts` (posts de 10/09 e 14/09 abrem com "Nesse frio") |
 | 10 | Tem fotos de cílios, sobrancelhas, bronze e tranças sem rosto e sem texto? | A galeria deixa de ser quase só unhas |
-| 11 | Quem é a mulher do adesivo da vitrine (foto da fachada)? Tem foto da fachada sem o adesivo e da recepção sem o texto "Sonhei"? | Seção "Quem cuida de você" (`fachada.webp`, `espaco-recepcao.webp`) |
+| 11 | Quem é a mulher do adesivo da vitrine (foto da fachada)? Tem foto da fachada **tirada de longe, pegando a frente inteira** (de preferência sem o adesivo)? E da recepção sem o texto "Sonhei"? | Seção "Quem cuida de você" (`fachada.webp`, `espaco-recepcao.webp`) |
 
 ## Bloqueia o lançamento
 

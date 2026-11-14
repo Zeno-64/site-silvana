@@ -45,10 +45,17 @@ decidido (sempre a opção mais simples).
   zoom de 1.7 ancorado embaixo, o que deixa a parede e o "Sonhei" fora do enquadramento
   (aparecem só as poltronas e a planta; o monograma SR da parede também sai). Vale pedir à
   Silvana uma foto limpa da recepção.
+  - **Depois, a pedido do Kevin:** o quadro mostra uma poltrona só. O arquivo passou a ser um
+    recorte de 300×300 do original (640×640, poltrona da esquerda com a planta ao lado), sem
+    zoom no CSS; o "Sonhei" e o monograma da parede ficam fora do arquivo.
 - **`fachada.jpg` mostra o adesivo da vitrine com o rosto de uma mulher** ("Seja sua melhor
   versão / Cursos: Nail design / Lash..."). É propaganda do próprio salão, provavelmente a
   Silvana, mas **isso não está confirmado** em nenhum lugar. O `alt` descreve só o adesivo,
   sem dar nome. Perguntar à Silvana quem é, ou trocar por foto da fachada sem o adesivo.
+  - **Pedido de mostrar a fachada inteira:** não dá com esta foto. Ela é um close inclinado
+    de capa de reel (360×640, sem original maior) e o quadro já mostra de 67% (computador) a
+    87% (celular) da altura dela; mostrar a foto inteira só acrescentaria o resto do adesivo e
+    o chão. Precisa de foto nova, tirada de longe (pendência 11 de `CONTEUDO-PENDENTE.md`).
 
 ## Contato, Cursos, rodapé e Depoimentos
 

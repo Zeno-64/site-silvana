@@ -60,8 +60,9 @@ Saíram do repositório: `FaixaTexto`, `Numeros`, `Mural`, `Capitulos` (e
   vazios, nada de "em breve" no site. JSON-LD e `canonical` esperam endereço e domínio.
 - **Monograma** é um SVG redesenhado a partir do letreiro (`Monograma.tsx`), não a logo
   original.
-- `espaco-recepcao.webp` tem o texto "Sonhei" por cima (cortado com zoom) e `fachada.webp`
-  mostra o rosto do adesivo da vitrine. Ver `levantamento/duvidas.md`.
+- `espaco-recepcao.webp` é um recorte de uma poltrona só (o original tinha o texto "Sonhei"
+  por cima) e `fachada.webp` mostra o rosto do adesivo da vitrine. A fachada é um close
+  de capa de reel: para mostrar a frente inteira, só com foto nova. Ver `levantamento/duvidas.md`.
 - Nenhuma foto de rosto de cliente ou aluna está no site. As 5 fotos de entrega de
   certificado esperam autorização (campo `foto?` em `cursos.ts`).
 

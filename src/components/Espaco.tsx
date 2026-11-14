@@ -71,15 +71,15 @@ export default function Espaco() {
             style={{ y: c }}
             className="absolute right-0 bottom-0 h-[42%] w-[52%] overflow-hidden rounded-2xl border border-rosa-claro/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]"
           >
-            {/* Zoom para fora do quadro o texto "Sonhei" que a foto original traz por cima. */}
+            {/* Recorte da foto da recepção numa poltrona só (o arquivo já vem recortado, sem o texto "Sonhei"). */}
             <img
               src="/img/espaco-recepcao.webp"
-              alt="Recepção com duas poltronas rosa e uma planta"
-              width={640}
-              height={640}
+              alt="Poltrona rosa da recepção, com almofada escura, ao lado de uma planta"
+              width={300}
+              height={300}
               loading="lazy"
               className="h-full w-full object-cover"
-              style={{ transform: 'scale(1.7)', transformOrigin: '50% 100%' }}
+              style={{ objectPosition: '35% 50%' }}
             />
           </motion.div>
         </div>
