@@ -47,7 +47,7 @@ export default function Cursos() {
                     href={site.whatsapp}
                     target="_blank"
                     rel="noreferrer"
-                    className="botao-texto mt-7 inline-flex items-center gap-3 rounded-full border border-rosa px-6 py-4 text-rosa transition hover:bg-rosa hover:text-fundo"
+                    className="botao-texto btn-contorno mt-7 w-full md:w-auto"
                   >
                     <IconeWhatsapp className="size-4" />
                     Quero saber das turmas

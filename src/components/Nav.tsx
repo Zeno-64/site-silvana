@@ -24,7 +24,7 @@ export default function Nav() {
 
   useMotionValueEvent(scrollY, 'change', (v) => {
     setRolou(v > 40)
-    setPassouHero(v > 500)
+    setPassouHero(v > 200)
   })
 
   // Celular = abaixo de md (768px), o mesmo corte do Tailwind.
@@ -36,12 +36,20 @@ export default function Nav() {
     return () => mq.removeEventListener('change', atualizar)
   }, [])
 
-  // O botão flutuante some enquanto o CTA do Contato está na tela (dois botões iguais empilhados).
+  // Um botão cheio por tela: o flutuante some enquanto o do hero, o da Promoção ou o do Contato está visível.
   useEffect(() => {
-    const cta = document.getElementById('contato-cta')
-    if (!cta) return
-    const io = new IntersectionObserver(([e]) => setCtaVisivel(e.isIntersecting))
-    io.observe(cta)
+    const visiveis = new Set<string>()
+    const io = new IntersectionObserver((entradas) => {
+      for (const e of entradas) {
+        if (e.isIntersecting) visiveis.add(e.target.id)
+        else visiveis.delete(e.target.id)
+      }
+      setCtaVisivel(visiveis.size > 0)
+    })
+    for (const id of ['hero-cta', 'promocao-cta', 'contato-cta']) {
+      const el = document.getElementById(id)
+      if (el) io.observe(el)
+    }
     return () => io.disconnect()
   }, [])
 
@@ -67,7 +75,7 @@ export default function Nav() {
     if (!celular) setMenuAberto(false)
   }, [celular])
 
-  const mostrarFlutuante = passouHero && !(celular && ctaVisivel)
+  const mostrarFlutuante = passouHero && !ctaVisivel
 
   return (
     <>
@@ -83,7 +91,7 @@ export default function Nav() {
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 sm:px-8">
-          <a href="#inicio" className="group flex items-center gap-3" aria-label="SR Espaço da Beleza, início">
+          <a href="#inicio" className="group flex min-h-12 items-center gap-3" aria-label="SR Espaço da Beleza, início">
             <img
               src="/img/logo-perfil.jpg"
               alt=""
@@ -100,7 +108,7 @@ export default function Nav() {
               <a
                 key={l.href}
                 href={l.href}
-                className="botao-texto group relative py-3 text-texto transition-colors hover:text-rosa"
+                className="botao-texto group relative py-4 text-texto transition-colors hover:text-rosa"
               >
                 {l.texto}
                 <span className="absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-rosa transition-transform duration-500 group-hover:scale-x-100" />
@@ -113,7 +121,7 @@ export default function Nav() {
               href={site.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="botao-texto inline-flex items-center gap-2 rounded-full border border-rosa px-5 py-3.5 text-rosa transition hover:bg-rosa hover:text-fundo"
+              className="botao-texto btn-contorno !gap-2 !px-4"
             >
               <IconeWhatsapp className="size-4" />
               Agendar
@@ -184,7 +192,7 @@ export default function Nav() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setMenuAberto(false)}
-              className="botao-texto mb-4 inline-flex items-center justify-center gap-3 rounded-full bg-rosa px-8 py-4 text-fundo"
+              className="botao-texto btn-cheio mb-4 w-full"
             >
               <IconeWhatsapp className="size-5" />
               Agendar no WhatsApp

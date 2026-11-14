@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { site } from '../lib/site'
+import { IconeSeta } from '../lib/Icones'
 import { Linhas, Reveal } from './Reveal'
 
 /** Quem cuida de você: apresentação da Silvana, higiene e o lugar, com fotos em camadas (parallax). */
@@ -32,9 +33,10 @@ export default function Espaco() {
             </p>
             <a
               href="#cursos"
-              className="botao-texto mt-8 inline-flex items-center gap-2 py-4 text-rosa"
+              className="botao-texto btn-link mt-6"
             >
               Conheça os cursos
+              <IconeSeta className="size-4" />
             </a>
           </Reveal>
         </div>

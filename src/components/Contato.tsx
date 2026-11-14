@@ -20,13 +20,13 @@ export default function Contato() {
         </Reveal>
 
         <Reveal atraso={0.35} className="mt-12">
-          <Magnetic forca={0.4}>
+          <Magnetic forca={0.4} className="block w-full md:w-auto">
             <a
               id="contato-cta"
               href={site.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="botao-texto inline-flex items-center gap-3 rounded-full bg-rosa px-8 py-4 text-fundo"
+              className="botao-texto btn-cheio w-full md:w-auto"
             >
               <IconeWhatsapp className="size-6" />
               Chamar no WhatsApp

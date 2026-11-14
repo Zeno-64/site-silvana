@@ -146,12 +146,13 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 1 }}
           >
-            <Magnetic>
+            <Magnetic className="block w-full md:w-auto">
               <a
+                id="hero-cta"
                 href={site.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="botao-texto inline-flex items-center gap-3 rounded-full bg-rosa px-8 py-4 text-fundo"
+                className="botao-texto btn-cheio w-full md:w-auto"
               >
                 <IconeWhatsapp className="size-5" />
                 Agendar no WhatsApp
@@ -159,7 +160,7 @@ export default function Hero() {
             </Magnetic>
             <a
               href="#servicos"
-              className="botao-texto group inline-flex items-center gap-2 px-2 py-4 text-rosa"
+              className="botao-texto btn-link group"
             >
               Ver serviços
               <IconeSeta className="size-4 transition-transform group-hover:translate-x-1.5" />

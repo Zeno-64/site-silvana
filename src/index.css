@@ -205,6 +205,57 @@ select {
   }
 }
 
+/* ---- Botões: três tipos, e só eles (direcao-visual.md, seção 5) ----------------
+   Use junto com `.botao-texto`. Cheio: 52 px, só um por tela. Contorno: 48 px.
+   Link: texto rosa com seta, área de toque de 48 px. Largura total no celular
+   fica por conta de quem usa (`w-full md:w-auto`). Dentro de `.papel` só entra
+   link. */
+@layer components {
+  .btn-cheio,
+  .btn-contorno,
+  .btn-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .btn-cheio {
+    min-height: 3.25rem;
+    padding-inline: 2rem;
+    border-radius: 9999px;
+    background: var(--color-rosa);
+    color: var(--color-fundo);
+  }
+  .btn-cheio:active {
+    background: var(--color-rosa-claro);
+  }
+  .btn-contorno {
+    min-height: 3rem;
+    padding-inline: 1.5rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-rosa);
+    color: var(--color-rosa);
+  }
+  .btn-contorno:active {
+    background: var(--color-rosa);
+    color: var(--color-fundo);
+  }
+  .btn-link {
+    min-height: 3rem;
+    gap: 0.5rem;
+    color: var(--color-rosa);
+  }
+  @media (hover: hover) {
+    .btn-cheio:hover {
+      background: var(--color-rosa-claro);
+    }
+    .btn-contorno:hover {
+      background: var(--color-rosa);
+      color: var(--color-fundo);
+    }
+  }
+}
+
 /* Faixas que rolam sozinhas (só os depoimentos, hoje ocultos). */
 .faixa {
   display: flex;

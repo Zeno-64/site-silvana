@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion'
 export default function Magnetic({
   children,
   forca = 0.3,
-  className = '',
+  className = 'inline-block',
 }: {
   children: ReactNode
   forca?: number
@@ -29,7 +29,7 @@ export default function Magnetic({
   return (
     <motion.div
       ref={ref}
-      className={`inline-block ${className}`}
+      className={className}
       style={{ x, y }}
       onPointerMove={mover}
       onPointerLeave={soltar}

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { servicos, type Servico, type Tecnica } from '../data/servicos'
 import { site } from '../lib/site'
-import { Coracao } from '../lib/Icones'
+import { Coracao, IconeSeta } from '../lib/Icones'
 import { useMediaQuery } from '../lib/useMediaQuery'
 import { Linhas, Reveal } from './Reveal'
 
@@ -74,9 +74,10 @@ function Cartao({ s, computador }: { s: Servico; computador: boolean }) {
             href={site.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="botao-texto mt-7 inline-flex items-center rounded-full border border-rosa px-6 py-4 text-rosa transition hover:bg-rosa hover:text-fundo"
+            className="botao-texto btn-link mt-4"
           >
             Agendar {s.nome}
+            <IconeSeta className="size-4" />
           </a>
         </div>
       )}

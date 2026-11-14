@@ -42,12 +42,13 @@ export default function Promocao() {
         </Reveal>
 
         <Reveal atraso={0.25} className="mt-5 flex justify-center md:mt-10">
-          <Magnetic>
+          <Magnetic className="block w-full md:w-auto">
             <a
+              id="promocao-cta"
               href={site.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="botao-texto inline-flex items-center gap-3 rounded-full bg-rosa px-8 py-4 text-fundo"
+              className="botao-texto btn-cheio w-full md:w-auto"
             >
               <IconeWhatsapp className="size-5" />
               Garantir meu horário
