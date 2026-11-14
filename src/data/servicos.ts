@@ -19,8 +19,6 @@ export type Servico = {
   tecnicas: Tecnica[]
   /** Linha extra em .corpo-pequeno, depois da lista. */
   nota?: string
-  /** Cor de fundo do cartão. */
-  bg: string
   /** Com valores ligados, o cartão ganha o aviso de referência. */
   temPrecos?: boolean
 }
@@ -55,7 +53,6 @@ export const servicos: Servico[] = [
       { nome: 'Postiça realista', preco: 'R$ 90' },
     ],
     nota: 'Homem também faz as unhas.',
-    bg: '#3a1c25',
     temPrecos: true,
   },
   {
@@ -89,7 +86,6 @@ export const servicos: Servico[] = [
       { nome: 'Morena iluminada', preco: 'a partir de R$ 320' },
       { nome: 'Matização' },
     ],
-    bg: '#2b1116',
     temPrecos: true,
   },
   {
@@ -103,7 +99,6 @@ export const servicos: Servico[] = [
       { nome: 'Híbrido' },
       { nome: 'Extensão cola fria' },
     ],
-    bg: '#2a1626',
   },
   {
     id: 'sobrancelhas',
@@ -111,7 +106,6 @@ export const servicos: Servico[] = [
     script: 'realçando olhares',
     frase: 'Design de sobrancelhas, com ou sem henna.',
     tecnicas: [{ nome: 'Design' }, { nome: 'Design com henna' }],
-    bg: '#1f1311',
   },
   {
     id: 'bronze',
@@ -123,7 +117,6 @@ export const servicos: Servico[] = [
       { nome: 'Bronzeamento artificial' },
       { nome: 'Tatuagem de bronze' },
     ],
-    bg: '#38220f',
   },
   {
     id: 'trancas',
@@ -136,6 +129,5 @@ export const servicos: Servico[] = [
       { nome: 'Nagô com desenhos' },
       { nome: 'Tiara nagô' },
     ],
-    bg: '#341a10',
   },
 ]

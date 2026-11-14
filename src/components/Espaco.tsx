@@ -12,7 +12,7 @@ export default function Espaco() {
   const c = useTransform(scrollYProgress, [0, 1], ['6%', '-8%'])
 
   return (
-    <section id="espaco" ref={ref} aria-label="O salão" className="grao relative overflow-hidden bg-fundo-2 py-24 sm:py-36">
+    <section id="espaco" ref={ref} aria-label="O salão" className="relative overflow-hidden bg-fundo py-16 md:py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-2">
         <div className="relative z-10">
           <Reveal>
@@ -32,7 +32,7 @@ export default function Espaco() {
             </p>
             <a
               href="#cursos"
-              className="mt-8 inline-block border-b border-rosa/60 pb-1 text-[13px] tracking-[0.2em] text-rosa uppercase transition-colors hover:border-rosa"
+              className="botao-texto mt-8 inline-flex items-center gap-2 py-4 text-rosa"
             >
               Conheça os cursos
             </a>
@@ -42,7 +42,7 @@ export default function Espaco() {
         <div className="relative mx-auto h-[520px] w-full max-w-[540px] sm:h-[640px]">
           <motion.div
             style={{ y: a }}
-            className="absolute top-0 left-0 h-[78%] w-[58%] overflow-hidden rounded-t-[999px] rounded-b-2xl border border-rosa-claro/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]"
+            className="absolute top-0 left-0 h-[78%] w-[58%] overflow-hidden rounded-t-[999px] rounded-b-2xl"
           >
             <img
               src="/img/silvana-salao.webp"
@@ -55,7 +55,7 @@ export default function Espaco() {
           </motion.div>
           <motion.div
             style={{ y: b }}
-            className="absolute top-[4%] right-0 h-[36%] w-[36%] overflow-hidden rounded-2xl border border-rosa-claro/20"
+            className="absolute top-[4%] right-0 h-[36%] w-[36%] overflow-hidden rounded-2xl"
           >
             <img
               src="/img/fachada.webp"
@@ -69,7 +69,7 @@ export default function Espaco() {
           </motion.div>
           <motion.div
             style={{ y: c }}
-            className="absolute right-0 bottom-0 h-[42%] w-[52%] overflow-hidden rounded-2xl border border-rosa-claro/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]"
+            className="absolute right-0 bottom-0 h-[42%] w-[52%] overflow-hidden rounded-2xl"
           >
             {/* Recorte da foto da recepção numa poltrona só (o arquivo já vem recortado, sem o texto "Sonhei"). */}
             <img

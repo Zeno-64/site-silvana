@@ -17,7 +17,7 @@ export default function Depoimentos() {
           {dobro.map((d, i) => (
             <figure
               key={i}
-              className="w-72 shrink-0 rounded-2xl border border-rosa/25 bg-cetim p-6 sm:w-80"
+              className="w-72 shrink-0 rounded-2xl bg-superficie-2 p-5 sm:w-80"
             >
               <blockquote className="corpo">“{d.texto}”</blockquote>
               <figcaption className="rotulo mt-4">

@@ -17,7 +17,7 @@ function Comparador({ caso }: { caso: CasoAntesDepois }) {
     <figure className="w-full">
       <div
         ref={caixa}
-        className="group relative aspect-[4/5] cursor-ew-resize touch-pan-y overflow-hidden rounded-3xl border border-rosa-claro/20 select-none"
+        className="group relative aspect-[4/5] cursor-ew-resize touch-pan-y overflow-hidden rounded-2xl select-none"
         onPointerDown={(e) => {
           e.currentTarget.setPointerCapture(e.pointerId)
           atualizar(e.clientX)
@@ -35,15 +35,15 @@ function Comparador({ caso }: { caso: CasoAntesDepois }) {
           draggable={false}
         />
 
-        <span className="absolute top-4 left-4 rounded-full bg-fundo/70 px-3 py-1 text-[10px] tracking-[0.25em] text-texto uppercase backdrop-blur">
+        <span className="rotulo absolute top-4 left-4 rounded-full bg-fundo px-3 py-1 !text-texto">
           Antes
         </span>
-        <span className="absolute top-4 right-4 rounded-full bg-fundo/70 px-3 py-1 text-[10px] tracking-[0.25em] text-texto uppercase backdrop-blur">
+        <span className="rotulo absolute top-4 right-4 rounded-full bg-fundo px-3 py-1 !text-texto">
           Depois
         </span>
 
-        <div className="pointer-events-none absolute inset-y-0 w-px bg-rosa-claro" style={{ left: `${p}%` }}>
-          <span className="absolute top-1/2 left-1/2 grid size-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-rosa-claro bg-fundo/60 text-rosa-claro shadow-[0_0_30px_rgba(233,160,173,0.5)] backdrop-blur transition-transform group-active:scale-90 group-focus-within:ring-2 group-focus-within:ring-rosa">
+        <div className="pointer-events-none absolute inset-y-0 w-px bg-rosa" style={{ left: `${p}%` }}>
+          <span className="absolute top-1/2 left-1/2 grid size-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-rosa bg-fundo text-rosa transition-transform group-active:scale-90 group-focus-within:ring-2 group-focus-within:ring-rosa">
             <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M9 7l-5 5 5 5M15 7l5 5-5 5" />
             </svg>
@@ -61,7 +61,7 @@ function Comparador({ caso }: { caso: CasoAntesDepois }) {
         />
       </div>
       <figcaption className="mt-4 flex items-baseline justify-between gap-4">
-        <span className="subtitulo text-3xl">{caso.servico}</span>
+        <span className="titulo-cartao">{caso.servico}</span>
         <span className="corpo-pequeno">{caso.legenda}</span>
       </figcaption>
     </figure>
@@ -72,7 +72,7 @@ function Comparador({ caso }: { caso: CasoAntesDepois }) {
 export default function AntesDepois() {
   if (antesDepois.length === 0) return null
   return (
-    <section id="antes-depois" aria-label="Antes e depois" className="bg-fundo-2 py-24 sm:py-32">
+    <section id="antes-depois" aria-label="Antes e depois" className="bg-superficie py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <p className="rotulo">Antes &amp; depois</p>

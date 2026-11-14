@@ -73,13 +73,13 @@ export default function Nav() {
     <>
       <motion.div
         aria-hidden="true"
-        className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-gradient-to-r from-rosa-escuro via-rosa to-rosa-claro"
+        className="fixed inset-x-0 top-0 z-[60] h-0.5 origin-left bg-rosa"
         style={{ scaleX: progresso }}
       />
 
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-[background,backdrop-filter,padding] duration-500 ${
-          rolou ? 'bg-fundo/70 py-3 backdrop-blur-xl' : 'py-5'
+          rolou ? 'bg-fundo/85 py-3 backdrop-blur-xl' : 'py-5'
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 sm:px-8">
@@ -90,11 +90,9 @@ export default function Nav() {
               width="40"
               height="40"
               loading="lazy"
-              className="size-10 rounded-full ring-1 ring-rosa/40 transition group-hover:ring-rosa"
+              className="size-10 rounded-full"
             />
-            <span className="font-titulo text-sm tracking-[0.22em] text-titulo uppercase max-sm:hidden">
-              SR Espaço da Beleza
-            </span>
+            <span className="botao-texto text-titulo max-sm:hidden">SR Espaço da Beleza</span>
           </a>
 
           <nav aria-label="Seções" className="hidden items-center gap-9 md:flex">
@@ -102,7 +100,7 @@ export default function Nav() {
               <a
                 key={l.href}
                 href={l.href}
-                className="group relative text-[13px] tracking-[0.2em] text-texto uppercase transition-colors hover:text-rosa"
+                className="botao-texto group relative py-3 text-texto transition-colors hover:text-rosa"
               >
                 {l.texto}
                 <span className="absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-rosa transition-transform duration-500 group-hover:scale-x-100" />
@@ -115,7 +113,7 @@ export default function Nav() {
               href={site.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-rosa/60 px-5 py-2.5 text-[12px] font-medium tracking-[0.2em] text-rosa uppercase transition hover:bg-rosa hover:text-fundo"
+              className="botao-texto inline-flex items-center gap-2 rounded-full border border-rosa px-5 py-3.5 text-rosa transition hover:bg-rosa hover:text-fundo"
             >
               <IconeWhatsapp className="size-4" />
               Agendar
@@ -127,7 +125,7 @@ export default function Nav() {
               aria-expanded={menuAberto}
               aria-controls="menu-celular"
               onClick={() => setMenuAberto(true)}
-              className="grid size-11 place-items-center rounded-full border border-rosa/40 text-rosa md:hidden"
+              className="grid size-12 place-items-center rounded-full border border-rosa text-rosa md:hidden"
             >
               <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
                 <path d="M4 8h16M4 16h16" />
@@ -151,13 +149,13 @@ export default function Nav() {
             transition={{ duration: 0.3 }}
           >
             <div className="flex items-center justify-between">
-              <span className="font-titulo text-sm tracking-[0.22em] text-titulo uppercase">SR Espaço da Beleza</span>
+              <span className="botao-texto text-titulo">SR Espaço da Beleza</span>
               <button
                 ref={botaoFechar}
                 type="button"
                 aria-label="Fechar menu"
                 onClick={() => setMenuAberto(false)}
-                className="grid size-11 place-items-center rounded-full border border-rosa/40 text-rosa"
+                className="grid size-12 place-items-center rounded-full border border-rosa text-rosa"
               >
                 <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
                   <path d="M6 6l12 12M18 6L6 18" />
@@ -171,7 +169,7 @@ export default function Nav() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setMenuAberto(false)}
-                  className="titulo block text-[clamp(2.4rem,11vw,3.4rem)]"
+                  className="titulo block"
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + i * 0.07, duration: 0.5 }}
@@ -186,7 +184,7 @@ export default function Nav() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setMenuAberto(false)}
-              className="mb-4 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-rosa-claro via-rosa to-rosa-escuro px-8 py-4 text-[13px] font-medium tracking-[0.2em] text-fundo uppercase"
+              className="botao-texto mb-4 inline-flex items-center justify-center gap-3 rounded-full bg-rosa px-8 py-4 text-fundo"
             >
               <IconeWhatsapp className="size-5" />
               Agendar no WhatsApp
@@ -202,14 +200,13 @@ export default function Nav() {
             target="_blank"
             rel="noreferrer"
             aria-label="Agendar pelo WhatsApp"
-            className="fixed right-5 bottom-5 z-50 grid size-14 place-items-center rounded-full bg-gradient-to-br from-rosa-claro to-rosa-escuro text-fundo shadow-[0_10px_40px_-8px_rgba(233,160,173,0.7)] sm:right-8 sm:bottom-8"
+            className="fixed right-5 bottom-5 z-50 grid size-14 place-items-center rounded-full bg-rosa text-fundo shadow-[0_6px_20px_rgb(26_15_16/0.35)] sm:right-8 sm:bottom-8"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             whileHover={{ scale: 1.1 }}
             transition={{ type: 'spring', stiffness: 300, damping: 18 }}
           >
-            <span className="absolute inset-0 animate-ping rounded-full bg-rosa/40 [animation-duration:2.6s]" />
             <IconeWhatsapp className="relative size-7" />
           </motion.a>
         )}

@@ -29,12 +29,6 @@
   --color-tinta-suave: #674e4f;
   --color-rosa-profundo: #9e3d55;
 
-  /* Transitório: saem na etapa 2, quando os componentes que ainda os usam forem limpos. */
-  --color-fundo-2: #1a0f10;
-  --color-cetim: #2c1b1d;
-  --color-creme: #fbf1ef;
-  --color-rosa-escuro: #e9a0ad;
-
   /* ---- Tipografia ------------------------------------------------ */
   --font-titulo: 'Playfair Display', Georgia, serif;
   --font-script: 'Great Vibes', 'Playfair Display', cursive;

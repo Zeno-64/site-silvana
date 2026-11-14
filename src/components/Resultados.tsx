@@ -14,7 +14,7 @@ import Tilt from './Tilt'
 function Foto({ r, className = '', quadro = '' }: { r: Resultado; className?: string; quadro?: string }) {
   return (
     <figure className={className}>
-      <div className={`aspect-[4/5] overflow-hidden rounded-2xl border border-rosa-claro/15 ${quadro}`}>
+      <div className={`aspect-[4/5] overflow-hidden rounded-2xl ${quadro}`}>
         <img
           src={r.foto}
           alt={r.alt}
@@ -37,10 +37,10 @@ function CartaoInstagram({ className = '' }: { className?: string }) {
       href={site.instagram}
       target="_blank"
       rel="noreferrer"
-      className={`flex aspect-[4/5] flex-col items-center justify-center gap-4 rounded-2xl border border-rosa/30 bg-cetim p-6 text-center transition-colors hover:border-rosa ${className}`}
+      className={`flex aspect-[4/5] flex-col items-center justify-center gap-4 rounded-2xl bg-superficie-2 p-6 text-center ${className}`}
     >
       <IconeInstagram className="size-9 text-rosa" />
-      <span className="titulo text-[clamp(1.6rem,2.4vw,2.2rem)] leading-tight">Tem mais no Instagram</span>
+      <span className="titulo-cartao">Tem mais no Instagram</span>
       <span className="corpo-pequeno">{site.instagramUser}</span>
     </a>
   )
@@ -95,7 +95,7 @@ function GaleriaPresa() {
       // altura extra = quanto a fita precisa andar, para o ritmo ficar natural
       style={{ height: `calc(100svh + ${distancia}px)` }}
     >
-      <div className="grao sticky top-0 flex h-[100svh] flex-col justify-center overflow-hidden pt-16">
+      <div className="sticky top-0 flex h-[100svh] flex-col justify-center overflow-hidden pt-16">
         <div className="mb-6">
           <Cabecalho />
         </div>
@@ -112,7 +112,7 @@ function GaleriaPresa() {
         </motion.div>
 
         <div className="mx-auto mt-8 w-full max-w-7xl px-8" aria-hidden="true">
-          <div className="h-px w-full bg-rosa/15">
+          <div className="h-px w-full bg-linha">
             <motion.div className="h-px origin-left bg-rosa" style={{ scaleX: barra }} />
           </div>
         </div>
@@ -124,7 +124,7 @@ function GaleriaPresa() {
 /** Celular: fita horizontal nativa com encaixe, sem prender a rolagem vertical. */
 function GaleriaFita() {
   return (
-    <section id="resultados" aria-label="Resultados" className="grao relative bg-fundo pt-12 pb-16">
+    <section id="resultados" aria-label="Resultados" className="relative bg-fundo pt-12 pb-16">
       <Cabecalho />
       <div className="mt-6 flex items-start snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {resultados.map((r) => (

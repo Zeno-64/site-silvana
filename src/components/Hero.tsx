@@ -9,7 +9,6 @@ import {
 } from 'framer-motion'
 import { site } from '../lib/site'
 import { IconeSeta, IconeWhatsapp } from '../lib/Icones'
-import Blobs from './Blobs'
 import Magnetic from './Magnetic'
 import { Linhas } from './Reveal'
 
@@ -47,7 +46,7 @@ function Camada({
   return (
     <motion.div className={`absolute ${className}`} style={{ x, y }}>
       <motion.div
-        className="h-full w-full overflow-hidden rounded-[999px_999px_24px_24px] border border-rosa-claro/25 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]"
+        className="h-full w-full overflow-hidden rounded-[999px_999px_16px_16px]"
         initial={{ opacity: 0, y: 60, rotate: inclina * 2.5 }}
         animate={{ opacity: 1, y: 0, rotate: inclina }}
         transition={{ duration: 1.4, delay: atraso, ease: [0.22, 1, 0.36, 1] }}
@@ -92,10 +91,8 @@ export default function Hero() {
       id="inicio"
       ref={secao}
       onPointerMove={mover}
-      className="grao relative isolate min-h-[100svh] overflow-hidden bg-fundo"
+      className="relative isolate min-h-[100svh] overflow-hidden bg-fundo"
     >
-      <Blobs />
-
       <motion.div
         style={{ y: subir, opacity: sumir }}
         // Celular: respiro menor para a galeria chegar em até 2 telas (seção 10 da direção).
@@ -127,7 +124,7 @@ export default function Hero() {
 
           <motion.p
             // Celular: faixa de ponta a ponta, uma linha só. A partir de sm: caixa arredondada do tamanho do texto.
-            className="-mx-5 mt-5 flex w-[calc(100%+2.5rem)] md:mt-8 flex-wrap items-center justify-center gap-x-2 gap-y-1 border-y border-rosa/25 bg-rosa/[0.07] px-3 py-2.5 text-[clamp(9.5px,2.7vw,11px)] font-normal tracking-[0.1em] text-rosa uppercase sm:mx-0 sm:w-fit sm:max-w-full sm:justify-start sm:gap-x-2.5 sm:rounded-full sm:border sm:border-rosa/30 sm:px-5 sm:text-[11px] sm:tracking-[0.2em] xl:gap-x-3 xl:px-6 xl:text-[12px] xl:tracking-[0.3em]"
+            className="corpo mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 md:mt-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 1 }}
@@ -154,7 +151,7 @@ export default function Hero() {
                 href={site.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-rosa-claro via-rosa to-rosa-escuro px-8 py-4 text-[13px] font-medium tracking-[0.2em] text-fundo uppercase shadow-[0_14px_50px_-10px_rgba(233,160,173,0.65)]"
+                className="botao-texto inline-flex items-center gap-3 rounded-full bg-rosa px-8 py-4 text-fundo"
               >
                 <IconeWhatsapp className="size-5" />
                 Agendar no WhatsApp
@@ -162,7 +159,7 @@ export default function Hero() {
             </Magnetic>
             <a
               href="#servicos"
-              className="group inline-flex items-center gap-2 px-2 py-4 text-[13px] tracking-[0.2em] text-rosa uppercase"
+              className="botao-texto group inline-flex items-center gap-2 px-2 py-4 text-rosa"
             >
               Ver serviços
               <IconeSeta className="size-4 transition-transform group-hover:translate-x-1.5" />
@@ -206,13 +203,13 @@ export default function Hero() {
         onClick={descer}
         aria-label="Rolar para baixo"
         // No celular some: o hero fica curto e a faixa já aparece logo abaixo.
-        className="absolute bottom-7 left-1/2 max-md:hidden flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] tracking-[0.35em] text-texto uppercase"
+        className="rotulo absolute bottom-7 left-1/2 max-md:hidden flex -translate-x-1/2 flex-col items-center gap-2 !text-texto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.6 }}
       >
         Role
-        <span className="relative h-10 w-px overflow-hidden bg-rosa/20">
+        <span className="relative h-10 w-px overflow-hidden bg-linha">
           <motion.span
             className="absolute inset-x-0 top-0 h-4 bg-rosa"
             animate={{ y: [-16, 40] }}

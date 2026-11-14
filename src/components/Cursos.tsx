@@ -6,7 +6,7 @@ import Tilt from './Tilt'
 
 export default function Cursos() {
   return (
-    <section id="cursos" aria-label="Cursos" className="relative bg-fundo-2 py-24 sm:py-32">
+    <section id="cursos" aria-label="Cursos" className="relative bg-fundo py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <p className="rotulo">Para quem quer aprender</p>
@@ -24,10 +24,7 @@ export default function Cursos() {
           {cursos.map((c, i) => (
             <Reveal key={c.id} atraso={i * 0.15}>
               <Tilt grau={5}>
-                <article
-                  className="rounded-3xl border border-rosa-claro/20 p-6 sm:p-8"
-                  style={{ backgroundColor: c.bg }}
-                >
+                <article className="rounded-2xl bg-superficie-2 p-5 md:p-6">
                   {c.foto && (
                     <img
                       src={c.foto}
@@ -41,7 +38,7 @@ export default function Cursos() {
                   <p className="subtitulo mt-1">{c.script}</p>
                   <ul className="mt-6">
                     {c.linhas.map((l) => (
-                      <li key={l} className="corpo-pequeno border-b border-rosa/15 py-2.5 last:border-b-0">
+                      <li key={l} className="corpo-pequeno border-b border-linha py-2.5 last:border-b-0">
                         {l}
                       </li>
                     ))}
@@ -50,7 +47,7 @@ export default function Cursos() {
                     href={site.whatsapp}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-7 inline-flex items-center gap-3 rounded-full border border-rosa/60 px-6 py-3 text-[12px] font-medium tracking-[0.2em] text-rosa uppercase transition hover:bg-rosa hover:text-fundo"
+                    className="botao-texto mt-7 inline-flex items-center gap-3 rounded-full border border-rosa px-6 py-4 text-rosa transition hover:bg-rosa hover:text-fundo"
                   >
                     <IconeWhatsapp className="size-4" />
                     Quero saber das turmas

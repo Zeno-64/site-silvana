@@ -8,7 +8,7 @@ import { Linhas, Reveal } from './Reveal'
 /** Uma linha da lista: nome à esquerda e, com os valores ligados, o preço alinhado à direita. */
 function Linha({ nome, preco }: { nome: string; preco?: string }) {
   return (
-    <li className="flex items-baseline justify-between gap-4 border-b border-rosa/15 py-2.5 last:border-b-0">
+    <li className="flex items-baseline justify-between gap-4 border-b border-linha py-2.5 last:border-b-0">
       <span className="corpo-pequeno">{nome}</span>
       {preco && <span className="corpo-pequeno shrink-0 text-right">{preco}</span>}
     </li>
@@ -36,16 +36,13 @@ function Cartao({ s, computador }: { s: Servico; computador: boolean }) {
 
   const cabecalho = (
     <>
-      <span className="titulo block text-[clamp(1.9rem,3vw,2.6rem)] uppercase">{s.nome}</span>
-      <span className="subtitulo mt-1 block">{s.script}</span>
+      <span className="titulo-cartao block">{s.nome}</span>
+      <span className="frase mt-1 block">{s.script}</span>
     </>
   )
 
   return (
-    <article
-      className="rounded-3xl border border-rosa-claro/20 p-6 sm:p-8"
-      style={{ backgroundColor: s.bg }}
-    >
+    <article className="rounded-2xl bg-superficie-2 p-5 md:p-6">
       {computador ? (
         <h3>{cabecalho}</h3>
       ) : (
@@ -77,7 +74,7 @@ function Cartao({ s, computador }: { s: Servico; computador: boolean }) {
             href={site.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="mt-7 inline-flex items-center rounded-full border border-rosa/60 px-6 py-3 text-[12px] font-medium tracking-[0.2em] text-rosa uppercase transition hover:bg-rosa hover:text-fundo"
+            className="botao-texto mt-7 inline-flex items-center rounded-full border border-rosa px-6 py-4 text-rosa transition hover:bg-rosa hover:text-fundo"
           >
             Agendar {s.nome}
           </a>

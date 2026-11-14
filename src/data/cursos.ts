@@ -6,7 +6,6 @@ export type Curso = {
   titulo: string
   script: string
   linhas: string[]
-  bg: string
   foto?: string
   alt?: string
 }
@@ -22,7 +21,6 @@ export const cursos: Curso[] = [
       '8 horas de aula',
       'Certificado',
     ],
-    bg: '#3a1c25',
   },
   {
     id: 'cilios',
@@ -34,6 +32,5 @@ export const cursos: Curso[] = [
       '8 horas de aula',
       'Certificado',
     ],
-    bg: '#2a1626',
   },
 ]

@@ -6,7 +6,7 @@ import Monograma from './Monograma'
 export default function Rodape() {
   const separador = <Coracao className="size-2.5 shrink-0 text-rosa" />
   return (
-    <footer className="border-t border-rosa/15 bg-fundo px-5 py-10 sm:px-8">
+    <footer className="border-t border-linha bg-fundo px-5 py-10 sm:px-8">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-4 gap-y-3 text-[13px] tracking-[0.2em] text-texto uppercase">
         <Monograma className="size-12" />
         <span>{site.nome}</span>
