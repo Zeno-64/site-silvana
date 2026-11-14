@@ -257,23 +257,3 @@ select {
     }
   }
 }
-
-/* Faixas que rolam sozinhas (só os depoimentos, hoje ocultos). */
-.faixa {
-  display: flex;
-  width: max-content;
-  animation: rolar 70s linear infinite;
-}
-.faixa-pausa:hover .faixa {
-  animation-play-state: paused;
-}
-@keyframes rolar {
-  to {
-    transform: translateX(-50%);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .faixa {
-    animation: none;
-  }
-}
