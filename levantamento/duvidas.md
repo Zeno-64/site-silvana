@@ -151,3 +151,8 @@ Onde a direção foi ambígua ou entrou em choque com `direcao.md`, valeu a opç
   quebra em duas linhas por `text-wrap: balance`); antes eram duas linhas fixas com a segunda
   menor.
 - **`theme-color`** em `index.html` passou a `#1a0f10` (novo `fundo`).
+- **CTA da Promoção em contorno (não cheio):** a seção 9 manda botão cheio na Promoção, mas
+  a seção 12 manda "nunca dois botões cheios na mesma tela". A faixa é curta: em 360×640 e
+  em 375×812 o botão cheio do hero e o da Promoção apareciam juntos (rolagem de 440 a 560 px).
+  Valeu a regra geral: a Promoção usa o contorno de largura total, e só o hero tem o cheio.
+

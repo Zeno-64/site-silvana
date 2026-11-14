@@ -13,7 +13,7 @@ import { Linhas } from './Reveal'
 export default function Hero() {
   return (
     <section id="inicio" className="relative bg-fundo">
-      <div className="mx-auto grid max-w-7xl md:min-h-[100svh] md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-12 md:px-8 md:pt-28 md:pb-24">
+      <div className="mx-auto grid max-w-7xl md:min-h-[100svh] md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-12 md:px-8 md:pt-24 md:pb-24">
         {/* A barra do menu fica por cima da parte preta da foto. */}
         <div className="h-[46svh] overflow-hidden md:order-2 md:h-auto md:aspect-[4/5] md:rounded-2xl">
           <img

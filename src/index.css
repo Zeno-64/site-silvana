@@ -2,7 +2,7 @@
 
 @theme {
   /* ---- Cores: direção visual (levantamento/direcao-visual.md, seção 3) ----
-     Marrom-vinho no escuro, branco quente no claro. Nada de #fff, #000 nem brilho.
+     Marrom-vinho no escuro, branco quente no claro. Nada de branco nem preto absolutos, nem brilho.
      Este é o ÚNICO lugar com hex (fora o degradê do Monograma). */
 
   /* Superfícies escuras: três degraus de 0,06 de luminosidade. Quem separa um

@@ -23,7 +23,7 @@ export default function Promocao() {
         </Reveal>
 
         {/* Celular: cartões que deslizam para o lado (como a galeria), para a faixa ficar curta. Computador: grade de 3. */}
-        <Reveal atraso={0.15} className="mt-5 md:mt-12">
+        <Reveal atraso={0.15} className="mt-8">
           <ul
             tabIndex={0}
             aria-label="Preços da Black Friday"
@@ -32,7 +32,7 @@ export default function Promocao() {
             {promocao.itens.map((i) => (
               <li
                 key={i.servico}
-                className="flex w-[44%] shrink-0 snap-start flex-col items-start justify-between gap-2.5 rounded-2xl bg-superficie-2 p-4 md:w-auto md:justify-start md:gap-3 md:p-6"
+                className="flex w-[44%] shrink-0 snap-start flex-col items-start justify-between gap-3 rounded-2xl bg-superficie-2 p-5 md:w-auto md:justify-start md:p-6"
               >
                 <span className="corpo-pequeno !text-texto">{i.servico}</span>
                 <span className="titulo-cartao">{i.valor}</span>
@@ -41,14 +41,14 @@ export default function Promocao() {
           </ul>
         </Reveal>
 
-        <Reveal atraso={0.25} className="mt-5 flex justify-center md:mt-10">
+        <Reveal atraso={0.25} className="mt-6 flex justify-center md:mt-8">
           <Magnetic className="block w-full md:w-auto">
             <a
               id="promocao-cta"
               href={site.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="botao-texto btn-cheio w-full md:w-auto"
+              className="botao-texto btn-contorno w-full md:w-auto"
             >
               <IconeWhatsapp className="size-5" />
               Garantir meu horário

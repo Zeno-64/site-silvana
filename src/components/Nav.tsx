@@ -103,7 +103,7 @@ export default function Nav() {
             <span className="botao-texto text-titulo max-sm:hidden">SR Espaço da Beleza</span>
           </a>
 
-          <nav aria-label="Seções" className="hidden items-center gap-9 md:flex">
+          <nav aria-label="Seções" className="hidden items-center gap-8 md:flex">
             {links.map((l) => (
               <a
                 key={l.href}
@@ -150,7 +150,7 @@ export default function Nav() {
             role="dialog"
             aria-modal="true"
             aria-label="Menu"
-            className="fixed inset-0 z-[70] flex flex-col bg-fundo px-5 py-5 md:hidden"
+            className="fixed inset-0 z-[70] flex flex-col bg-fundo px-5 py-4 md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

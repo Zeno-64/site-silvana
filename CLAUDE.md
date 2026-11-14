@@ -78,8 +78,9 @@ npm run build    # tsc -b && vite build
   - `.rotulo` (Jost 500, maiúsculas, `rosa`) e `.botao-texto` (Jost 600, maiúsculas).
 - **Botões: três tipos, e só eles** (classes `btn-cheio`, `btn-contorno`, `btn-link`
   em `index.css`, sempre junto de `.botao-texto`). Cheio (52 px, `rosa`, texto
-  `fundo`): no máximo um por tela; o flutuante some enquanto o do hero, o da
-  Promoção ou o do Contato está visível. Contorno (48 px). Link (texto `rosa` +
+  `fundo`): no máximo um por tela (hero, Contato e menu do celular); o flutuante some
+  enquanto o do hero, o da Promoção ou o do Contato está visível. O CTA da Promoção é
+  contorno, porque a faixa é curta e o cheio dela apareceria junto com o do hero. Contorno (48 px). Link (texto `rosa` +
   seta, 48 px de toque). Sem degradê; dentro de `.papel` só entra link. Todo alvo de
   toque tem 44 px ou mais.
 - **Espaço:** escala 4, 8, 12, 16, 24, 32, 48, 64, 96 px; margem lateral de 20 px no

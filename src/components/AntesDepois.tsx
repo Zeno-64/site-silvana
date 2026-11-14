@@ -80,7 +80,7 @@ export default function AntesDepois() {
             Arraste e veja a <em>transformação</em>
           </h2>
         </Reveal>
-        <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {antesDepois.map((caso, i) => (
             <Reveal key={caso.antes} atraso={i * 0.1}>
               <Comparador caso={caso} />

@@ -8,7 +8,7 @@ import { Linhas, Reveal } from './Reveal'
 /** Uma linha da lista: nome à esquerda e, com os valores ligados, o preço alinhado à direita. */
 function Linha({ nome, preco }: { nome: string; preco?: string }) {
   return (
-    <li className="corpo flex items-baseline justify-between gap-4 border-b border-linha py-2.5 last:border-b-0">
+    <li className="corpo flex items-baseline justify-between gap-4 border-b border-linha py-3 last:border-b-0">
       <span>{nome}</span>
       {preco && <span className="shrink-0 text-right">{preco}</span>}
     </li>
