@@ -23,6 +23,13 @@ export const IconeSeta = (p: P) => (
   </svg>
 )
 
+/** Seta para baixo: indicador da sanfona (gira ao abrir). */
+export const IconeSetaBaixo = (p: P) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...p}>
+    <path d="M6 9l6 6 6-6" />
+  </svg>
+)
+
 /** Coração do monograma (centrado na origem, ~22px de largura). */
 export const CORACAO = 'M0 9C-11 0 -12 -8 -6 -11C-3 -12.400 0 -10.500 0 -7.500C0 -10.500 3 -12.400 6 -11C12 -8 11 0 0 9Z'
 
