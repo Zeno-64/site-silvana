@@ -1,26 +1,39 @@
 @import 'tailwindcss';
 
 @theme {
-  /* ---- Superfícies ------------------------------------------------
-     Cetim chocolate: o mesmo fundo dos posts da Silvana. O rosa só
-     brilha porque tem escuro em volta. */
-  --color-fundo: #120a09;
-  --color-fundo-2: #1a0f0d;
-  --color-cetim: #2a1713;
+  /* ---- Cores: direção visual (levantamento/direcao-visual.md, seção 3) ----
+     Marrom-vinho no escuro, branco quente no claro. Nada de #fff, #000 nem brilho.
+     Este é o ÚNICO lugar com hex (fora o degradê do Monograma). */
 
-  /* ---- Rosa: a única cor de destaque do site ----------------------
-     `rosa` = subtítulos, rótulos e botões. `rosa-claro`/`rosa-escuro` só
-     compõem o degradê dos botões e os brilhos de fundo. */
-  --color-rosa-claro: #f9d4d8;
+  /* Superfícies escuras: três degraus de 0,06 de luminosidade. Quem separa um
+     do outro é o degrau somado ao respiro, não a borda. */
+  --color-fundo: #1a0f10;
+  --color-superficie: #2c1b1d;
+  --color-superficie-2: #3e282b;
+  --color-linha: #533b3e;
+
+  /* Texto sobre escuro */
+  --color-titulo: #fbf1ef;
+  --color-texto: #e9d8d5;
+  --color-texto-suave: #c4aaa9;
+
+  /* Rosa: o único destaque (botões, rótulos, cursiva). */
   --color-rosa: #e9a0ad;
-  --color-rosa-escuro: #c9707f;
-  --color-creme: #fbefe9;
+  --color-rosa-claro: #f9d4d8;
 
-  /* ---- Papéis de texto (uma cor por papel, sem exceção) ----------
-     Título: branco puro (+ brilho rosa, ver .titulo) · Subtítulo: rosa ·
-     Texto: abaixo. Sobre #120a09 o texto tem ~13:1 de contraste. */
-  --color-titulo: #ffffff;
-  --color-texto: #ead9d4;
+  /* Seção clara (.papel): só Serviços. */
+  --color-papel: #fbecea;
+  --color-papel-2: #f4dddc;
+  --color-linha-papel: #e1c2c3;
+  --color-tinta: #342022;
+  --color-tinta-suave: #674e4f;
+  --color-rosa-profundo: #9e3d55;
+
+  /* Transitório: saem na etapa 2, quando os componentes que ainda os usam forem limpos. */
+  --color-fundo-2: #1a0f10;
+  --color-cetim: #2c1b1d;
+  --color-creme: #fbf1ef;
+  --color-rosa-escuro: #e9a0ad;
 
   /* ---- Tipografia ------------------------------------------------ */
   --font-titulo: 'Playfair Display', Georgia, serif;
@@ -39,7 +52,7 @@
     background: var(--color-fundo);
     color: var(--color-texto);
     font-family: var(--font-sans);
-    font-weight: 300;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
   }
@@ -75,69 +88,130 @@ select {
   cursor: url('/cursor/seta-link.svg') 3 2, pointer;
 }
 
-/* ---- Tipografia: 3 papéis, cada um com UMA fonte e UMA cor ------------
-   O tamanho padrão vem aqui; títulos de destaque (hero, capítulos...)
-   sobrescrevem só o tamanho com `text-[...]`, nunca fonte nem cor. */
+/* ---- Seção clara ----------------------------------------------------------
+   Troca as variáveis dentro dela: os componentes seguem usando as mesmas classes
+   (`titulo`, `corpo`, `text-rosa`, `bg-superficie-2`, `border-linha`).
+   Dentro de `.papel` não entra botão cheio (texto escuro sobre rosa-profundo
+   não tem contraste): só link de texto. */
+.papel {
+  background: var(--color-papel);
+  color: var(--color-tinta);
+  --color-titulo: var(--color-tinta);
+  --color-texto: var(--color-tinta);
+  --color-texto-suave: var(--color-tinta-suave);
+  --color-rosa: var(--color-rosa-profundo);
+  --color-superficie-2: var(--color-papel-2);
+  --color-linha: var(--color-linha-papel);
+}
+
+/* ---- Tipografia: 9 estilos, sempre os mesmos --------------------------------
+   Celular primeiro (375 px); `md` (768 px) é adaptação. Nenhum `text-[...]` solto
+   em componente: o único ajuste permitido é o do título do hero no computador. */
 @layer components {
-  /* Título: Playfair, branco puro, leve brilho rosa em volta. O brilho está
-     em `em` para acompanhar o tamanho da letra (grande = brilho maior). */
+  /* Título de seção. */
   .titulo {
     font-family: var(--font-titulo);
-    font-size: clamp(2.4rem, 6vw, 4.8rem);
+    font-size: clamp(2rem, 8.5vw, 3.5rem);
     font-weight: 500;
-    line-height: 1;
+    line-height: 1.05;
     color: var(--color-titulo);
-    text-shadow:
-      0 0 0.14em rgb(233 160 173 / 0.5),
-      0 0 0.36em rgb(233 160 173 / 0.25);
+    text-wrap: balance;
   }
-  /* Palavra em destaque no título: só itálico. Mesma fonte, mesma cor. */
+  /* Título do hero: mesmo estilo, maior. */
+  .titulo-hero {
+    font-size: clamp(2.5rem, 11.7vw, 5rem);
+    line-height: 1;
+  }
+  /* Palavra em destaque no título: só itálico, mesma fonte e cor. */
   .titulo em {
     font-style: italic;
   }
 
-  /* Subtítulo: script, rosa. */
-  .subtitulo {
-    font-family: var(--font-script);
-    font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  /* Título de cartão (serviço, curso, valor da promoção). */
+  .titulo-cartao {
+    font-family: var(--font-titulo);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--color-titulo);
+  }
+
+  /* Frase da cliente dentro de um cartão: itálico, rosa, sem ser cursiva. */
+  .frase {
+    font-family: var(--font-titulo);
+    font-style: italic;
+    font-size: 1.0625rem;
     font-weight: 400;
-    line-height: 1.1;
+    line-height: 1.3;
     color: var(--color-rosa);
   }
 
-  /* Rótulo (linha pequena em maiúsculas acima do título): mesmo rosa do subtítulo. */
+  /* Cursiva: no máximo 3 vezes na página, só em cabeçalho de seção. */
+  .subtitulo {
+    font-family: var(--font-script);
+    font-size: clamp(1.625rem, 7vw, 2.25rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--color-rosa);
+    text-wrap: balance;
+  }
+
+  /* Texto corrido e texto de apoio. */
+  .corpo {
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-texto);
+  }
+  .corpo-pequeno {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-texto-suave);
+  }
+
+  /* Rótulo: linha pequena em maiúsculas acima do título. */
   .rotulo {
-    font-size: 13px;
-    letter-spacing: 0.3em;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    line-height: 1.4;
     text-transform: uppercase;
     color: var(--color-rosa);
   }
 
-  /* Texto corrido: Jost, sempre a mesma cor. `corpo-pequeno` para legendas e cartões. */
-  .corpo {
-    font-size: clamp(1.125rem, 1.06rem + 0.25vw, 1.25rem);
-    line-height: 1.65;
-    color: var(--color-texto);
+  /* Texto de botão e de link de navegação. A cor vem do botão. */
+  .botao-texto {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    text-transform: uppercase;
   }
-  .corpo-pequeno {
-    font-size: 1.0625rem;
-    line-height: 1.55;
-    color: var(--color-texto);
+
+  @media (min-width: 768px) {
+    .titulo-hero {
+      font-size: 5rem;
+    }
+    .titulo-cartao {
+      font-size: 1.75rem;
+    }
+    .frase {
+      font-size: 1.125rem;
+    }
+    .subtitulo {
+      font-size: 2.25rem;
+    }
+    .corpo {
+      font-size: 1.1875rem;
+    }
+    .corpo-pequeno {
+      font-size: 1rem;
+    }
   }
 }
 
-/* Textura de tecido: ruído estático, custa um único desenho. */
-.grao::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.07;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-}
-
-/* Faixas que rolam sozinhas (fotos e textos). */
+/* Faixas que rolam sozinhas (só os depoimentos, hoje ocultos). */
 .faixa {
   display: flex;
   width: max-content;
@@ -156,4 +230,3 @@ select {
     animation: none;
   }
 }
-
