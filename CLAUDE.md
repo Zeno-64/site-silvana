@@ -5,7 +5,8 @@ tranças, bronze e cursos). Todo CTA leva ao WhatsApp; sem backend. Instagram da
 cliente: https://www.instagram.com/srespacodabelezaofc/
 
 **Antes de mexer, ler [CONTEXTO.md](CONTEXTO.md)** (decisões, o que já existe,
-armadilhas) e [CONTEUDO-PENDENTE.md](CONTEUDO-PENDENTE.md) (o que falta da cliente).
+armadilhas), [levantamento/direcao-visual.md](levantamento/direcao-visual.md) (a
+aparência) e [CONTEUDO-PENDENTE.md](CONTEUDO-PENDENTE.md) (o que falta da cliente).
 
 ## Fluxo de trabalho (regra fixa)
 
@@ -41,37 +42,66 @@ npm run build    # tsc -b && vite build
   Black Friday em `src/data/promocao.ts` (tem data de fim); cursos em
   `src/data/cursos.ts`; `antesDepois.ts` e `depoimentos.ts` (lista vazia = seção
   não renderiza).
-- **A direção do site é `levantamento/direcao.md`** (ordem das seções, copy,
-  fotos). Dúvidas e desvios da implementação ficam em `levantamento/duvidas.md`.
-  O script (`.subtitulo`) é sempre uma frase literal do perfil da cliente.
-- **Tokens de design** só em `src/index.css` (`@theme`): cores `fundo`, `rosa*`,
-  `creme`, `titulo`, `texto`; fontes `font-titulo` (Playfair Display),
-  `font-script` (Great Vibes), `font-sans` (Jost). Não usar Cormorant Garamond
-  (quebra ê/ô em pt-BR).
-- **Tipografia: 3 papéis, cada um com UMA fonte e UMA cor** (pedido do Kevin,
-  para reduzir poluição visual). Usar as classes de `index.css`, sem inventar
-  cor/fonte por componente:
-  - **Título** (`.titulo`): Playfair, branco puro + leve brilho rosa
-    (`text-shadow` em `em`, acompanha o tamanho). Palavra de destaque dentro do
-    título = `<em>` (só itálico; nada de script, degradê ou outra cor). O
-    tamanho padrão é o de título de seção; hero/capítulos/contato sobrescrevem
-    só o tamanho com `text-[...]`.
-  - **Subtítulo** (`.subtitulo`): Great Vibes, rosa. **Rótulo** (`.rotulo`,
-    linha pequena em maiúsculas acima do título): o mesmo rosa.
-  - **Texto** (`.corpo`; `.corpo-pequeno` para legendas/listas/cartões): Jost,
-    sempre `texto`. Nada de `suave`, `creme` ou opacidades para variar o texto.
-  - Botões: contorno/preenchimento em `rosa`; o CTA principal usa o degradê
-    rosa. Não criar cor de destaque por seção (os capítulos só trocam o fundo).
-  - Se um título tiver brilho e estiver dentro de máscara `overflow-hidden`,
-    a máscara precisa de folga (ver `Linhas`), senão corta o brilho.
+- **O site é para celular** (cerca de 90% das visitas vêm do Instagram, no telefone).
+  Toda decisão é tomada em 375×812 e conferida em 360×640; o computador herda os
+  tokens e as regras, sem efeito próprio novo. **Conferir sempre nos dois tamanhos.**
+- **Duas direções mandam:** `levantamento/direcao.md` (ordem das seções, copy, fotos)
+  e **`levantamento/direcao-visual.md` (aparência: cor, tipografia, forma, espaço,
+  fotos e movimento; vence `direcao.md` onde as duas discordarem)**. Dúvidas e desvios
+  da implementação ficam em `levantamento/duvidas.md`. O script (`.subtitulo`) é
+  sempre uma frase literal do perfil da cliente.
+- **Tokens de design** só em `src/index.css` (`@theme`); nenhum hex fora dele (exceto
+  o degradê do `Monograma.tsx`, que é a logo). Superfícies escuras: `fundo`,
+  `superficie`, `superficie-2` (cartão), `linha` (divisória de 1 px). Texto: `titulo`
+  (branco quente), `texto`, `texto-suave`. Destaque: `rosa` (e `rosa-claro` só no
+  botão pressionado). Seção clara: `.papel` (só Serviços) troca as variáveis dentro
+  dela (`papel`, `papel-2`, `linha-papel`, `tinta`, `tinta-suave`, `rosa-profundo`);
+  os componentes seguem usando as mesmas classes. Fontes: `font-titulo` (Playfair
+  Display), `font-script` (Great Vibes), `font-sans` (Jost). Não usar Cormorant
+  Garamond (quebra ê/ô em pt-BR).
+- **Nada de cor absoluta, brilho, sombra, degradê ou transparência de `rosa`.**
+  Sem `#fff`/`#000`, sem `text-shadow`. Cartão se separa do fundo pelo degrau de
+  superfície, não por borda. Borda só em botão de contorno (`rosa` cheio) e divisória
+  (`linha`). Sombra: só no botão flutuante. Raios: 16 px (cartão e foto) e total
+  (botão); o único arco é o retrato da Silvana em "Quem cuida de você".
+- **Tipografia: 9 estilos, sempre os mesmos**, em classes de `index.css`; nenhum
+  `text-[...]` solto em componente (única exceção: o título do hero no computador).
+  Nenhum texto abaixo de 12 px; corpo em Jost 400.
+  - `.titulo` (Playfair 500, `titulo`), `.titulo-hero` (mesmo, maior) e
+    `.titulo-cartao`. Palavra de destaque = `<em>` (só itálico). Sem maiúsculas em
+    Playfair.
+  - `.frase`: Playfair itálico, `rosa`; as frases da cliente dentro de cartões.
+  - `.subtitulo`: Great Vibes, `rosa`. **Cursiva no máximo 3 vezes na página**, uma
+    por seção, só em cabeçalho (Resultados, Quem cuida de você, Cursos).
+  - `.corpo` (Jost 400, `texto`), `.corpo-pequeno` (`texto-suave`: legendas, notas,
+    rodapé; nunca em parágrafo principal nem em item de lista).
+  - `.rotulo` (Jost 500, maiúsculas, `rosa`) e `.botao-texto` (Jost 600, maiúsculas).
+- **Botões: três tipos, e só eles** (classes `btn-cheio`, `btn-contorno`, `btn-link`
+  em `index.css`, sempre junto de `.botao-texto`). Cheio (52 px, `rosa`, texto
+  `fundo`): no máximo um por tela; o flutuante some enquanto o do hero, o da
+  Promoção ou o do Contato está visível. Contorno (48 px). Link (texto `rosa` +
+  seta, 48 px de toque). Sem degradê; dentro de `.papel` só entra link. Todo alvo de
+  toque tem 44 px ou mais.
+- **Espaço:** escala 4, 8, 12, 16, 24, 32, 48, 64, 96 px; margem lateral de 20 px no
+  celular; seção com 64 px em cima e embaixo (96 no computador).
 - **Animação**: só `transform` e `opacity`; respeitar `prefers-reduced-motion`
-  (já há `MotionConfig reducedMotion="user"` em `main.tsx`). Efeitos de mouse
-  (magnético, tilt) só com `pointerType === 'mouse'`.
+  (já há `MotionConfig reducedMotion="user"` em `main.tsx`). A primeira tela não
+  depende de animação (só o título sobe pela máscara, em até 0,6 s). Revelação ao
+  rolar: 16 px, 0,5 s, atraso máximo de 0,1 s, uma vez só. **Nada em laço infinito.**
+  Efeitos de mouse (magnético, tilt) só com `pointerType === 'mouse'`.
 - **Cursor**: só CSS, sem JavaScript. Seta rosa em SVG (`public/cursor/seta.svg`
   e `seta-link.svg`, esta para links/botões), ligada em `src/index.css`. Foi
   escolha do Kevin trocar o cursor animado com rótulo por este; não recriar o
   componente. Para arrastar, usar os cursores nativos (`cursor-grab`,
   `cursor-ew-resize`), que vencem a seta por serem declarados no elemento.
+- **Conteúdo separado do código**: contato/marca/local em `src/lib/site.ts`
+  (`endereco` e `horario` vazios = não aparecem; `mostrarPrecos` liga os valores);
+  serviços em `src/data/servicos.ts`; galeria em `src/data/resultados.ts`;
+  Black Friday em `src/data/promocao.ts` (tem data de fim); cursos em
+  `src/data/cursos.ts`; `antesDepois.ts` e `depoimentos.ts` (lista vazia = seção
+  não renderiza). Serviço e curso não têm cor própria.
+- **Fotos:** sem filtro nem cor por cima; nenhuma exibida maior que a metade da
+  largura real do arquivo; legenda só quando diz a técnica.
 - **Não inventar informação da cliente** (preços, horários, técnicas, números).
   Se não está no Instagram nem foi dito pelo Kevin, vira item em
   `CONTEUDO-PENDENTE.md`.

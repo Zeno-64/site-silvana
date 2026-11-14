@@ -1,7 +1,8 @@
 # Contexto do projeto (passagem de sessão)
 
-Escrito em 2026-09-30 e reescrito em 2026-11-13, depois de implementar
-[levantamento/direcao.md](levantamento/direcao.md). Serve para a próxima sessão abrir
+Escrito em 2026-09-30, reescrito em 2026-11-13 (depois de implementar
+[levantamento/direcao.md](levantamento/direcao.md)) e atualizado em 2026-11-14 com a
+[direção visual](levantamento/direcao-visual.md). Serve para a próxima sessão abrir
 direto nesta pasta sem depender do histórico do workspace.
 
 ## O que é
@@ -19,9 +20,12 @@ Mateus, São Paulo (das marcações e hashtags dos posts). WhatsApp:
   colaboração, 8 destaques frame a frame) e leitura visual com nota de 1 a 3 por post.
 - `levantamento/imagens.md`: as 24 fotos nota 3 baixadas em `levantamento/imagens/`
   (fora do git).
-- `levantamento/direcao.md`: a direção que o site segue. **Onde ela e o código
+- `levantamento/direcao.md`: ordem das seções, copy e fotos. **Onde ela e o código
   discordarem, vale a direção.** Onde for ambígua, o que foi decidido está em
   `levantamento/duvidas.md`.
+- `levantamento/direcao-visual.md`: a aparência (cor, tipografia, forma, espaço, fotos,
+  movimento), medida e pensada para celular (375×812 e 360×640). **Vence `direcao.md`
+  em tudo que é aparência.** Foi implementada em 9 etapas (14/11/2026).
 - `levantamento/auditoria.md`: auditoria do site anterior (história, copy, identidade).
 
 ## Decisões do Kevin
@@ -30,23 +34,30 @@ Mateus, São Paulo (das marcações e hashtags dos posts). WhatsApp:
   quando a cliente enviar a lista de serviços. Quando vierem, encaixar entre Serviços e
   Resultados.
 - Antes/depois e depoimentos existem, mas ocultos por falta de dados.
-- Tipografia em 3 papéis, uma fonte e uma cor cada (ver `CLAUDE.md`).
+- Tipografia em papéis fixos (hoje 9 estilos, ver `CLAUDE.md`). **Mudança de uma regra do
+  Kevin, feita pela direção visual: o texto passou a ter dois tons (`texto` e
+  `texto-suave`); ele pode vetar.** O título perdeu o brilho rosa e a cursiva ficou
+  restrita a 3 cabeçalhos.
 - Só o que o Instagram sustenta entra no site; o resto vai para `CONTEUDO-PENDENTE.md`.
 
 ## Ordem da página (atual)
 
-`Hero` → `Promocao` (Black Friday, some depois de 20/11/2026 23h59) → `Resultados`
-(9 fotos 4:5 + cartão do Instagram; presa no computador, fita nativa no celular) →
-`AntesDepois` (oculto) → `Depoimentos` (oculto) → `Servicos` (cardápio em texto; sanfona
-no celular) → `Espaco` ("Quem cuida de você", `id="espaco"`) → `Contato` → `Cursos` →
-`Rodape`. Globais: `Nav` (barra, menu de tela cheia no celular, progresso, botão
-flutuante de WhatsApp que some no celular enquanto o CTA do Contato está na tela); o
-cursor é só CSS. Primitivas: `Magnetic`, `Tilt`, `Reveal`/`Linhas`, `Blobs`,
-`Monograma`, `Coracao` (ornamento único), `useMediaQuery`.
+`Hero` (foto de ponta a ponta no celular, duas colunas no computador) → `Promocao`
+(Black Friday, some depois de 20/11/2026 23h59) → `Resultados` (7 fotos 4:5 + cartão do
+Instagram; presa no computador, fita nativa no celular) → `AntesDepois` (oculto) →
+`Depoimentos` (oculto) → `Servicos` (em papel claro, `.papel`; sanfona no celular) →
+`Espaco` ("Quem cuida de você", `id="espaco"`, só o retrato em arco) → `Contato` →
+`Cursos` → `Rodape`. Globais: `Nav` (barra de 64 px, menu de tela cheia no celular,
+progresso de 2 px, botão flutuante de WhatsApp que some enquanto o botão cheio do hero,
+da Promoção ou do Contato está na tela); o cursor é só CSS. Primitivas: `Magnetic`,
+`Tilt` (só na galeria do computador), `Reveal`/`Linhas`, `Monograma`, `Coracao`
+(ornamento único), `useMediaQuery`. Sequência de fundos: `fundo`, `superficie`
+(Promoção), `fundo`, `papel` (Serviços), `fundo`, `superficie` (Contato), `fundo`.
 
 Saíram do repositório: `FaixaTexto`, `Numeros`, `Mural`, `Capitulos` (e
-`capitulos.ts`), `ArteSemFoto`, as artes de post (`bronze`, `sobrancelhas`,
-`unhas-azul`) e as fotos antigas.
+`capitulos.ts`), `ArteSemFoto`, `Blobs`, a classe `.grao`, as artes de post (`bronze`,
+`sobrancelhas`, `unhas-azul`) e as fotos antigas (e, na direção visual, `fachada`,
+`espaco-recepcao`, `unhas-leitosas` e `unhas-francesinha-ouro`).
 
 ## Estado / limitações atuais
 
@@ -60,27 +71,32 @@ Saíram do repositório: `FaixaTexto`, `Numeros`, `Mural`, `Capitulos` (e
   vazios, nada de "em breve" no site. JSON-LD e `canonical` esperam endereço e domínio.
 - **Monograma** é um SVG redesenhado a partir do letreiro (`Monograma.tsx`), não a logo
   original.
-- `espaco-recepcao.webp` é um recorte de uma poltrona só (o original tinha o texto "Sonhei"
-  por cima) e `fachada.webp` mostra o rosto do adesivo da vitrine. A fachada é um close
-  de capa de reel: para mostrar a frente inteira, só com foto nova. Ver `levantamento/duvidas.md`.
+- Fachada e recepção estão **fora do site** (a fachada era um close de capa de reel com o
+  rosto do adesivo; a recepção, um recorte de 300 px). Voltam só com foto nova da
+  Silvana (pendência 11 de `CONTEUDO-PENDENTE.md`).
 - Nenhuma foto de rosto de cliente ou aluna está no site. As 5 fotos de entrega de
   certificado esperam autorização (campo `foto?` em `cursos.ts`).
 
 ## Detalhes técnicos que custaram tempo
 
 - `whileInView` dentro de `overflow-hidden` não dispara: ver `CLAUDE.md`.
-- `Linhas` (`Reveal.tsx`): a máscara ganhou 0.4em de folga em volta (para não cortar o
-  brilho rosa do título); por isso o texto sobe de 160%, e o contêiner é `flex-col`
-  (margens negativas de blocos vizinhos colapsariam).
+- `Linhas` (`Reveal.tsx`): a máscara tem 0.15em de folga em volta (para não cortar o
+  itálico); o texto sobe de 130% em 0,6 s, e o contêiner é `flex-col` (margens negativas
+  de blocos vizinhos colapsariam).
 - `Resultados`: no computador a altura da seção = `100svh + distância que a fita precisa
   andar`, medida com `ResizeObserver`. No celular é outro componente (`GaleriaFita`),
   escolhido por `useMediaQuery`, porque `useScroll` com alvo fora da tela não funciona.
 - `Servicos`: no celular o painel de cada cartão só é renderizado quando aberto (sanfona
-  sem animar altura, para respeitar "só transform e opacity").
-- No `Hero`, a linha "Cabelos · Unhas · Cílios · Sobrancelhas · Bronze" fica numa caixa:
-  no celular vira faixa de ponta a ponta (uma linha só, tamanho em `vw`); de `sm` em
-  diante, caixa arredondada.
-- O botão flutuante observa `#contato-cta` (id do CTA do Contato).
+  sem animar altura, para respeitar "só transform e opacity"). A seção usa `.papel`, que
+  troca as variáveis de cor dentro dela; por isso nenhum componente dela sabe que está
+  no claro.
+- No `Hero`, a foto é a primeira coisa do celular (46svh, `object-position` 50% 0% para a
+  barra do menu cair na parte preta) e só o título tem animação de entrada. Cada item da
+  linha de serviços não quebra no meio (`whitespace-nowrap`), com o espaço fora do `span`,
+  senão a linha estoura a largura do celular.
+- O botão flutuante observa `#hero-cta`, `#promocao-cta` e `#contato-cta`: um botão cheio
+  por tela, também no computador.
+- Âncoras: `html` tem `scroll-padding-top: 4rem` para parar abaixo da barra fixa.
 - No shell do Claude Code no Windows, blocos `cat <<EOF` muito grandes com aspas mistas
   falharam; para arquivos longos usar a ferramenta Write.
 - O navegador embutido devolve screenshot atrasado em um passo: depois de rolar, esperar

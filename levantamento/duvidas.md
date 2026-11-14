@@ -107,3 +107,47 @@ decidido (sempre a opção mais simples).
   texto é estreita). Conferido em 360, 375, 768, 1024 e 1440 px: sempre 2 linhas.
 - **Legenda da galeria:** saiu de cima da foto (tinha um degradê `fundo/90`) e foi para
   baixo dela, fora da imagem. Nada de cor sobre as unhas.
+
+## Direção visual ([direcao-visual.md](direcao-visual.md), implementada em 14/11/2026)
+
+Onde a direção foi ambígua ou entrou em choque com `direcao.md`, valeu a opção mais simples.
+
+- **Rótulo do hero:** a direção visual escreve `São Mateus, SP` (uma linha) e `direcao.md`
+  escreve `São Paulo`. Em 360 px "São Paulo" não cabe numa linha, então o celular mostra
+  "SP" e de `sm` para cima aparece "São Paulo" (dois `span`, um escondido em cada tamanho).
+- **Hero sem parallax, sem inclinação e sem "Role":** o botão "Role" foi removido inteiro,
+  não só o traço animado (sozinho ele não diz nada). O parallax do mouse também saiu no
+  computador, porque o palco com duas fotos sobrepostas deixou de existir.
+- **Foto do hero no celular:** `object-position` 50% 0% (a direção diz que a barra fica
+  sobre a parte preta; com 45% ela caía sobre as mãos). No computador continua 50% 45%.
+- **Nome do salão na barra** (só de `sm` para cima): em `.botao-texto` (Jost), porque a
+  regra "sem maiúsculas em Playfair" proíbe o estilo antigo e não há um 10º estilo. Os
+  links da barra do computador também usam `.botao-texto`.
+- **Cursos:** a direção visual manda rótulo `Nail design` / `Lash design` e título
+  `Curso de unhas` / `Curso de cílios` (a `direcao.md` tinha rótulo "Curso de", título
+  "Unhas" e a cursiva "nail design"). Valeu a visual; `cursos.ts` troca `script` por
+  `rotulo`. Sem `Tilt` nos cartões ("iguais").
+- **Botão flutuante:** some também com o botão do hero e o da Promoção, e isso vale no
+  computador também (a regra era só para o celular), por ser a opção mais simples.
+- **Galeria no computador (presa):** só troca de tokens; continua com `Tilt` e o reflexo
+  claro que segue o mouse (é um `radial-gradient` de efeito de mouse, não fundo nem botão).
+- **`unhas-brancas-ouro`:** a foto já é 4:5, então `object-position` não corta nada. A
+  marca d'água sai com `scale(1.16)` partindo do canto de cima à direita (`origem` em
+  `resultados.ts`).
+- **Arquivos apagados de `public/img`:** `unhas-leitosas`, `unhas-francesinha-ouro`,
+  `fachada`, `espaco-recepcao` (ficam no histórico do git; os originais seguem em
+  `levantamento/imagens/`).
+- **Monograma do rodapé:** o SVG tem "SR" e "Espaço da Beleza" em Great Vibes. É a logo, então
+  não entra na conta das "3 cursivas" nem dos 9 estilos de texto da conferência.
+- **`Reveal`:** o atraso é limitado a 0,1 s dentro do componente (`Math.min`), então chamadas
+  antigas com `atraso={0.35}` etc. continuam compilando e ficam dentro da regra. Perdeu o
+  parâmetro `y` (era 28 px; agora fixo em 16 px).
+- **Depoimentos (oculto):** deixou de ser uma faixa que roda sozinha (era um laço infinito) e
+  virou fita nativa com encaixe, igual à galeria.
+- **Faixa da Black Friday no celular:** continua em cartões que deslizam para o lado (a
+  direção visual só pede troca de tokens, botão cheio de largura total e valor em
+  `.titulo-cartao`).
+- **Cabeçalho de Cursos:** `Cursos <em>profissionais</em>` em uma frase corrida (no celular
+  quebra em duas linhas por `text-wrap: balance`); antes eram duas linhas fixas com a segunda
+  menor.
+- **`theme-color`** em `index.html` passou a `#1a0f10` (novo `fundo`).
