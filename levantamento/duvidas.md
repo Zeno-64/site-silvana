@@ -156,3 +156,33 @@ Onde a direção foi ambígua ou entrou em choque com `direcao.md`, valeu a opç
   em 375×812 o botão cheio do hero e o da Promoção apareciam juntos (rolagem de 440 a 560 px).
   Valeu a regra geral: a Promoção usa o contorno de largura total, e só o hero tem o cheio.
 
+
+## Galeria com as fotos do WhatsApp (15/11/2026)
+
+A Silvana mandou 22 fotos e 4 vídeos pelo WhatsApp em 14/11 (originais em
+`levantamento/whatsapp/`, fora do git, numerados na ordem em que chegaram). A galeria
+trocou as 7 fotos do Instagram por 9 delas (pedido do Kevin: as novas substituem as
+antigas). As 7 antigas saíram de `public/img` e ficam guardadas em
+`levantamento/fotos-antigas/`, com o mesmo nome, caso alguma volte.
+
+- **Escolhidas (ordem da fita):** `04` unhas azul e dourado, `06` cabelo preto liso,
+  `16` cílios, `03` unhas preto e nude, `26` tranças, `25` sobrancelha, `07` cabelo loiro,
+  `19` francesinha rosa, `01` francesinha branca. Abre e fecha com cetim rosa, como a
+  direção pedia, e a galeria deixa de ser quase só unhas (pendência 10).
+- **Recorte no arquivo, não no CSS:** cada foto foi cortada em 4:5 com Pillow e salva em
+  WebP qualidade 78, sem redimensionar (já vêm com 731 a 1086 px de largura, abaixo dos
+  1200 px do resto). Nenhuma passa da regra de nitidez no celular (cartão de 293 px).
+- **Marca d'água:** fora do quadro em 7 das 9. Nos dois cabelos (`06` e `07`) ela fica no
+  canto de baixo, sobre a capa: cortar tiraria as pontas, que são o resultado. Kevin pode
+  vetar.
+- **Sem legenda:** ela não disse a técnica de nenhuma foto (só "Vou mandar os cabelos
+  agora"), então nenhuma etiqueta. `cabelo-matizado`, a única com legenda, saiu.
+- **Rosto parcial:** cílios (`16`) e sobrancelha (`25`) mostram parte do rosto da cliente.
+  Foram mandadas pela dona para o site, mas a autorização da cliente não está registrada
+  (pendência 3).
+- **Ficaram de fora:** bronze (`10` a `14`: luz azul e verde destoa, e são fotos de corpo),
+  noiva (`23`, rosto inteiro de cliente), equipe (`21`, legenda "Equipe": candidata a
+  "Quem cuida de você", decisão de seção), logo (`22`, 719 px, já existe o monograma),
+  `02` (a marca d'água encosta nas unhas), `05` (deitada: em 4:5 corta as mãos), `08` e
+  `17` (repetem os cílios), `24` (repete as tranças). Os vídeos (`09` 0:17, `15` 0:59,
+  `18` 0:25 com legenda "Curso", `20` 0:24) não entram: o site não tem lugar para vídeo.

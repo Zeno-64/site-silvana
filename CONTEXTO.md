@@ -43,8 +43,9 @@ Mateus, São Paulo (das marcações e hashtags dos posts). WhatsApp:
 ## Ordem da página (atual)
 
 `Hero` (foto de ponta a ponta no celular, duas colunas no computador) → `Promocao`
-(Black Friday, some depois de 20/11/2026 23h59) → `Resultados` (7 fotos 4:5 + cartão do
-Instagram; presa no computador, fita nativa no celular) → `AntesDepois` (oculto) →
+(Black Friday, some depois de 20/11/2026 23h59) → `Resultados` (9 fotos 4:5 mandadas pela
+Silvana no WhatsApp + cartão do Instagram; presa no computador, fita nativa no celular; ver
+"Galeria com as fotos do WhatsApp" em `levantamento/duvidas.md`) → `AntesDepois` (oculto) →
 `Depoimentos` (oculto) → `Servicos` (em papel claro, `.papel`; sanfona no celular) →
 `Espaco` ("Quem cuida de você", `id="espaco"`, só o retrato em arco) → `Contato` →
 `Cursos` → `Rodape`. Globais: `Nav` (barra de 64 px, menu de tela cheia no celular,

@@ -10,14 +10,14 @@ destrava** e onde entra no código. A direção completa está em `levantamento/
 |---|---|---|
 | 1 | Qual o endereço e o horário de funcionamento? | `site.endereco`, `site.horario`, mapa, JSON-LD (`src/lib/site.ts`, `Contato.tsx`) |
 | 2 | Os valores das tabelas de Unhas e de Cabelos dos destaques ainda valem? | `site.mostrarPrecos = true` (valores já estão em `src/data/servicos.ts`) |
-| 3 | Pode usar no site as fotos de unhas e de cabelo do Instagram? | Mantém a galeria no ar com tranquilidade (`src/data/resultados.ts`) |
+| 3 | As clientes das fotos de cílios e de sobrancelha (mandadas no WhatsApp em 14/11) autorizam aparecer no site? Aparece parte do rosto. | Mantém `cilios.webp` e `sobrancelha.webp` na galeria (`src/data/resultados.ts`) |
 | 4 | As alunas das fotos de certificado autorizam aparecer no site? | Fotos nos cartões de Cursos (`2025-11-09-formatura-...-s5` e `-s7`, campo `foto` em `src/data/cursos.ts`) |
 | 5 | A Kerolyn autoriza publicar a mensagem dela sobre o curso? | Primeiro depoimento em `src/data/depoimentos.ts` |
 | 6 | Tranças continua sendo feita no salão? E os volumes egípcio, glamour e russo de cílios? | Mantém ou tira o cartão de Tranças; completa Cílios |
 | 7 | O número (11) 98282-8471 é o WhatsApp do salão? | Botões com mensagem pronta por serviço (`https://wa.me/55DDDNUMERO?text=`) |
 | 8 | A foto de 28/10/2026 (francesinha no cetim rosa) é foto real? | Mais uma foto na galeria |
 | 9 | Compressa quente e massagem são de todo atendimento ou foram só no frio? | Voltam para Unhas e Sobrancelhas em `servicos.ts` (posts de 10/09 e 14/09 abrem com "Nesse frio") |
-| 10 | Tem fotos de cílios, sobrancelhas, bronze e tranças sem rosto e sem texto? | A galeria deixa de ser quase só unhas |
+| 10 | ~~Tem fotos de cílios, sobrancelhas, bronze e tranças?~~ Chegaram pelo WhatsApp em 14/11 (bronze ficou de fora: luz destoante). Qual a técnica de cada foto (para a legenda)? | Etiquetas em `src/data/resultados.ts` |
 | 11 | Quem é a mulher do adesivo da vitrine (foto da fachada)? Tem foto da fachada **tirada de longe, pegando a frente inteira** (de preferência sem o adesivo)? E da recepção sem o texto "Sonhei"? | Seção "Quem cuida de você": `fachada.webp` e `espaco-recepcao.webp` saíram do site (e de `public/img`) na direção visual; voltam com as fotos novas |
 
 ## Bloqueia o lançamento

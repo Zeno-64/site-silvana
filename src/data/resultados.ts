@@ -1,5 +1,7 @@
-// Galeria: fotos reais do Instagram do salão, 4:5, sem arte de post e sem repetição.
-// Etiqueta só com o que dá para afirmar (as legendas originais são só emoji).
+// Galeria: fotos que a Silvana mandou pelo WhatsApp em 14/11/2026 (originais em
+// levantamento/whatsapp/, fora do git), recortadas em 4:5 já sem a marca d'água do canto,
+// menos nos dois cabelos (a marca fica sobre a capa e cortar tiraria as pontas).
+// Etiqueta só com o que dá para afirmar: ela não disse a técnica de nenhuma foto.
 export type Resultado = {
   foto: string
   alt: string
@@ -14,14 +16,15 @@ export type Resultado = {
   origem?: string
 }
 
-// Ordem da direção visual (seção 7): abre e fecha com cetim rosa.
+// Abre e fecha com cetim rosa; unhas alternam com os outros serviços.
 export const resultados: Resultado[] = [
-  { foto: '/img/unhas-preto-marmore.webp', alt: 'Unhas amendoadas em preto e marmorizado com folha dourada', largura: 1200, altura: 1600 },
-  { foto: '/img/unhas-bordo.webp', alt: 'Unhas curtas em bordô sobre cetim rosé', largura: 1200, altura: 1500 },
-  // A marca d'água do canto de baixo fica fora do quadro: a foto cresce a partir do canto de cima, à direita.
-  { foto: '/img/unhas-brancas-ouro.webp', alt: 'Unhas amendoadas em branco leitoso com filete dourado na cutícula', largura: 1200, altura: 1500, escala: 1.16, origem: '100% 0%' },
-  { foto: '/img/cabelo-matizado.webp', alt: 'Cabelo loiro matizado, liso, visto de costas', tag: 'Cabelos · matização', largura: 1200, altura: 1500, posicao: '50% 40%', escala: 1.08 },
-  { foto: '/img/unhas-nude-mesa.webp', alt: 'Unhas amendoadas em nude rosado', largura: 1200, altura: 1598 },
-  { foto: '/img/unhas-holograficas.webp', alt: 'Unhas longas com efeito cromado holográfico', largura: 1200, altura: 1423 },
-  { foto: '/img/unhas-francesinha-strass.webp', alt: 'Unhas amendoadas com francesinha branca e pedrinhas', largura: 1200, altura: 1600 },
+  { foto: '/img/unhas-azul-dourado.webp', alt: 'Unhas amendoadas em nude com azul royal, francesinha branca e folha dourada, sobre cetim rosa', largura: 819, altura: 1024 },
+  { foto: '/img/cabelo-liso-preto.webp', alt: 'Cabelo preto longo e liso, visto de costas, com capa rosa', largura: 1086, altura: 1358 },
+  { foto: '/img/cilios.webp', alt: 'Cílios volumosos, em close do olho', largura: 746, altura: 932 },
+  { foto: '/img/unhas-preto-nude.webp', alt: 'Unhas amendoadas em preto e nude com filete dourado, sobre cetim rosa', largura: 800, altura: 1000 },
+  { foto: '/img/trancas.webp', alt: 'Tranças rente à cabeça, uma delas com fita prateada trançada', largura: 823, altura: 1029 },
+  { foto: '/img/sobrancelha.webp', alt: 'Sobrancelha desenhada, vista de lado, com o olho fechado', largura: 774, altura: 968 },
+  { foto: '/img/cabelo-loiro.webp', alt: 'Cabelo loiro longo e liso, visto de costas, com capa rosa', largura: 1086, altura: 1358 },
+  { foto: '/img/unhas-francesinha-rosa.webp', alt: 'Unhas quadradas com francesinha rosa, sobre cetim rosa', largura: 731, altura: 914 },
+  { foto: '/img/unhas-francesinha-branca.webp', alt: 'Unhas quadradas longas com francesinha branca, sobre cetim rosa', largura: 819, altura: 1024 },
 ]
