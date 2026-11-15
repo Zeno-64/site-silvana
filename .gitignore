@@ -6,3 +6,7 @@ dist
 
 # Imagens baixadas do Instagram (levantamento): não versionar
 levantamento/imagens/
+
+# Fotos e vídeos enviados pela Silvana no WhatsApp (podem ter clientes; só entram
+# no site depois de escolhidas e com autorização): não versionar
+levantamento/whatsapp/
