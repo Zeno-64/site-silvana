@@ -71,10 +71,16 @@ function Cartao({ s, computador }: { s: Servico; computador: boolean }) {
           {site.mostrarPrecos && s.temPrecos && (
             <p className="corpo-pequeno mt-4">Valores de referência. Confirme no WhatsApp.</p>
           )}
-          <a href={site.whatsapp} target="_blank" rel="noreferrer" className="botao-texto btn-link mt-2 !justify-start">
+          <a href={site.whatsapp} target="_blank" rel="noreferrer" className="botao-texto btn-link mt-2 !flex !justify-start">
             Agendar {s.nome}
             <IconeSeta className="size-4" />
           </a>
+          {s.pagina && (
+            <a href={s.pagina} className="botao-texto btn-link !flex !justify-start">
+              Ver fotos do {s.nome.toLowerCase()}
+              <IconeSeta className="size-4" />
+            </a>
+          )}
         </div>
       )}
     </article>

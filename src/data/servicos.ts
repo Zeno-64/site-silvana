@@ -21,6 +21,8 @@ export type Servico = {
   nota?: string
   /** Com valores ligados, o cartão ganha o aviso de referência. */
   temPrecos?: boolean
+  /** Página própria do serviço (hoje só o Bronze): o cartão ganha o link das fotos. */
+  pagina?: string
 }
 
 export const servicos: Servico[] = [
@@ -117,6 +119,7 @@ export const servicos: Servico[] = [
       { nome: 'Bronzeamento artificial' },
       { nome: 'Tatuagem de bronze' },
     ],
+    pagina: '/bronze/',
   },
   {
     id: 'trancas',

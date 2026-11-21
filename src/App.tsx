@@ -3,6 +3,7 @@ import Contato from './components/Contato'
 import Cursos from './components/Cursos'
 import Depoimentos from './components/Depoimentos'
 import Espaco from './components/Espaco'
+import FaixaBronze from './components/FaixaBronze'
 import Hero from './components/Hero'
 import Nav from './components/Nav'
 import Promocao from './components/Promocao'
@@ -20,6 +21,7 @@ export default function App() {
         <Resultados />
         <AntesDepois />
         <Depoimentos />
+        <FaixaBronze />
         <Servicos />
         <Espaco />
         <Contato />
