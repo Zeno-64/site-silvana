@@ -3,9 +3,10 @@ import { site } from '../lib/site'
 import { Linhas, Reveal } from './Reveal'
 
 /**
- * Quem cuida de você: apresentação da Silvana e higiene. O retrato em arco é a
- * única forma de arco da página (assinatura). Fachada e recepção saíram até a
- * Silvana mandar fotos novas (pendência 11 de CONTEUDO-PENDENTE.md).
+ * Quem cuida de você: apresentação da Silvana e higiene. A foto é a da equipe, que a
+ * Silvana mandou com a legenda "Equipe" (quadrada: três rostos não cabem num arco).
+ * Ninguém é nomeado: não se sabe quem é quem. Fachada e recepção seguem fora até
+ * chegarem fotos novas (CONTEUDO-PENDENTE.md).
  */
 export default function Espaco() {
   return (
@@ -21,16 +22,16 @@ export default function Espaco() {
           <p className="subtitulo mt-2">cuidado e higiene em cada detalhe</p>
         </div>
 
-        <div className="mx-auto w-full max-w-[320px] md:col-start-2 md:row-span-2 md:row-start-1 md:max-w-[400px] md:self-center">
+        <div className="mx-auto w-full max-w-[360px] md:col-start-2 md:row-span-2 md:row-start-1 md:max-w-[440px] md:self-center">
           <Reveal>
-            <div className="aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-2xl">
+            <div className="aspect-square overflow-hidden rounded-2xl">
               <img
-                src="/img/silvana-salao.webp"
-                alt="Silvana de uniforme rosa, com prancha e secador, em frente ao logo do salão"
-                width={828}
-                height={1472}
+                src="/img/equipe.webp"
+                alt="Equipe do SR Espaço da Beleza"
+                width={1200}
+                height={1200}
                 loading="lazy"
-                className="h-full w-full object-cover object-[50%_20%]"
+                className="h-full w-full object-cover"
               />
             </div>
           </Reveal>
