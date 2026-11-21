@@ -16,7 +16,7 @@ export const site = {
   mostrarPrecos: false,
   // Assinatura de quem fez o site (última linha do rodapé). O `ref` diz ao portfólio de onde veio a visita.
   autor: {
-    nome: 'Kevin Baradelli',
+    nome: 'Zeno',
     url: 'https://zeno.dev.br/?ref=sr-espaco-da-beleza',
   },
 } as const
