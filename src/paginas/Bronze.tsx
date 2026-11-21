@@ -77,7 +77,7 @@ export default function Bronze() {
             <h2 className="titulo mt-16">
               O <em>resultado</em>
             </h2>
-            <Reveal className="mt-8 grid grid-cols-2 gap-3">
+            <Reveal className="mt-8 grid max-w-[500px] grid-cols-2 gap-3">
               {resultado.map((f) => (
                 <Quadro key={f.src} f={f} />
               ))}
@@ -91,7 +91,7 @@ export default function Bronze() {
             <h2 className="titulo">
               Na <em>cabine</em>
             </h2>
-            <Reveal className="mt-8 grid grid-cols-2 gap-3">
+            <Reveal className="mt-8 grid max-w-[500px] grid-cols-2 gap-3">
               {cabine.map((f) => (
                 <Quadro key={f.src} f={f} />
               ))}
