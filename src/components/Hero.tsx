@@ -5,25 +5,25 @@ import Magnetic from './Magnetic'
 import { Linhas } from './Reveal'
 
 /**
- * Celular (o que importa): foto de ponta a ponta com 46svh, depois rótulo, título,
- * serviços, botão cheio e link. Tudo, menos o título, já nasce visível: nada de
- * animação de entrada no texto nem laço infinito.
- * Computador: duas colunas, texto à esquerda e a mesma foto à direita, 4:5.
+ * Celular (o que importa): barra sólida, foto de ponta a ponta em 4:3 logo abaixo
+ * dela, depois rótulo, título, serviços, botão cheio e link. Tudo, menos o título,
+ * já nasce visível: nada de animação de entrada no texto nem laço infinito.
+ * Computador: duas colunas, texto à esquerda e a mesma foto à direita, 4:3.
  */
 export default function Hero() {
   return (
     <section id="inicio" className="relative bg-fundo">
-      <div className="mx-auto grid max-w-7xl md:min-h-[100svh] md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-12 md:px-8 md:pt-24 md:pb-24">
-        {/* A barra do menu fica por cima da parte preta da foto. */}
-        <div className="h-[46svh] overflow-hidden md:order-2 md:h-auto md:aspect-[4/5] md:rounded-2xl">
+      <div className="mx-auto grid max-w-7xl pt-16 md:min-h-[100svh] md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-12 md:px-8 md:pt-24 md:pb-24">
+        {/* A foto é deitada (4:3) e aparece inteira; no celular começa abaixo da barra. */}
+        <div className="aspect-[4/3] overflow-hidden md:order-2 md:rounded-2xl">
           <img
-            src="/img/hero-unhas.webp"
-            alt="Mãos com unhas amendoadas em nude rosado sobre cetim rosé, fundo preto"
-            width={1200}
-            height={1600}
+            src="/img/hero.webp"
+            alt="Mãos com unhas amendoadas em vermelho e prata com brilho, sobre cetim rosa"
+            width={1280}
+            height={960}
             loading="eager"
             fetchPriority="high"
-            className="h-full w-full object-cover object-[50%_0%] md:object-[50%_45%]"
+            className="h-full w-full object-cover"
           />
         </div>
 
