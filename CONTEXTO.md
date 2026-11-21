@@ -2,7 +2,8 @@
 
 Escrito em 2026-09-30, reescrito em 2026-11-13 (depois de implementar
 [levantamento/direcao.md](levantamento/direcao.md)) e atualizado em 2026-11-14 com a
-[direção visual](levantamento/direcao-visual.md). Serve para a próxima sessão abrir
+[direção visual](levantamento/direcao-visual.md) e em 2026-11-21 com as fotos novas e a
+página do Bronze ([plano](levantamento/plano-fotos-novas.md)). Serve para a próxima sessão abrir
 direto nesta pasta sem depender do histórico do workspace.
 
 ## O que é
@@ -42,18 +43,19 @@ Mateus, São Paulo (das marcações e hashtags dos posts). WhatsApp:
 
 ## Ordem da página (atual)
 
-`Hero` (foto de ponta a ponta no celular, duas colunas no computador) → `Promocao`
+`Hero` (barra sólida e foto 4:3 de ponta a ponta no celular, duas colunas no computador) → `Promocao`
 (Black Friday, some depois de 20/11/2026 23h59) → `Resultados` (9 fotos 4:5 mandadas pela
 Silvana no WhatsApp + cartão do Instagram; presa no computador, fita nativa no celular; ver
 "Galeria com as fotos do WhatsApp" em `levantamento/duvidas.md`) → `AntesDepois` (oculto) →
-`Depoimentos` (oculto) → `Servicos` (em papel claro, `.papel`; sanfona no celular) →
-`Espaco` ("Quem cuida de você", `id="espaco"`, só o retrato em arco) → `Contato` →
+`Depoimentos` (oculto) → `FaixaBronze` (`id="bronze"`, 2 fotos e o botão "Ver o bronze",
+que leva a `/bronze/`) → `Servicos` (em papel claro, `.papel`; sanfona no celular) →
+`Espaco` ("Quem cuida de você", `id="espaco"`, foto da equipe, quadrada) → `Contato` →
 `Cursos` → `Rodape`. Globais: `Nav` (barra de 64 px, menu de tela cheia no celular,
 progresso de 2 px, botão flutuante de WhatsApp que some enquanto o botão cheio do hero,
 da Promoção ou do Contato está na tela); o cursor é só CSS. Primitivas: `Magnetic`,
 `Tilt` (só na galeria do computador), `Reveal`/`Linhas`, `Monograma`, `Coracao`
-(ornamento único), `useMediaQuery`. Sequência de fundos: `fundo`, `superficie`
-(Promoção), `fundo`, `papel` (Serviços), `fundo`, `superficie` (Contato), `fundo`.
+(ornamento único), `useMediaQuery`. Sequência de fundos: `fundo`, `superficie` (Promoção), `fundo`, `superficie` (Bronze),
+`papel` (Serviços), `fundo`, `superficie` (Contato), `fundo`.
 
 Saíram do repositório: `FaixaTexto`, `Numeros`, `Mural`, `Capitulos` (e
 `capitulos.ts`), `ArteSemFoto`, `Blobs`, a classe `.grao`, as artes de post (`bronze`,
@@ -62,9 +64,10 @@ Saíram do repositório: `FaixaTexto`, `Numeros`, `Mural`, `Capitulos` (e
 
 ## Estado / limitações atuais
 
-- **Imagens em WebP** (1200 px, qualidade 78, gerado com Pillow; 1,5 MB no total). Só
-  `hero-unhas.jpg` (para o `og:image`) e `logo-perfil.jpg` continuam em JPEG. Ver
-  `levantamento/duvidas.md`.
+- **Imagens em WebP** (qualidade 78, recortadas no arquivo, sem ampliar). Só `hero-og.jpg`
+  (o `og:image`) é JPEG. Todas vêm do WhatsApp da Silvana; as do Instagram estão em
+  `levantamento/fotos-antigas/`. Ver `levantamento/duvidas.md`.
+- **Vídeo:** `public/video/bronze.mp4` (9,8 s, sem áudio, 0,8 MB), só na página do Bronze.
 - **Preços desligados** (`site.mostrarPrecos = false`). As tabelas de Unhas e Cabelos
   estão em `servicos.ts`, mas só aparecem quando a Silvana confirmar que valem. As de
   Cílios e Tranças são assinadas por outras profissionais e não entram.
@@ -75,8 +78,19 @@ Saíram do repositório: `FaixaTexto`, `Numeros`, `Mural`, `Capitulos` (e
 - Fachada e recepção estão **fora do site** (a fachada era um close de capa de reel com o
   rosto do adesivo; a recepção, um recorte de 300 px). Voltam só com foto nova da
   Silvana (pendência 11 de `CONTEUDO-PENDENTE.md`).
-- Nenhuma foto de rosto de cliente ou aluna está no site. As 5 fotos de entrega de
+- **Rostos no site:** a foto da equipe (mandada pela dona com a legenda "Equipe"; ninguém
+  é nomeado) e parte do rosto nas fotos de cílios e de sobrancelha. As fotos de bronze são
+  de corpo, sem rosto. Autorizações: pendências 3, 12 e 13 de `CONTEUDO-PENDENTE.md`. As 5 fotos de entrega de
   certificado esperam autorização (campo `foto?` em `cursos.ts`).
+
+## Página do Bronze
+
+`/bronze/` é uma segunda página estática, sem roteador: `bronze/index.html` →
+`src/bronze.tsx` → `src/paginas/Bronze.tsx`, declarada em `build.rollupOptions.input`
+(`vite.config.ts`). Tem barra própria (`← Início`, avatar, `Agendar`), cabeçalho com o
+único botão cheio, "O resultado" (3 fotos), "Na cabine" (2 fotos e o vídeo), a lista de
+técnicas e o `Rodape`. O texto vem do cartão Bronze de `servicos.ts`. Não usa o `Nav`
+(ele depende das âncoras da página inicial) nem tem botão flutuante.
 
 ## Detalhes técnicos que custaram tempo
 
@@ -91,8 +105,9 @@ Saíram do repositório: `FaixaTexto`, `Numeros`, `Mural`, `Capitulos` (e
   sem animar altura, para respeitar "só transform e opacity"). A seção usa `.papel`, que
   troca as variáveis de cor dentro dela; por isso nenhum componente dela sabe que está
   no claro.
-- No `Hero`, a foto é a primeira coisa do celular (46svh, `object-position` 50% 0% para a
-  barra do menu cair na parte preta) e só o título tem animação de entrada. Cada item da
+- No `Hero`, a foto (4:3, inteira) é a primeira coisa do celular, logo abaixo da barra,
+  que ali tem fundo sólido (`max-md:bg-fundo`): a foto é rosa-claro e a barra por cima dela
+  ficaria ilegível. Só o título tem animação de entrada. Cada item da
   linha de serviços não quebra no meio (`whitespace-nowrap`), com o espaço fora do `span`,
   senão a linha estoura a largura do celular.
 - O botão flutuante observa `#hero-cta`, `#promocao-cta` e `#contato-cta`: um botão cheio

@@ -153,9 +153,9 @@ Regras:
 
 ## 5. Forma
 
-- **Raios:** 16 px (cartão e foto) e total (botão). Saem `rounded-3xl` e os arcos, menos
-  **um**: o retrato da Silvana em "Quem cuida de você" (arco em cima, 16 px embaixo). O
-  arco vira a assinatura da página por aparecer uma vez só.
+- **Raios:** 16 px (cartão e foto) e total (botão). Saem `rounded-3xl` e os arcos.
+  (Em 21/11/2026 saiu também o último arco, o do retrato da Silvana: a foto de "Quem cuida
+  de você" passou a ser a da equipe, quadrada, e três rostos não cabem num arco.)
 - **Bordas:** cartão e foto não têm borda. Divisória de lista: 1 px `linha`.
 - **Sombras:** nenhuma, a não ser no botão flutuante
   (`0 6px 20px rgb(26 15 16 / 0.35)`), para ele aparecer também sobre o papel.
@@ -279,8 +279,8 @@ Sanfona, Unhas aberta. Cartões `papel-2`, raio 16, sem borda. Cabeçalho: nome 
 `.corpo-pequeno`, link "Agendar unhas". Computador: 2 colunas, tudo aberto.
 
 ### Quem cuida de você
-Rótulo, título, cursiva, **retrato da Silvana em arco** (largura total até 320 px,
-centralizado, 4:5), os dois parágrafos, link "Conheça os cursos".
+Rótulo, título, cursiva, **foto da equipe, quadrada** (largura total até 360 px,
+centralizada, raio de 16 px; até 21/11/2026 era o retrato da Silvana em arco), os dois parágrafos, link "Conheça os cursos".
 
 ### Contato
 Faixa `superficie`, sem manchas. Rótulo, título no tamanho de seção, frase, botão cheio

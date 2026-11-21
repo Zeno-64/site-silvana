@@ -186,3 +186,40 @@ antigas). As 7 antigas saíram de `public/img` e ficam guardadas em
   `02` (a marca d'água encosta nas unhas), `05` (deitada: em 4:5 corta as mãos), `08` e
   `17` (repetem os cílios), `24` (repete as tranças). Os vídeos (`09` 0:17, `15` 0:59,
   `18` 0:25 com legenda "Curso", `20` 0:24) não entram: o site não tem lugar para vídeo.
+
+## Fotos novas no site inteiro e página do Bronze (21/11/2026)
+
+Execução de [plano-fotos-novas.md](plano-fotos-novas.md). Onde o plano era ambíguo, valeu
+a opção mais simples.
+
+- **Ferramenta:** os recortes foram feitos com o `ffmpeg` (WebP qualidade 78), não com o
+  Pillow: o Python em modo isolado não enxerga o Pillow do usuário. Cada recorte foi
+  conferido olhando o arquivo.
+- **Arquivar junto com a troca:** o plano mandava arquivar todas as fotos antigas na etapa
+  1. Elas foram movidas para `levantamento/fotos-antigas/` no mesmo commit em que a
+  referência saiu do código (hero e avatar na etapa 2, retrato na etapa 3), para o site no
+  ar nunca ficar com imagem quebrada entre um push e outro.
+- **Hero:** `05` inteira (1280×960). No celular a barra ganhou fundo sólido e a foto começa
+  abaixo dela, em 4:3. Em 360×640 o botão cheio termina em 617 px (cabe sem rolar). A marca
+  d'água do canto ficou: cortá-la tiraria parte da mão.
+- **Recortes do bronze:** `13` → 792×990 a partir do topo (termina antes da fita verde);
+  `14` → 640×800 a partir do topo e sem a faixa da direita, o que deixa **as duas tatuagens
+  fora do quadro**; `10` → 1000×1250; `11` e `12` → 900×1124.
+- **Vídeo:** 9,8 s (a tela preta começa em 9,97 s), sem áudio, 40 px de cima cortados
+  (marca do CapCut), `crf 30` para ficar em 0,84 MB (com 28 passava de 1 MB). A capa é o
+  quadro dos 7 s.
+- **Foto da equipe:** fundo branco puro do próprio arquivo (é foto, não cor do site).
+  Ninguém é nomeado.
+- **Página do Bronze:** o avatar fica no centro da barra (com `← Início` à esquerda e
+  `Agendar` à direita). "O resultado" e "Na cabine" são títulos de seção, não informação
+  da cliente. A lista de técnicas tem o rótulo `Técnicas`. Largura máxima de 768 px no
+  computador (a página é uma coluna só).
+- **Faixa do Bronze na página inicial:** no computador, texto e botão à esquerda e as duas
+  fotos à direita; no celular, o botão vem depois das fotos, com a largura toda.
+- **Link no cartão:** `servicos.ts` ganhou o campo opcional `pagina`; o cartão que o tem
+  mostra `Ver fotos do bronze` abaixo de `Agendar Bronze`.
+- **Black Friday:** a faixa sumiu sozinha depois de 20/11, como previsto. O componente e
+  `promocao.ts` continuam no repositório.
+- **Não entraram:** `02`, `08`, `17`, `24` (repetem a galeria), `23` (noiva, rosto de
+  cliente), `15-video` (cabelo; pendência 14), `18-video` e `20-video` (gravações de tela
+  do Instagram).

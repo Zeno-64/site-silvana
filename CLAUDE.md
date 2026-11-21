@@ -1,7 +1,7 @@
 # SR Espaço da Beleza — site da Silvana
 
-Site de uma página de um salão de beleza (cabelos, unhas, cílios, sobrancelhas,
-tranças, bronze e cursos). Todo CTA leva ao WhatsApp; sem backend. Instagram da
+Site de um salão de beleza (cabelos, unhas, cílios, sobrancelhas, tranças, bronze e
+cursos): a página inicial e a página do Bronze (`/bronze/`). Todo CTA leva ao WhatsApp; sem backend. Instagram da
 cliente: https://www.instagram.com/srespacodabelezaofc/
 
 **Antes de mexer, ler [CONTEXTO.md](CONTEXTO.md)** (decisões, o que já existe,
@@ -23,8 +23,10 @@ aparência) e [CONTEUDO-PENDENTE.md](CONTEUDO-PENDENTE.md) (o que falta da clien
 ## Stack
 
 Vite 8 + React 19 + TypeScript 6 + Tailwind 4 (`@tailwindcss/vite`, sem
-`tailwind.config`) + framer-motion 13. Node 22 (`.nvmrc`). Sem react-router
-(página única com âncoras). Deploy: Cloudflare, assets estáticos de `dist/`
+`tailwind.config`) + framer-motion 13. Node 22 (`.nvmrc`). Sem react-router:
+duas páginas estáticas, a inicial (`index.html`, com âncoras) e a do Bronze
+(`bronze/index.html`, entrada `src/bronze.tsx`, componente `src/paginas/Bronze.tsx`),
+declaradas em `build.rollupOptions.input` no `vite.config.ts`. Deploy: Cloudflare, assets estáticos de `dist/`
 (`wrangler.jsonc`).
 
 ```bash
@@ -63,7 +65,7 @@ npm run build    # tsc -b && vite build
   Sem `#fff`/`#000`, sem `text-shadow`. Cartão se separa do fundo pelo degrau de
   superfície, não por borda. Borda só em botão de contorno (`rosa` cheio) e divisória
   (`linha`). Sombra: só no botão flutuante. Raios: 16 px (cartão e foto) e total
-  (botão); o único arco é o retrato da Silvana em "Quem cuida de você".
+  (botão). Não há arco: a foto de "Quem cuida de você" é a da equipe, quadrada.
 - **Tipografia: 9 estilos, sempre os mesmos**, em classes de `index.css`; nenhum
   `text-[...]` solto em componente (única exceção: o título do hero no computador).
   Nenhum texto abaixo de 12 px; corpo em Jost 400.
@@ -72,7 +74,8 @@ npm run build    # tsc -b && vite build
     Playfair.
   - `.frase`: Playfair itálico, `rosa`; as frases da cliente dentro de cartões.
   - `.subtitulo`: Great Vibes, `rosa`. **Cursiva no máximo 3 vezes na página**, uma
-    por seção, só em cabeçalho (Resultados, Quem cuida de você, Cursos).
+    por seção, só em cabeçalho (Resultados, Quem cuida de você, Cursos). Na página do Bronze,
+    uma só ("ativando a marquinha").
   - `.corpo` (Jost 400, `texto`), `.corpo-pequeno` (`texto-suave`: legendas, notas,
     rodapé; nunca em parágrafo principal nem em item de lista).
   - `.rotulo` (Jost 500, maiúsculas, `rosa`) e `.botao-texto` (Jost 600, maiúsculas).
@@ -102,7 +105,13 @@ npm run build    # tsc -b && vite build
   `src/data/cursos.ts`; `antesDepois.ts` e `depoimentos.ts` (lista vazia = seção
   não renderiza). Serviço e curso não têm cor própria.
 - **Fotos:** sem filtro nem cor por cima; nenhuma exibida maior que a metade da
-  largura real do arquivo; legenda só quando diz a técnica.
+  largura real do arquivo; legenda só quando diz a técnica. Hoje todas vêm do que a
+  Silvana mandou pelo WhatsApp (originais em `levantamento/whatsapp/`, fora do git);
+  as do Instagram que saíram estão em `levantamento/fotos-antigas/`.
+- **Bronze:** a página inicial mostra só 2 fotos (`FaixaBronze`, os recortes de fundo
+  rosa) e leva a `/bronze/`. Os closes da cabine de luz azul e o vídeo ficam só lá. O
+  texto da página do Bronze vem do cartão Bronze de `servicos.ts`, sem duplicar.
+- **Vídeo:** sem faixa de áudio, sem tocar sozinho, sem repetir, `preload="none"` e capa.
 - **Não inventar informação da cliente** (preços, horários, técnicas, números).
   Se não está no Instagram nem foi dito pelo Kevin, vira item em
   `CONTEUDO-PENDENTE.md`.
@@ -117,5 +126,6 @@ seguir o mesmo padrão.
 
 ## Preview
 
-`.claude/launch.json` traz a entrada `site-silvana` (porta 5174). Se o app abrir
+`.claude/launch.json` traz a entrada `site-silvana` (porta 5174); a página do
+Bronze abre em `/bronze/`. Se o app abrir
 outro servidor, o `launch.json` lido é o da raiz do workspace.

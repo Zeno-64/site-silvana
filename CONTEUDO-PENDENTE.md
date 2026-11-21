@@ -20,11 +20,15 @@ destrava** e onde entra no código. A direção completa está em `levantamento/
 | 10 | ~~Tem fotos de cílios, sobrancelhas, bronze e tranças?~~ Chegaram pelo WhatsApp em 14/11 (bronze ficou de fora: luz destoante). Qual a técnica de cada foto (para a legenda)? | Etiquetas em `src/data/resultados.ts` |
 | 11 | Quem é a mulher do adesivo da vitrine (foto da fachada)? Tem foto da fachada **tirada de longe, pegando a frente inteira** (de preferência sem o adesivo)? E da recepção sem o texto "Sonhei"? | Seção "Quem cuida de você": `fachada.webp` e `espaco-recepcao.webp` saíram do site (e de `public/img`) na direção visual; voltam com as fotos novas |
 
+| 12 | As clientes das fotos e do vídeo de bronze (mandados no WhatsApp em 14/11) autorizam aparecer no site? São fotos de corpo; a tatuagem da foto das costas foi cortada do quadro. | Mantém a faixa do Bronze na página inicial e a página `/bronze/` (`FaixaBronze.tsx`, `src/paginas/Bronze.tsx`) |
+| 13 | Quem é quem na foto da equipe? A Silvana está nela? As três autorizam aparecer? | Nomes e legenda em "Quem cuida de você" (`Espaco.tsx`, `equipe.webp`) |
+| 14 | Pode usar o vídeo de cabelo (0:59) no site? Em que seção? | Hoje a página inicial não tem vídeo (`levantamento/whatsapp/15-video.mp4`) |
+
 ## Bloqueia o lançamento
 
 | Item | Onde entra |
 |---|---|
-| **Logo original em PNG/SVG, fundo transparente** | Hoje o monograma é um SVG redesenhado a partir do letreiro (`src/components/Monograma.tsx`) e o avatar do menu é a foto de perfil em 150 px (`public/img/logo-perfil.jpg`). |
+| **Logo original em PNG/SVG, fundo transparente** | Hoje o monograma é um SVG redesenhado a partir do letreiro (`src/components/Monograma.tsx`) e o avatar do menu é um recorte da foto da logo em néon que a Silvana mandou (`public/img/logo.webp`, 192 px). |
 | **Domínio** | Definir e apontar depois do deploy (ver passo a passo em `../landing-page-natalie/PLAYBOOK.md`). Com domínio e endereço entram `canonical` e JSON-LD. |
 
 ## Deixa o site mais forte

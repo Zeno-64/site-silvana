@@ -1,5 +1,8 @@
 # Plano: fotos novas no site inteiro e página do Bronze
 
+**Executado em 21/11/2026** (6 commits "Fotos novas 1/6" a "6/6"); o que foi decidido na
+execução está em [duvidas.md](duvidas.md).
+
 Escrito em 15/11/2026 para ser executado no Opus. Decisão do Kevin: **as fotos que a
 Silvana mandou pelo WhatsApp em 14/11 substituem as antigas do Instagram em todo o site**;
 do bronze, **2 fotos ficam na página inicial** e **o resto (fotos e vídeo) vai para uma
