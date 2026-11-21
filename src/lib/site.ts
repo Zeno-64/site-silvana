@@ -14,4 +14,9 @@ export const site = {
   // Liga os valores de referência das tabelas dos destaques (só depois que a
   // Silvana confirmar que ainda valem).
   mostrarPrecos: false,
+  // Assinatura de quem fez o site (última linha do rodapé). O `ref` diz ao portfólio de onde veio a visita.
+  autor: {
+    nome: 'Kevin Baradelli',
+    url: 'https://zeno.dev.br/?ref=sr-espaco-da-beleza',
+  },
 } as const

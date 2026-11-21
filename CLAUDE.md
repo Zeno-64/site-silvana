@@ -116,6 +116,9 @@ npm run build    # tsc -b && vite build
   Se não está no Instagram nem foi dito pelo Kevin, vira item em
   `CONTEUDO-PENDENTE.md`.
 - Fotos de clientes só com autorização delas.
+- **Assinatura do autor:** última linha do `Rodape` (aparece nas duas páginas), com nome
+  e link em `site.autor` (`src/lib/site.ts`). Usa a fonte e a cor do rodapé; só o nome é
+  sublinhado. Não ganha cor, fonte nem botão próprios.
 
 ## Armadilha conhecida
 
