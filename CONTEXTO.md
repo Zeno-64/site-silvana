@@ -72,7 +72,11 @@ Saíram do repositório: `FaixaTexto`, `Numeros`, `Mural`, `Capitulos` (e
   estão em `servicos.ts`, mas só aparecem quando a Silvana confirmar que valem. As de
   Cílios e Tranças são assinadas por outras profissionais e não entram.
 - **Endereço e horário** não existem no Instagram: `site.endereco` e `site.horario`
-  vazios, nada de "em breve" no site. JSON-LD e `canonical` esperam endereço e domínio.
+  vazios, nada de "em breve" no site. JSON-LD e `canonical` esperam o endereço (o
+  domínio já existe: `srespaçobeleza.com.br`, ver README).
+- **Domínio com ç:** no Cloudflare e no DNS ele aparece como `xn--srespaobeleza-ngb.com.br`.
+  O painel do Cloudflare trava na escolha de plano com esse nome; a zona ativou abrindo a
+  página de DNS pelo endereço com ç (`/srespa%C3%A7obeleza.com.br/dns/records`).
 - **Monograma** é um SVG redesenhado a partir do letreiro (`Monograma.tsx`), não a logo
   original.
 - Fachada e recepção estão **fora do site** (a fachada era um close de capa de reel com o

@@ -29,7 +29,7 @@ destrava** e onde entra no código. A direção completa está em `levantamento/
 | Item | Onde entra |
 |---|---|
 | **Logo original em PNG/SVG, fundo transparente** | Hoje o monograma é um SVG redesenhado a partir do letreiro (`src/components/Monograma.tsx`) e o avatar do menu é um recorte da foto da logo em néon que a Silvana mandou (`public/img/logo.webp`, 192 px). |
-| **Domínio** | Definir e apontar depois do deploy (ver passo a passo em `../landing-page-natalie/PLAYBOOK.md`). Com domínio e endereço entram `canonical` e JSON-LD. |
+| ~~**Domínio**~~ | Resolvido em 22/11/2026: `srespaçobeleza.com.br` (com ç; no DNS, `xn--srespaobeleza-ngb.com.br`), DNS no Cloudflare e ligado ao Worker `site-silvana` (raiz e `www`). `canonical` e JSON-LD ainda esperam o endereço. |
 
 ## Deixa o site mais forte
 

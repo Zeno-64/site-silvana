@@ -6,6 +6,9 @@ Todo CTA leva para o WhatsApp. Sem backend.
 
 **Stack:** Vite 8 + React 19 + TypeScript + Tailwind 4 (`@tailwindcss/vite`) + framer-motion.
 Deploy: Cloudflare Workers (assets estáticos), `wrangler.jsonc` apontando para `dist/`.
+Domínio: **srespaçobeleza.com.br** (com ç; no DNS, `xn--srespaobeleza-ngb.com.br`), registrado
+no registro.br, com DNS no Cloudflare. Raiz e `www` estão ligados ao Worker `site-silvana` como
+Custom Domain, e o `workers.dev` continua ligado.
 
 ```bash
 npm install
